@@ -1,0 +1,40 @@
+{
+  "name": "@prose/gatsby",
+  "version": "0.1.0",
+  "description": "The Prose Gatsby library",
+  "source": "src/index.js",
+  "main": "dist/gatsby.js",
+  "module": "dist/gatsby.esm.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prosejs/prose.git",
+    "directory": "packages/gatsby"
+  },
+  "homepage": "https://github.com/prosejs/prose/tree/master/packages/gatsby#readme",
+  "scripts": {
+    "prepare": "microbundle --no-compress -o dist",
+    "watch": "microbundle watch --no-compress -o dist",
+    "test": "echo testing gatsby-theme with version: $npm_package_version"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "gatsby": "^2.18.0",
+    "microbundle": "^0.11.0",
+    "prettier": "^1.19.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.13.13",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "dependencies": {
+    "@utilz/deepmerge": "^0.1.8",
+    "gatsby-core-utils": "^1.0.25",
+    "gatsby-source-filesystem": "^2.1.43"
+  }
+}

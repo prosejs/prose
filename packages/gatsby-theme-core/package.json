@@ -1,0 +1,50 @@
+{
+  "name": "@prose/gatsby-theme-core",
+  "version": "0.1.1-alpha.2",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prosejs/prose.git",
+    "directory": "packages/gatsby-theme-core"
+  },
+  "homepage": "https://github.com/prosejs/prose/tree/master/packages/gatsby-theme-core#readme",
+  "scripts": {
+    "build": "echo build",
+    "prepare": "cross-env NODE_ENV=production npm run build",
+    "test": "echo testing gatsby-theme-core with version: $npm_package_version"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@mdx-js/react": "^1.5.1",
+    "gatsby": "^2.6.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.5.1",
+    "@utilz/deepmerge": "^0.1.8",
+    "gatsby-plugin-mdx": "^1.0.59",
+    "gatsby-plugin-sharp": "^2.3.2",
+    "gatsby-remark-copy-linked-files": "^2.1.30",
+    "gatsby-remark-graph": "^0.2.2",
+    "gatsby-remark-images": "^3.1.31",
+    "gatsby-remark-mermaid": "^1.2.0",
+    "gatsby-remark-prismjs": "^3.3.23",
+    "gatsby-remark-responsive-iframe": "^2.2.27",
+    "gatsby-remark-smartypants": "^2.1.16",
+    "gatsby-source-filesystem": "^2.1.37",
+    "gatsby-transformer-json": "^2.2.18",
+    "gatsby-transformer-remark": "^2.6.36",
+    "gatsby-transformer-sharp": "^2.3.5",
+    "prismjs": "^1.17.1",
+    "rehype-toc": "^2.2.2",
+    "remark-slug": "^5.1.2"
+  },
+  "devDependencies": {
+    "cross-env": "^6.0.3"
+  },
+  "gitHead": "6621bc126c3dbec7324cf9946fadbd7ee87008c9"
+}

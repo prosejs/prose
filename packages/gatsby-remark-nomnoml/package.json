@@ -1,0 +1,17 @@
+{
+  "name": "@prose/gatsby-remark-nomnoml",
+  "version": "0.1.1-alpha.0",
+  "description": "Add nomnoml graphs.",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo testing gatsby-theme with version: $npm_package_version"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "nomnoml": "^0.6.2",
+    "unist-util-visit": "^1.4.0"
+  }
+}
