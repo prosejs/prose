@@ -41,6 +41,7 @@
     "@storybook/addon-knobs": "^5.2.8",
     "@storybook/react": "^5.2.8",
     "@theme-ui/preset-base": "^0.2.44",
+    "@theme-ui/preset-funk": "^0.2.44",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "faker": "^4.1.0",

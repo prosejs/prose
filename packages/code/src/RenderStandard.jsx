@@ -190,7 +190,6 @@ const RenderStandard = ({
             display: 'grid',
             padding: `${label ? '1.5rem' : '1rem'} 0.5rem 1rem 0.5rem`,
             gridTemplateColumns: options.lines.enabled ? 'auto 1fr' : '1fr',
-            alignItems: 'center',
             margin: 0,
             ...getLabelProps(label, options.lines.enabled),
           }}
@@ -200,15 +199,17 @@ const RenderStandard = ({
             return (
               <React.Fragment key={line.data.id}>
                 {options.lines.enabled && (
-                  <span
+                  <div
                     sx={{
+                      display: 'flex',
+                      alignItems: 'center',
                       fontSize: 1,
                       borderRight: '1px solid #ccc', // TODO: get all these values from theme, with fallback
                       paddingRight: '0.5rem',
                     }}
                   >
-                    {options.lines.start + i}
-                  </span>
+                    <span>{options.lines.start + i}</span>
+                  </div>
                 )}
                 <div
                   {...getLineProps({ line: line.data })}

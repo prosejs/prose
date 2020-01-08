@@ -3,7 +3,7 @@ import React from 'react'
 import { jsx, Styled } from 'theme-ui'
 import Code, { fromMdxProps } from './index'
 import { ThemeProvider } from 'theme-ui'
-import baseTheme from '@theme-ui/preset-base'
+import funkTheme from '@theme-ui/preset-funk'
 import nightOwl from '@theme-ui/prism/presets/night-owl.json'
 import nightOwlLight from '@theme-ui/prism/presets/night-owl-light.json'
 import MDX from '@mdx-js/runtime'
@@ -13,7 +13,8 @@ import { withKnobs, optionsKnob as options } from '@storybook/addon-knobs'
 
 const defaultProps = {
   language: 'javascript',
-  code: `const foo = 'bar'`,
+  code: `const foo = 'bar'
+const bar = 'foo'`,
 }
 
 export default { title: 'Code', decorators: [withKnobs] }
@@ -27,17 +28,18 @@ const Themed = ({ theme, children }) => (
 )
 
 export const withTheme = () => {
-  const theme = {
-    ...baseTheme,
-    styles: {
-      pre: {
-        ...nightOwlLight,
-      },
-    },
-  }
+  // const theme = {
+  //   ...funkTheme,
+  //   styles: {
+  //     pre: {
+  //       ...nightOwlLight,
+  //     },
+  //   },
+  // }
 
+  console.log(funkTheme)
   return (
-    <Themed theme={theme}>
+    <Themed theme={funkTheme}>
       <Code {...defaultProps} />
     </Themed>
   )
@@ -116,34 +118,34 @@ export const withMdxInvalidNoLanguageAndOptions = () => (
 )
 
 const mdxThemed = code => {
-  const theme = {
-    ...baseTheme,
-    styles: {
-      pre: {
-        ...nightOwlLight,
-      },
-    },
-  }
+  // const theme = {
+  //   ...baseTheme,
+  //   styles: {
+  //     pre: {
+  //       ...nightOwlLight,
+  //     },
+  //   },
+  // }
 
   return (
-    <Themed theme={theme}>
+    <Themed theme={funkTheme}>
       <MDX {...mdxProps(code)} />
     </Themed>
   )
 }
 
 const MdxT = ({ language, code }) => {
-  const theme = {
-    ...baseTheme,
-    styles: {
-      pre: {
-        ...nightOwlLight,
-      },
-    },
-  }
+  // const theme = {
+  //   ...baseTheme,
+  //   styles: {
+  //     pre: {
+  //       ...nightOwlLight,
+  //     },
+  //   },
+  // }
 
   return (
-    <Themed theme={theme}>
+    <Themed theme={funkTheme}>
       <MDX {...mdxProps(code)} />
     </Themed>
   )
