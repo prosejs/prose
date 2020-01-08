@@ -165,6 +165,41 @@ const getLabel = language => {
   return label
 }
 
+const LineNumber = ({ lineNumber }) => (
+  <div
+    sx={{
+      display: 'flex',
+      alignItems: 'center',
+      fontSize: 1,
+      borderRight: '1px solid #ccc', // TODO: get all these values from theme, with fallback
+      paddingRight: '0.5rem',
+    }}
+  >
+    <span>{lineNumber}</span>
+  </div>
+)
+
+const Symbol = ({ symbol, theme, meta }) => (
+  <span
+    sx={{
+      fontSize: 1,
+      ...getTokenStyle({ theme, meta }),
+    }}
+  >
+    {symbol}&nbsp;
+  </span>
+)
+
+const Token = ({ token, theme, meta, getTokenProps }) => (
+  <span
+    {...getTokenProps({ token })}
+    sx={{
+      fontSize: 1,
+      ...getTokenStyle({ theme, meta }),
+    }}
+  />
+)
+
 const CodeLine = ({
   line,
   lineNumber,
@@ -178,19 +213,7 @@ const CodeLine = ({
 
   return (
     <React.Fragment>
-      {lineNumbersEnabled && (
-        <div
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            fontSize: 1,
-            borderRight: '1px solid #ccc', // TODO: get all these values from theme, with fallback
-            paddingRight: '0.5rem',
-          }}
-        >
-          <span>{lineNumber}</span>
-        </div>
-      )}
+      {lineNumbersEnabled && <LineNumber lineNumber={lineNumber} />}
       <div
         {...getLineProps({ line: line.data })}
         sx={{
@@ -201,24 +224,14 @@ const CodeLine = ({
           paddingLeft: '0.5rem',
         }}
       >
-        {symbol && (
-          <span
-            sx={{
-              fontSize: 1,
-              ...getTokenStyle({ theme, meta: line.meta }),
-            }}
-          >
-            {symbol}&nbsp;
-          </span>
-        )}
+        {symbol && <Symbol symbol={symbol} theme={theme} meta={line.meta} />}
         {line.data.tokens.map(token => (
-          <span
+          <Token
             key={token.id}
-            {...getTokenProps({ token })}
-            sx={{
-              fontSize: 1,
-              ...getTokenStyle({ theme, meta: line.meta }),
-            }}
+            token={token}
+            theme={theme}
+            meta={line.meta}
+            getTokenProps={getTokenProps}
           />
         ))}
       </div>
