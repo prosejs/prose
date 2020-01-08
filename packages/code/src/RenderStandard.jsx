@@ -165,6 +165,67 @@ const getLabel = language => {
   return label
 }
 
+const CodeLine = ({
+  line,
+  lineNumber,
+  lineNumbersEnabled,
+  getLineProps,
+  getTokenProps,
+}) => {
+  const context = useThemeUI()
+  const { theme } = context
+  const symbol = getSymbol({ meta: line.meta })
+
+  return (
+    <React.Fragment>
+      {lineNumbersEnabled && (
+        <div
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            fontSize: 1,
+            borderRight: '1px solid #ccc', // TODO: get all these values from theme, with fallback
+            paddingRight: '0.5rem',
+          }}
+        >
+          <span>{lineNumber}</span>
+        </div>
+      )}
+      <div
+        {...getLineProps({ line: line.data })}
+        sx={{
+          ...getLineStyle({
+            theme,
+            meta: line.meta,
+          }),
+          paddingLeft: '0.5rem',
+        }}
+      >
+        {symbol && (
+          <span
+            sx={{
+              fontSize: 1,
+              ...getTokenStyle({ theme, meta: line.meta }),
+            }}
+          >
+            {symbol}&nbsp;
+          </span>
+        )}
+        {line.data.tokens.map(token => (
+          <span
+            key={token.id}
+            {...getTokenProps({ token })}
+            sx={{
+              fontSize: 1,
+              ...getTokenStyle({ theme, meta: line.meta }),
+            }}
+          />
+        ))}
+      </div>
+    </React.Fragment>
+  )
+}
+
 const RenderStandard = ({
   parsed,
   language,
@@ -172,8 +233,6 @@ const RenderStandard = ({
   getLineProps,
   getTokenProps,
 }) => {
-  const context = useThemeUI()
-  const { theme } = context
   const { options, lines } = parsed
 
   const label = getLabel(language)
@@ -194,57 +253,16 @@ const RenderStandard = ({
             ...getLabelProps(label, options.lines.enabled),
           }}
         >
-          {lines.map((line, i) => {
-            const symbol = getSymbol({ meta: line.meta })
-            return (
-              <React.Fragment key={line.data.id}>
-                {options.lines.enabled && (
-                  <div
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      fontSize: 1,
-                      borderRight: '1px solid #ccc', // TODO: get all these values from theme, with fallback
-                      paddingRight: '0.5rem',
-                    }}
-                  >
-                    <span>{options.lines.start + i}</span>
-                  </div>
-                )}
-                <div
-                  {...getLineProps({ line: line.data })}
-                  sx={{
-                    ...getLineStyle({
-                      theme,
-                      meta: line.meta,
-                    }),
-                    paddingLeft: '0.5rem',
-                  }}
-                >
-                  {symbol && (
-                    <span
-                      sx={{
-                        fontSize: 1,
-                        ...getTokenStyle({ theme, meta: line.meta }),
-                      }}
-                    >
-                      {symbol}&nbsp;
-                    </span>
-                  )}
-                  {line.data.tokens.map(token => (
-                    <span
-                      key={token.id}
-                      {...getTokenProps({ token })}
-                      sx={{
-                        fontSize: 1,
-                        ...getTokenStyle({ theme, meta: line.meta }),
-                      }}
-                    />
-                  ))}
-                </div>
-              </React.Fragment>
-            )
-          })}
+          {lines.map((line, i) => (
+            <CodeLine
+              key={line.data.id}
+              lineNumber={options.lines.start + i}
+              lineNumbersEnabled={options.lines.enabled}
+              line={line}
+              getLineProps={getLineProps}
+              getTokenProps={getTokenProps}
+            />
+          ))}
         </Styled.pre>
       </div>
     </React.Fragment>
