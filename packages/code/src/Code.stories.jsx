@@ -8,7 +8,7 @@ import nightOwl from '@theme-ui/prism/presets/night-owl.json'
 import nightOwlLight from '@theme-ui/prism/presets/night-owl-light.json'
 import MDX from '@mdx-js/runtime'
 import deepmerge from '@utilz/deepmerge'
-import { languageLabels } from './RenderStandard'
+import languageLabels from './render/language-labels'
 import { withKnobs, optionsKnob as options } from '@storybook/addon-knobs'
 
 const defaultProps = {
@@ -28,18 +28,17 @@ const Themed = ({ theme, children }) => (
 )
 
 export const withTheme = () => {
-  // const theme = {
-  //   ...funkTheme,
-  //   styles: {
-  //     pre: {
-  //       ...nightOwlLight,
-  //     },
-  //   },
-  // }
+  const theme = {
+    ...funkTheme,
+    styles: {
+      pre: {
+        ...nightOwlLight,
+      },
+    },
+  }
 
-  console.log(funkTheme)
   return (
-    <Themed theme={funkTheme}>
+    <Themed theme={theme}>
       <Code {...defaultProps} />
     </Themed>
   )
@@ -118,34 +117,34 @@ export const withMdxInvalidNoLanguageAndOptions = () => (
 )
 
 const mdxThemed = code => {
-  // const theme = {
-  //   ...baseTheme,
-  //   styles: {
-  //     pre: {
-  //       ...nightOwlLight,
-  //     },
-  //   },
-  // }
+  const theme = {
+    ...funkTheme,
+    styles: {
+      pre: {
+        ...nightOwlLight,
+      },
+    },
+  }
 
   return (
-    <Themed theme={funkTheme}>
+    <Themed theme={theme}>
       <MDX {...mdxProps(code)} />
     </Themed>
   )
 }
 
 const MdxT = ({ language, code }) => {
-  // const theme = {
-  //   ...baseTheme,
-  //   styles: {
-  //     pre: {
-  //       ...nightOwlLight,
-  //     },
-  //   },
-  // }
+  const theme = {
+    ...funkTheme,
+    styles: {
+      pre: {
+        ...nightOwlLight,
+      },
+    },
+  }
 
   return (
-    <Themed theme={funkTheme}>
+    <Themed theme={theme}>
       <MDX {...mdxProps(code)} />
     </Themed>
   )

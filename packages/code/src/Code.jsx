@@ -4,7 +4,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer'
 import deepmerge from '@utilz/deepmerge'
 import shortid from 'shortid'
 import parseStandard from './parse-standard'
-import renderStandard from './RenderStandard.jsx'
+import renderStandard from './render/RenderStandard.jsx'
 
 const defaultOptions = {
   classPrefix: 'language-',

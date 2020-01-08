@@ -1,0 +1,94 @@
+/** @jsx jsx */
+import React from 'react'
+import { jsx, Styled } from 'theme-ui'
+import Title from './Title'
+import CodeLine from './CodeLine'
+import languageLabels from './language-labels'
+
+const getLabelProps = (label, linesEnabled) => {
+  if (!label) {
+    return null
+  }
+
+  return {
+    '::before': {
+      content: `"${label.title}"`,
+      fontSize: 1,
+      fontFamily: 'body',
+      color: label.color,
+      backgroundColor: label.backgroundColor,
+      padding: '0 0.5rem 0.2rem 0.5rem',
+      borderRadius: '0 0 0.5rem 0.5rem',
+      margin: 0,
+      position: 'absolute',
+      left: linesEnabled ? '2rem' : '1rem',
+      top: 0,
+      textTransform: 'uppercase',
+    },
+  }
+}
+
+const getLabel = language => {
+  if (!language) {
+    return null
+  }
+
+  if (language === 'none') {
+    return null
+  }
+
+  const label = languageLabels[language]
+  if (!label) {
+    return {
+      ...languageLabels['default'],
+      title: language,
+    }
+  }
+
+  return label
+}
+
+const RenderStandard = ({
+  parsed,
+  language,
+  getPreProps,
+  getLineProps,
+  getTokenProps,
+}) => {
+  const { options, lines } = parsed
+
+  const label = getLabel(language)
+
+  return (
+    <React.Fragment>
+      {options.title && (
+        <Title borderColor={label.backgroundColor}>{options.title}</Title>
+      )}
+      <div style={{ position: 'relative' }}>
+        <Styled.pre
+          {...getPreProps()}
+          sx={{
+            display: 'grid',
+            padding: `${label ? '1.5rem' : '1rem'} 0.5rem 1rem 0.5rem`,
+            gridTemplateColumns: options.lines.enabled ? 'auto 1fr' : '1fr',
+            margin: 0,
+            ...getLabelProps(label, options.lines.enabled),
+          }}
+        >
+          {lines.map((line, i) => (
+            <CodeLine
+              key={line.data.id}
+              lineNumber={options.lines.start + i}
+              lineNumbersEnabled={options.lines.enabled}
+              line={line}
+              getLineProps={getLineProps}
+              getTokenProps={getTokenProps}
+            />
+          ))}
+        </Styled.pre>
+      </div>
+    </React.Fragment>
+  )
+}
+
+export default RenderStandard
