@@ -22,7 +22,8 @@ const defaultOptions = {
 
 const Code = ({ code, language, meta, options, parse, render, ...props }) => {
   const combinedOptions = deepmerge(defaultOptions, options)
-  const resolvedLanguage = combinedOptions.aliases[language] || language
+  const resolvedLanguage =
+    combinedOptions.aliases[language] || language || 'none'
   const resolvedParser = parse || parseStandard
   const ResolvedRenderer = render || renderStandard
 
