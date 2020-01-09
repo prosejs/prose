@@ -35,6 +35,12 @@ export const withTheme = () => {
         ...nightOwlLight,
       },
     },
+    code: {
+      lineNumber: {
+        color: '#ccc',
+        borderRight: '1px solid #ccc',
+      },
+    },
   }
 
   return (
