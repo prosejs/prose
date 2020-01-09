@@ -1,15 +1,16 @@
 /** @jsx jsx */
-import React from 'react'
 import { jsx } from 'theme-ui'
 
-const Token = ({ token, style, getTokenProps }) => (
-  <span
-    {...getTokenProps({ token })}
-    sx={{
-      fontSize: 1,
-      ...style,
-    }}
-  />
-)
+const Token = ({ token, tokenStyle, ...props }) => {
+  return (
+    <span
+      {...props}
+      sx={{
+        fontSize: 1,
+        ...tokenStyle,
+      }}
+    />
+  )
+}
 
 export default Token

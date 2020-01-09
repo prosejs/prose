@@ -6,7 +6,12 @@ import Token from './Token'
 import Symbol from './Symbol'
 
 const getLineStyle = ({ theme, meta }) => {
+  if (!meta) {
+    return null
+  }
+
   const { em, dem } = meta
+
   if (dem) {
     return null
   }
@@ -21,6 +26,10 @@ const getLineStyle = ({ theme, meta }) => {
 }
 
 const getTokenStyle = ({ theme, meta }) => {
+  if (!meta) {
+    return null
+  }
+
   const { dem } = meta
 
   if (dem) {
@@ -33,6 +42,10 @@ const getTokenStyle = ({ theme, meta }) => {
 }
 
 const getSymbol = ({ meta }) => {
+  if (!meta) {
+    return null
+  }
+
   const { em, dem } = meta
   return dem ? getSymbolType(dem) : getSymbolType(em)
 }
@@ -49,46 +62,55 @@ const getSymbolType = value => {
 }
 
 const CodeLine = ({
-  line,
+  meta,
+  tokens,
   lineNumber,
   lineNumbersEnabled,
-  getLineProps,
+  lineProps,
   getTokenProps,
 }) => {
   const context = useThemeUI()
   const { theme } = context
-  const symbol = getSymbol({ meta: line.meta })
+
+  const symbol = getSymbol({ meta })
 
   return (
     <React.Fragment>
       {lineNumbersEnabled && <LineNumber lineNumber={lineNumber} />}
       <div
-        {...getLineProps({ line: line.data })}
+        {...lineProps}
         sx={{
           ...getLineStyle({
             theme,
-            meta: line.meta,
+            meta,
           }),
           paddingLeft: '0.5rem',
         }}
       >
         {symbol && (
-          <Symbol
-            symbol={symbol}
-            style={getTokenStyle({ theme, meta: line.meta })}
-          />
+          <Symbol symbol={symbol} style={getTokenStyle({ theme, meta })} />
         )}
-        {line.data.tokens.map(token => (
+        {tokens.map(token => (
           <Token
             key={token.id}
             token={token}
-            style={getTokenStyle({ theme, meta: line.meta })}
-            getTokenProps={getTokenProps}
+            tokenStyle={getTokenStyle({ theme, meta })}
+            {...getTokenProps({ token })}
           />
         ))}
       </div>
     </React.Fragment>
   )
+}
+
+CodeLine.defaultProps = {
+  meta: null,
+  tokens: [],
+  lineNumber: 1,
+  lineNumbersEnabled: true,
+  getTokenProps: ({ token }) => ({
+    children: token.data.content,
+  }),
 }
 
 export default CodeLine

@@ -1,12 +1,14 @@
 /** @jsx jsx */
-import React from 'react'
 import { jsx, Styled } from 'theme-ui'
 
 const Title = ({ children, borderColor }) => (
   <Styled.pre
     as="div"
     sx={{ backgroundColor: 'pre.backgroundColor' }}
-    sx={{ padding: '0.8rem', borderBottom: `1px solid ${borderColor}` }}
+    sx={{
+      padding: '0.8rem',
+      borderBottom: borderColor ? `1px solid ${borderColor}` : null,
+    }}
   >
     <p
       sx={{

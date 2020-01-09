@@ -80,8 +80,9 @@ const RenderStandard = ({
               key={line.data.id}
               lineNumber={options.lines.start + i}
               lineNumbersEnabled={options.lines.enabled}
-              line={line}
-              getLineProps={getLineProps}
+              meta={line.meta}
+              tokens={line.data.tokens}
+              lineProps={getLineProps({ line: line.data })}
               getTokenProps={getTokenProps}
             />
           ))}
