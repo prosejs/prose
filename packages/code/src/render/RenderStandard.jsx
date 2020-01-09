@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import React from 'react'
 import { jsx, Styled } from 'theme-ui'
-import Title from './Title'
-import CodeLine from './CodeLine'
+import Title from './Title.jsx'
+import CodeLine from './CodeLine.jsx'
 import languageLabels from './language-labels'
 
 const getLabelProps = (label, linesEnabled) => {

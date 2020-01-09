@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import React from 'react'
 import { jsx, useThemeUI } from 'theme-ui'
-import LineNumber from './LineNumber'
-import Token from './Token'
-import Symbol from './Symbol'
+import LineNumber from './LineNumber.jsx'
+import Token from './Token.jsx'
+import Symbol from './Symbol.jsx'
 
 const getLineStyle = ({ theme, meta }) => {
   if (!meta) {
