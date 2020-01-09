@@ -4,7 +4,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer'
 import deepmerge from '@utilz/deepmerge'
 import shortid from 'shortid'
 import parseStandard from './parse-standard'
-import renderStandard from './RenderStandard.jsx'
+import renderStandard from './render/RenderStandard.jsx'
 
 const defaultOptions = {
   classPrefix: 'language-',
@@ -22,7 +22,8 @@ const defaultOptions = {
 
 const Code = ({ code, language, meta, options, parse, render, ...props }) => {
   const combinedOptions = deepmerge(defaultOptions, options)
-  const resolvedLanguage = combinedOptions.aliases[language] || language
+  const resolvedLanguage =
+    combinedOptions.aliases[language] || language || 'none'
   const resolvedParser = parse || parseStandard
   const ResolvedRenderer = render || renderStandard
 

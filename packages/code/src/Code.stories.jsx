@@ -3,17 +3,18 @@ import React from 'react'
 import { jsx, Styled } from 'theme-ui'
 import Code, { fromMdxProps } from './index'
 import { ThemeProvider } from 'theme-ui'
-import baseTheme from '@theme-ui/preset-base'
+import funkTheme from '@theme-ui/preset-funk'
 import nightOwl from '@theme-ui/prism/presets/night-owl.json'
 import nightOwlLight from '@theme-ui/prism/presets/night-owl-light.json'
 import MDX from '@mdx-js/runtime'
 import deepmerge from '@utilz/deepmerge'
-import { languageLabels } from './RenderStandard'
+import languageLabels from './render/language-labels'
 import { withKnobs, optionsKnob as options } from '@storybook/addon-knobs'
 
 const defaultProps = {
   language: 'javascript',
-  code: `const foo = 'bar'`,
+  code: `const foo = 'bar'
+const bar = 'foo'`,
 }
 
 export default { title: 'Code', decorators: [withKnobs] }
@@ -28,10 +29,16 @@ const Themed = ({ theme, children }) => (
 
 export const withTheme = () => {
   const theme = {
-    ...baseTheme,
+    ...funkTheme,
     styles: {
       pre: {
         ...nightOwlLight,
+      },
+    },
+    code: {
+      lineNumber: {
+        color: '#ccc',
+        borderRight: '1px solid #ccc',
       },
     },
   }
@@ -117,7 +124,7 @@ export const withMdxInvalidNoLanguageAndOptions = () => (
 
 const mdxThemed = code => {
   const theme = {
-    ...baseTheme,
+    ...funkTheme,
     styles: {
       pre: {
         ...nightOwlLight,
@@ -134,7 +141,7 @@ const mdxThemed = code => {
 
 const MdxT = ({ language, code }) => {
   const theme = {
-    ...baseTheme,
+    ...funkTheme,
     styles: {
       pre: {
         ...nightOwlLight,
