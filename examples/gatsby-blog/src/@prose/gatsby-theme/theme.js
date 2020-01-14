@@ -1,2 +1,11 @@
 const theme = require('@theme-ui/preset-swiss')
-module.exports = theme
+
+module.exports = {
+  ...theme,
+  mermaid: {
+    '.node': {
+      fill: '#fff',
+      stroke: '#c0c',
+    },
+  },
+}
