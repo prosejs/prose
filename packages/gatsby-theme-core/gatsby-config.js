@@ -13,16 +13,14 @@ module.exports = themeOptions => {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
-        remarkPlugins: [
-          // require('remark-slug'),
-          require('@prose/remark-mermaid').default, // TODO: mermaid options
-        ],
+        remarkPlugins: [require('remark-slug')],
         rehypePlugins: [
           /*require('rehype-toc')*/
         ],
         gatsbyRemarkPlugins: [
           // 'gatsby-remark-mermaid',
-          //   "gatsby-remark-nomnoml",
+          `@prose/remark-mermaid`,
+          // '@prose/gatsby-remark-nomnoml',
           {
             resolve: `gatsby-remark-images`,
             options: {
