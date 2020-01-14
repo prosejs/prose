@@ -48,9 +48,19 @@ const process = tree => {
   return updatedTree
 }
 
-const plugin = options => tree => {
-  console.log(tree)
-  return process(tree)
-}
+// const plugin = options => {
+//   console.log(options)
+//   return tree => {
+//     console.log(tree)
+//     return process(tree)
+//   }
+// }
+
+const plugin = tree => process(tree)
+
+// const plugin = ({ markdownAST }, options) => {
+//   console.log('foo')
+//   return process(markdownAST)
+// }
 
 export default plugin

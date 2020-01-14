@@ -14,8 +14,8 @@ module.exports = themeOptions => {
       options: {
         extensions: [`.mdx`, `.md`],
         remarkPlugins: [
-          require('remark-slug'),
-          require('@prose/remark-mermaid'),
+          // require('remark-slug'),
+          require('@prose/remark-mermaid').default, // TODO: mermaid options
         ],
         rehypePlugins: [
           /*require('rehype-toc')*/
