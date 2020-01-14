@@ -4,6 +4,8 @@ const mermaidDefault = {
   '.label': {
     // fontFamily: 'trebuchet ms', verdana, arial;
     // fontFamily: var(--mermaid-font-family);
+    fontFamily: 'body',
+    fontWeight: 'body',
     color: '#333',
   },
   '.label text': {
@@ -46,7 +48,9 @@ const mermaidDefault = {
     padding: '2px',
     // fontFamily: 'trebuchet ms', verdana, arial;
     // fontFamily: var(--mermaid-font-family);
-    fontSize: '12px',
+    fontFamily: 'body',
+    fontWeight: 'body',
+    fontSize: 12,
     background: '#ffffde',
     border: '1px solid #aaaa33',
     borderRadius: '2px',
@@ -117,7 +121,9 @@ const mermaidDefault = {
     stroke: 'none',
     // font-family: 'trebuchet ms', verdana, arial;
     // font-family: var(--mermaid-font-family);
-    fontSize: '14px',
+    fontFamily: 'body',
+    fontWeight: 'body',
+    fontSize: 14,
   },
   '.activation0': {
     fill: '#f4f4f4',
@@ -134,6 +140,8 @@ const mermaidDefault = {
   '.mermaid-main-font': {
     // font-family: "trebuchet ms", verdana, arial;
     // font-family: var(--mermaid-font-family);
+    fontFamily: 'body',
+    fontWeight: 'body',
   },
   '.section': {
     stroke: 'none',
@@ -163,10 +171,12 @@ const mermaidDefault = {
   },
   '.sectionTitle': {
     textAnchor: 'start',
-    fontSize: '11px',
-    textHeight: '14px',
+    fontSize: 12,
+    // textHeight: '14px',
     // fontFamily: 'trebuchet ms', verdana, arial;
     // fontFamily: var(--mermaid-font-family);
+    fontFamily: 'body',
+    fontWeight: 'body',
   },
   '.grid .tick': {
     stroke: 'lightgrey',
@@ -176,6 +186,8 @@ const mermaidDefault = {
   '.grid .tick text': {
     //   font-family: 'trebuchet ms', verdana, arial;
     //   font-family: var(--mermaid-font-family); }
+    fontFamily: 'body',
+    fontWeight: 'body',
   },
   '.grid path': {
     strokeWidth: 0,
@@ -192,21 +204,25 @@ const mermaidDefault = {
     textAnchor: 'middle',
     // font-family: 'trebuchet ms', verdana, arial;
     // font-family: var(--mermaid-font-family);
+    fontFamily: 'body',
+    fontWeight: 'body',
   },
   '.taskText:not([font-size])': {
-    fontSize: '11px',
+    fontSize: 12,
   },
   '.taskTextOutsideRight': {
     fill: 'black',
     textAnchor: 'start',
-    fontSize: '11px',
+    fontSize: 12,
     // font-family: 'trebuchet ms', verdana, arial;
     // font-family: var(--mermaid-font-family);
+    fontFamily: 'body',
+    fontWeight: 'body',
   },
   '.taskTextOutsideLeft': {
     fill: 'black',
     textAnchor: 'end',
-    fontSize: '11px',
+    fontSize: 12,
   },
   '.task.clickable': {
     cursor: 'pointer',
@@ -214,17 +230,17 @@ const mermaidDefault = {
   '.taskText.clickable': {
     cursor: 'pointer',
     fill: '#003163 !important',
-    fontWeight: 'bold',
+    fontWeight: 'heading',
   },
   '.taskTextOutsideLeft.clickable': {
     cursor: 'pointer',
     fill: '#003163 !important',
-    fontWeight: 'bold',
+    fontWeight: 'heading',
   },
   '.taskTextOutsideRight.clickable': {
     cursor: 'pointer',
     fill: '#003163 !important',
-    fontWeight: 'bold',
+    fontWeight: 'heading',
   },
   '.taskText0, .taskText1, .taskText2, .taskText3': {
     fill: 'white',
@@ -285,20 +301,24 @@ const mermaidDefault = {
   },
   '.titleText': {
     textAnchor: 'middle',
-    fontSize: '18px',
+    fontSize: 16,
     fill: 'black',
     // font-family: 'trebuchet ms', verdana, arial;
     // font-family: var(--mermaid-font-family); }
+    fontFamily: 'body',
+    fontWeight: 'body',
   },
   'g.classGroup text': {
     fill: '#9370DB',
     stroke: 'none',
     // font-family: 'trebuchet ms', verdana, arial;
     // font-family: var(--mermaid-font-family);
-    fontSize: '10px',
+    fontFamily: 'body',
+    fontWeight: 'body',
+    fontSize: 12,
   },
   'g.classGroup text .title': {
-    fontWeight: 'bolder',
+    fontWeight: 'display',
   },
   'g.clickable': {
     cursor: 'pointer',
@@ -319,7 +339,7 @@ const mermaidDefault = {
   },
   '.classLabel .label': {
     fill: '#9370DB',
-    fontSize: '10px',
+    fontSize: 12,
   },
   '.relation': {
     stroke: '#9370DB',
@@ -372,34 +392,37 @@ const mermaidDefault = {
   '.commit-id, .commit-msg, .branch-label': {
     fill: 'lightgrey',
     color: 'lightgrey',
+    fontFamily: 'body',
+    fontWeight: 'body',
     // font-family: 'trebuchet ms', verdana, arial;
     // font-family: var(--mermaid-font-family); }
   },
   '.pieTitleText': {
     textAnchor: 'middle',
-    fontSize: '25px',
+    fontSize: 24,
     fill: 'black',
+    fontFamily: 'body',
+    fontWeight: 'body',
     // font-family: 'trebuchet ms', verdana, arial;
     // font-family: var(--mermaid-font-family); }
   },
   '.slice': {
+    fontFamily: 'body',
+    fontWeight: 'body',
     // font-family: 'trebuchet ms', verdana, arial;
     // font-family: var(--mermaid-font-family); }
   },
   'g.stateGroup text': {
     fill: '#9370DB',
     stroke: 'none',
-    fontSize: '10px',
+    fontSize: 12,
+    fontFamily: 'body',
+    fontWeight: 'body',
     // font-family: 'trebuchet ms', verdana, arial;
     // font-family: var(--mermaid-font-family); }
-  },
-  'g.stateGroup text': {
-    fill: '#9370DB',
-    stroke: 'none',
-    fontSize: '10px',
   },
   'g.stateGroup .state-title': {
-    fontWeight: 'bolder',
+    fontWeight: 'display',
     fill: 'black',
   },
   'g.stateGroup rect': {
@@ -430,7 +453,7 @@ const mermaidDefault = {
   '.state-note text': {
     fill: 'black',
     stroke: 'none',
-    fontSize: '10px',
+    fontSize: 12,
   },
   '.stateLabel .box': {
     stroke: 'none',
@@ -440,11 +463,14 @@ const mermaidDefault = {
   },
   '.stateLabel text': {
     fill: 'black',
-    fontSize: '10px',
-    fontWeight: 'bold',
+    fontSize: 12,
+    // fontWeight: 'bold',
+    fontFamily: 'body',
+    fontWeight: 'heading',
     // font-family: 'trebuchet ms', verdana, arial;
     // font-family: var(--mermaid-font-family); }
   },
+  ':root': {},
 }
 
 export default {
