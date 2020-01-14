@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.5.1",
+    "@prose/remark-mermaid": "^0.1.0-alpha.0",
     "@utilz/deepmerge": "^0.1.8",
     "gatsby-plugin-mdx": "^1.0.59",
     "gatsby-plugin-sharp": "^2.3.2",

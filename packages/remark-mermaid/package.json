@@ -1,0 +1,33 @@
+{
+  "name": "@prose/remark-mermaid",
+  "version": "0.1.0-alpha.0",
+  "description": "Prose plugin for mermaid graphs.",
+  "private": true,
+  "source": "src/index.js",
+  "main": "dist/remark-mermaid.js",
+  "module": "dist/remark-mermaid.esm.js",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "microbundle --no-compress -o dist",
+    "watch": "microbundle watch --no-compress -o dist",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "theme-ui": "^0.2.52",
+    "unist-util-map": "^2.0.0",
+    "unist-util-modify-children": "^1.1.5",
+    "unist-util-visit": "^2.0.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "microbundle": "^0.11.0",
+    "remark": "^11.0.2",
+    "remark-mdx": "^1.5.3",
+    "to-vfile": "^6.0.0"
+  }
+}
