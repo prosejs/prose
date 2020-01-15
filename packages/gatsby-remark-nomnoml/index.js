@@ -1,41 +1,65 @@
 const visit = require('unist-util-visit')
 const nomnoml = require('nomnoml')
 
-function nomnomlNodes(markdownAST, language) {
+const EOL = '\n'
+
+const importLine = `import Nomnoml from '@prose/gatsby-remark-nomnoml/Nomnoml'`
+
+const isImportExists = tree => {
+  let exists = false
+
+  visit(tree, 'import', node => {
+    if (node.value && node.value.includes(importLine)) {
+      exists = true
+    }
+  })
+
+  return exists
+}
+
+const nomnomlNodes = (markdownAST, language) => {
   const result = []
+
   visit(markdownAST, 'code', node => {
     if ((node.lang || '').toLowerCase() === language) {
       result.push(node)
     }
   })
+
   return result
 }
 
-const defaultProcess = (language, content) => {
-  return `<div class="${language}">${content}</div>`
+const toNomnomlComponent = value => {
+  const svg = nomnoml.renderSvg(value)
+
+  let cleanedSvg = svg.replace(/<title >.*?<\/desc>/gms, '')
+  cleanedSvg = cleanedSvg.replace(/\sxmlns:xlink.*?>/gms, '>')
+  return `<Nomnoml>${EOL}${EOL}${cleanedSvg}${EOL}${EOL}</Nomnoml>`
 }
 
-// remove invalid xmlns:xlink property
-const defaultClean = content => {
-  const regex = /\sxmlns:xlink.*?\s/gm
-  return content.replace(regex, ' ')
+const addImport = (tree, importValue) => {
+  // TODO: review, as position property is not set
+  tree.children = [{ type: 'import', value: importValue }, ...tree.children]
 }
 
-module.exports = async ({ markdownAST }, options) => {
-  const { language = 'nomnoml' } = options
+const plugin = async ({ markdownAST }, options) => {
+  const { language = 'nomnoml' } = options || {}
+
+  if (!isImportExists(markdownAST)) {
+    addImport(markdownAST, importLine)
+  }
 
   const nodes = nomnomlNodes(markdownAST, language)
   if (nodes.length === 0) {
     return
   }
 
-  const process = options.process || defaultProcess
-  const clean = options.clean || defaultClean
-
   await Promise.all(
     nodes.map(async node => {
-      node.type = 'html'
-      node.value = process(language, clean(nomnoml.renderSvg(node.value)))
+      node.type = 'jsx'
+      node.value = toNomnomlComponent(node.value)
     })
   )
 }
+
+module.exports = plugin

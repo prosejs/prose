@@ -6,7 +6,7 @@ module.exports = themeOptions => {
   // TODO: validate options against schema
   const plugins = [
     ...options.definitions.map(d => ({
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: d.source,
     })),
     options.mdx && {
@@ -19,7 +19,7 @@ module.exports = themeOptions => {
         ],
         gatsbyRemarkPlugins: [
           `@prose/gatsby-remark-mermaid`,
-          // '@prose/gatsby-remark-nomnoml',
+          `@prose/gatsby-remark-nomnoml`,
           {
             resolve: `gatsby-remark-images`,
             options: {
