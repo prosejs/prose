@@ -2,7 +2,6 @@ const visit = require('unist-util-visit')
 const modifyChildren = require('unist-util-modify-children')
 const puppeteer = require('puppeteer')
 const render = require('./render')
-const theme = require('./theme')
 
 const EOL = '\n'
 

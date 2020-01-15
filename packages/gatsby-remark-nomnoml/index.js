@@ -1,18 +1,41 @@
 const visit = require('unist-util-visit')
+const modifyChildren = require('unist-util-modify-children')
 const nomnoml = require('nomnoml')
 
-function nomnomlNodes(markdownAST, language) {
+const EOL = '\n'
+
+const importLine = `import Nomnoml from '@prose/gatsby-remark-nomnoml/Nomnoml'`
+
+const isImportExists = tree => {
+  let exists = false
+
+  visit(tree, 'import', node => {
+    if (node.value && node.value.includes(importLine)) {
+      exists = true
+    }
+  })
+
+  return exists
+}
+
+const nomnomlNodes = (markdownAST, language) => {
   const result = []
+
   visit(markdownAST, 'code', node => {
     if ((node.lang || '').toLowerCase() === language) {
       result.push(node)
     }
   })
+
   return result
 }
 
-const defaultProcess = (language, content) => {
-  return `<div class="${language}">${content}</div>`
+const toNomnomlComponent = value => {
+  const svg = nomnoml.renderSvg(value)
+
+  let cleanedSvg = svg.replace(/<title >.*?<\/desc>/gms, '')
+  cleanedSvg = cleanedSvg.replace(/\sxmlns:xlink.*?>/gms, '>')
+  return `<Nomlnoml>${EOL}${EOL}${cleanedSvg}${EOL}${EOL}</Nomlnoml>`
 }
 
 // remove invalid xmlns:xlink property
@@ -21,21 +44,31 @@ const defaultClean = content => {
   return content.replace(regex, ' ')
 }
 
-module.exports = async ({ markdownAST }, options) => {
+const plugin = async ({ markdownAST }, options) => {
   const { language = 'nomnoml' } = options
+
+  if (!isImportExists(markdownAST)) {
+    const modify = modifyChildren((_, index, parent) => {
+      if (index === 0) {
+        parent.children.splice(index, 1, { type: 'import', value: importLine })
+        return index + 1
+      }
+    })
+
+    modify(markdownAST)
+  }
 
   const nodes = nomnomlNodes(markdownAST, language)
   if (nodes.length === 0) {
     return
   }
 
-  const process = options.process || defaultProcess
-  const clean = options.clean || defaultClean
-
   await Promise.all(
     nodes.map(async node => {
-      node.type = 'html'
-      node.value = process(language, clean(nomnoml.renderSvg(node.value)))
+      node.type = 'jsx'
+      node.value = toNomnomlComponent(node.value)
     })
   )
 }
+
+module.exports = plugin

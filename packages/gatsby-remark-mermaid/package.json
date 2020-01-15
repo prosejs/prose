@@ -27,10 +27,6 @@
   },
   "devDependencies": {
     "babel-jest": "^24.9.0",
-    "jest": "^24.9.0",
-    "microbundle": "^0.11.0",
-    "remark": "^11.0.2",
-    "remark-mdx": "^1.5.3",
-    "to-vfile": "^6.0.0"
+    "jest": "^24.9.0"
   }
 }
