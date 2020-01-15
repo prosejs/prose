@@ -34,43 +34,42 @@ const markdownAstToHtml = async markdownAST => {
   })
 }
 
-const markdownToHtml = async markdown => {
-  const markdownAST = await markdownToMdash(markdown)
-  return markdownAstToHtml(markdownAST)
+const markdownToHtml = plugins => async markdown => {
+  const markdownAST = await markdownToMdast(plugins)(markdown)
+  return await markdownAstToHtml(markdownAST)
 }
 
 describe('nomnoml plugin', () => {
-  //   it('should add nomnoml component import', async () => {
-  //     const markdownAST = await markdownToMdast(nomnomlPlugin)(`
-  // \`\`\`nomnoml
-  // [<start>st]->[<state>plunder]
-  // [plunder]->[<choice>more loot]
-  // [more loot]->[st]
-  // [more loot] no ->[<end>e]
-  // \`\`\``)
+  it('should add nomnoml component import', async () => {
+    const markdownAST = await markdownToMdast(nomnomlPlugin)(`
+    \`\`\`nomnoml
+    [<start>st]->[<state>plunder]
+    [plunder]->[<choice>more loot]
+    [more loot]->[st]
+    [more loot] no ->[<end>e]
+    \`\`\``)
 
-  //     expect(markdownAST).toBeTruthy()
-  //   })
+    expect(markdownAST).toBeTruthy()
+  })
 
   it('should add nomnoml and mermaid imports', async () => {
     const markdownAST = await markdownToMdast([mermaidPlugin, nomnomlPlugin])(`
-\`\`\`mermaid
-graph TD
-  A[Christmas] -->|Get money| B(Go shopping)
-  B --> C{Let me think}
-  C -->|One| D[Laptop]
-  C -->|Two| E[iPhone]
-  C -->|Three| F[fa:fa-car Car]
-\`\`\`
+    \`\`\`mermaid
+    graph TD
+      A[Christmas] -->|Get money| B(Go shopping)
+      B --> C{Let me think}
+      C -->|One| D[Laptop]
+      C -->|Two| E[iPhone]
+      C -->|Three| F[fa:fa-car Car]
+    \`\`\`
 
-\`\`\`nomnoml
-[<start>st]->[<state>plunder]
-[plunder]->[<choice>more loot]
-[more loot]->[st]
-[more loot] no ->[<end>e]
-\`\`\``)
+    \`\`\`nomnoml
+    [<start>st]->[<state>plunder]
+    [plunder]->[<choice>more loot]
+    [more loot]->[st]
+    [more loot] no ->[<end>e]
+    \`\`\``)
 
-    // console.log(markdownAST)
     expect(markdownAST).toBeTruthy()
   })
 })

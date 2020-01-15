@@ -20012,7 +20012,7 @@ unist-util-map@^2.0.0:
     "@types/mdast" "^3.0.3"
     object-assign "^4.0.1"
 
-unist-util-modify-children@^1.0.0, unist-util-modify-children@^1.1.5:
+unist-util-modify-children@^1.0.0:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/unist-util-modify-children/-/unist-util-modify-children-1.1.5.tgz#3cac9a5aea60b33395226eac4e37f15e0f04a7af"
   integrity sha512-XeL5qqyoS3TEueCKEzHusWXE9JBDJPE4rl6LmcLOwlzv0RIZrcMNqKx02GSK3Ms4v45ldu+ltPxG42FBMVdPZw==

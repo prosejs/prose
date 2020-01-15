@@ -7,11 +7,6 @@ export default {
     ...mermaidTheme('default'),
   },
   nomnoml: {
-    // '.nomnoml': {
-    //   display: 'flex',
-    //   justifyContent: 'center',
-    //   marginBottom: '1rem',
-    // },
     '&': {
       fontFamily: 'body',
       fontSize: 12,
