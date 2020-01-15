@@ -1,5 +1,4 @@
 const visit = require('unist-util-visit')
-const modifyChildren = require('unist-util-modify-children')
 const puppeteer = require('puppeteer')
 const render = require('./render')
 
@@ -31,23 +30,18 @@ const mermaidNodes = (markdownAST, language) => {
   return result
 }
 
-const plugin = async (
-  { markdownAST },
-  {
-    language = 'mermaid',
-    viewport = { height: 200, width: 200 },
-    mermaidOptions = {},
-  }
-) => {
-  if (!isImportExists(markdownAST)) {
-    const modify = modifyChildren((_, index, parent) => {
-      if (index === 0) {
-        parent.children.splice(index, 1, { type: 'import', value: importLine })
-        return index + 1
-      }
-    })
+const addImport = (tree, importValue) => {
+  // TODO: review, as position property is not set
+  tree.children = [{ type: 'import', value: importValue }, ...tree.children]
+}
 
-    modify(markdownAST)
+const plugin = async ({ markdownAST }, options) => {
+  const { language = 'mermaid' } = options || {}
+  const { viewport = { height: 200, width: 200 } } = options || {}
+  const { mermaidOptions = {} } = options || {}
+
+  if (!isImportExists(markdownAST)) {
+    addImport(markdownAST, importLine)
   }
 
   const nodes = mermaidNodes(markdownAST, language)

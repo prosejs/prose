@@ -1,5 +1,4 @@
 const visit = require('unist-util-visit')
-const modifyChildren = require('unist-util-modify-children')
 const nomnoml = require('nomnoml')
 
 const EOL = '\n'
@@ -35,27 +34,19 @@ const toNomnomlComponent = value => {
 
   let cleanedSvg = svg.replace(/<title >.*?<\/desc>/gms, '')
   cleanedSvg = cleanedSvg.replace(/\sxmlns:xlink.*?>/gms, '>')
-  return `<Nomlnoml>${EOL}${EOL}${cleanedSvg}${EOL}${EOL}</Nomlnoml>`
+  return `<Nomnoml>${EOL}${EOL}${cleanedSvg}${EOL}${EOL}</Nomnoml>`
 }
 
-// remove invalid xmlns:xlink property
-const defaultClean = content => {
-  const regex = /\sxmlns:xlink.*?\s/gm
-  return content.replace(regex, ' ')
+const addImport = (tree, importValue) => {
+  // TODO: review, as position property is not set
+  tree.children = [{ type: 'import', value: importValue }, ...tree.children]
 }
 
 const plugin = async ({ markdownAST }, options) => {
-  const { language = 'nomnoml' } = options
+  const { language = 'nomnoml' } = options || {}
 
   if (!isImportExists(markdownAST)) {
-    const modify = modifyChildren((_, index, parent) => {
-      if (index === 0) {
-        parent.children.splice(index, 1, { type: 'import', value: importLine })
-        return index + 1
-      }
-    })
-
-    modify(markdownAST)
+    addImport(markdownAST, importLine)
   }
 
   const nodes = nomnomlNodes(markdownAST, language)

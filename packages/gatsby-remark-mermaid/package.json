@@ -22,7 +22,6 @@
     "puppeteer": "^2.0.0",
     "theme-ui": "^0.2.52",
     "unist-util-map": "^2.0.0",
-    "unist-util-modify-children": "^1.1.5",
     "unist-util-visit": "^2.0.1"
   },
   "devDependencies": {

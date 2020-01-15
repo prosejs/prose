@@ -5,7 +5,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "echo testing gatsby-theme with version: $npm_package_version"
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "publishConfig": {
     "access": "public"
@@ -13,7 +14,15 @@
   "dependencies": {
     "nomnoml": "^0.6.2",
     "theme-ui": "^0.2.52",
-    "unist-util-modify-children": "^1.1.5",
     "unist-util-visit": "^1.4.0"
+  },
+  "devDependencies": {
+    "@prose/gatsby-remark-mermaid": "^0.1.0-alpha.0",
+    "babel-jest": "^24.9.0",
+    "cheerio": "^1.0.0-rc.3",
+    "hast-util-to-html": "^6.1.0",
+    "jest": "^24.9.0",
+    "mdast-util-to-hast": "^7.0.0",
+    "remark": "^11.0.2"
   }
 }
