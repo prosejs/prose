@@ -19,7 +19,7 @@ module.exports = themeOptions => {
         ],
         gatsbyRemarkPlugins: [
           // 'gatsby-remark-mermaid',
-          `@prose/remark-mermaid`,
+          `@prose/gatsby-remark-mermaid`,
           // '@prose/gatsby-remark-nomnoml',
           {
             resolve: `gatsby-remark-images`,
