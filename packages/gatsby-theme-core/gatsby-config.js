@@ -18,7 +18,6 @@ module.exports = themeOptions => {
           /*require('rehype-toc')*/
         ],
         gatsbyRemarkPlugins: [
-          // 'gatsby-remark-mermaid',
           `@prose/gatsby-remark-mermaid`,
           // '@prose/gatsby-remark-nomnoml',
           {
