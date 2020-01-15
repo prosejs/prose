@@ -1,0 +1,36 @@
+{
+  "name": "@prose/gatsby-remark-mermaid",
+  "version": "0.1.0-alpha.0",
+  "description": "Prose plugin for mermaid graphs.",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prosejs/prose.git",
+    "directory": "packages/gatsby-remark-mermaid"
+  },
+  "homepage": "https://github.com/prosejs/prose/tree/master/packages/gatsby-remark-mermaid#readme",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "mermaid": "^8.4.5",
+    "puppeteer": "^2.0.0",
+    "theme-ui": "^0.2.52",
+    "unist-util-map": "^2.0.0",
+    "unist-util-modify-children": "^1.1.5",
+    "unist-util-visit": "^2.0.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "microbundle": "^0.11.0",
+    "remark": "^11.0.2",
+    "remark-mdx": "^1.5.3",
+    "to-vfile": "^6.0.0"
+  }
+}

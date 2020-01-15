@@ -16,9 +16,11 @@ const BlogPosts = ({ data }) => {
   return (
     <ul>
       {posts.map((p, i) => (
-        <Styled.a key={i} as={Link} to={p.slug}>
-          {p.title}
-        </Styled.a>
+        <Styled.li key={i}>
+          <Styled.a as={Link} to={p.slug}>
+            {p.title}
+          </Styled.a>
+        </Styled.li>
       ))}
     </ul>
   )
