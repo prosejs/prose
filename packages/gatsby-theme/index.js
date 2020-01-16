@@ -1,2 +1,2 @@
 export { default } from './src'
-export { resolverPassThrough } from './resolver-pass-through'
+export { default as MDXRenderer } from './mdx-renderer'

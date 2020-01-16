@@ -1,5 +1,6 @@
 import React from 'react'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { MDXRenderer } from '@prose/gatsby-theme'
+console.log(MDXRenderer)
 
 const BlogPost = ({
   data: {

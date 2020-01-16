@@ -23,6 +23,13 @@ C -->|Two| E[iPhone]
 C -->|Three| F[fa:fa-car Car]
 ```
 
+```mermaid
+sequenceDiagram
+    Alice->>John: Hello John, how are you?
+    John-->>Alice: Great!
+```
+
+
 Nomnoml
 
 ```nomnoml

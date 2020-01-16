@@ -62,6 +62,8 @@ const theme = () => {
     '.actor': {
       stroke: '#CCCCFF',
       fill: '#ECECFF',
+      fontFamily: 'body',
+      fontSize: 12,
     },
     'text.actor': {
       fill: 'black',
@@ -96,6 +98,8 @@ const theme = () => {
     '.messageText': {
       fill: '#333',
       stroke: 'none',
+      fontFamily: 'body',
+      fontSize: 12,
     },
     '.labelBox': {
       stroke: '#CCCCFF',
