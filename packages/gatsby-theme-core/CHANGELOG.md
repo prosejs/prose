@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1-alpha.7](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-core@0.1.1-alpha.6...@prose/gatsby-theme-core@0.1.1-alpha.7) (2020-01-20)
+
+
+### Bug Fixes
+
+* disable deprecated remark images option ([#9](https://github.com/prosejs/prose/issues/9)) ([1dfb4d4](https://github.com/prosejs/prose/commit/1dfb4d41a7deed0bec016bd0c91bd64a0eff0bb0))
+
+
+
+
+
 ## [0.1.1-alpha.6](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-core@0.1.1-alpha.5...@prose/gatsby-theme-core@0.1.1-alpha.6) (2020-01-20)
 
 **Note:** Version bump only for package @prose/gatsby-theme-core
