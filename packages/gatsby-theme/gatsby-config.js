@@ -8,7 +8,6 @@ module.exports = themeOptions => {
       `gatsby-plugin-react-helmet`,
       `gatsby-plugin-twitter`,
       `gatsby-plugin-emotion`,
-      // `gatsby-plugin-theme-ui`,
     ],
   }
 }

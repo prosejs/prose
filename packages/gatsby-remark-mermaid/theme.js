@@ -62,6 +62,8 @@ const theme = () => {
     '.actor': {
       stroke: '#CCCCFF',
       fill: '#ECECFF',
+      fontFamily: 'body',
+      fontSize: 12,
     },
     'text.actor': {
       fill: 'black',
@@ -96,6 +98,8 @@ const theme = () => {
     '.messageText': {
       fill: '#333',
       stroke: 'none',
+      fontFamily: 'body',
+      fontSize: 12,
     },
     '.labelBox': {
       stroke: '#CCCCFF',
@@ -303,24 +307,25 @@ const theme = () => {
     },
     '.titleText': {
       textAnchor: 'middle',
-      fontSize: 16,
-      fill: 'black',
+      fontSize: 12,
+      fill: 'text',
       // font-family: 'trebuchet ms', verdana, arial;
       // font-family: var(--mermaid-font-family); }
       fontFamily: 'body',
       fontWeight: 'body',
     },
     'g.classGroup text': {
-      fill: '#9370DB',
+      // fill: '#9370DB',
+      fill: 'text',
       stroke: 'none',
       // font-family: 'trebuchet ms', verdana, arial;
       // font-family: var(--mermaid-font-family);
       fontFamily: 'body',
       fontWeight: 'body',
-      fontSize: 12,
+      fontSize: 10,
     },
     'g.classGroup text .title': {
-      fontWeight: 'display',
+      fontWeight: 'heading',
     },
     'g.clickable': {
       cursor: 'pointer',
@@ -424,8 +429,9 @@ const theme = () => {
       // font-family: var(--mermaid-font-family); }
     },
     'g.stateGroup .state-title': {
-      fontWeight: 'display',
-      fill: 'black',
+      fill: 'text',
+      fontWeight: 'body',
+      fontSize: 10,
     },
     'g.stateGroup rect': {
       fill: '#ECECFF',
