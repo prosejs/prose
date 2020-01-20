@@ -1,6 +1,6 @@
 {
   "name": "@prose/gatsby-theme",
-  "version": "0.1.1-alpha.6",
+  "version": "0.1.1-alpha.7",
   "description": "The prose Gatsby theme",
   "main": "index.js",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "@emotion/core": "^10.0.22",
     "@mdx-js/react": "^1.5.1",
     "@prose/code": "^0.1.1-alpha.2",
-    "@prose/gatsby-theme-core": "^0.1.1-alpha.5",
+    "@prose/gatsby-theme-core": "^0.1.1-alpha.6",
     "@theme-ui/prism": "^0.2.50",
     "@theme-ui/typography": "^0.2.46",
     "@utilz/deepmerge": "^0.1.8",

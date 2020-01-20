@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.2](https://github.com/prosejs/prose/compare/@prose/gatsby-remark-mermaid@0.1.0-alpha.1...@prose/gatsby-remark-mermaid@0.1.0-alpha.2) (2020-01-20)
+
+
+### Bug Fixes
+
+* replace brace before mermaid render ([#8](https://github.com/prosejs/prose/issues/8)) ([78d1c22](https://github.com/prosejs/prose/commit/78d1c2290a3f92495009b57522576f9e8518a446))
+
+
+
+
+
 # 0.1.0-alpha.1 (2020-01-15)
 
 
