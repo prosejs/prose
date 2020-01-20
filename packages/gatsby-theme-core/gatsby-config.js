@@ -24,7 +24,6 @@ module.exports = themeOptions => {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1380, // TODO: make configurable
-              sizeByPixelDensity: true,
             },
           },
         ],
