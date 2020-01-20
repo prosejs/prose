@@ -1,5 +1,4 @@
 import React from 'react'
-// import { MDXRenderer } from '@prose/gatsby-theme'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const BlogPost = ({
