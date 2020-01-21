@@ -1,4 +1,4 @@
-import parser from '@tson/parser'
+import parse from '@tson/parse'
 
 const getLanguage = className => {
   className = className ? className.trim() : ''
@@ -23,7 +23,7 @@ const getMeta = metastring => {
   }
 
   try {
-    return parser(metastring)
+    return parse(metastring)
   } catch (error) {
     throw new Error(
       `Metastring '${metastring}' is not valid TSON. Ensure you have specified a language if using meta options. ${error.message}`
