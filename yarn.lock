@@ -2988,10 +2988,10 @@
     modularscale "^2.0.1"
     object-assign "^4.1.1"
 
-"@tson/parser@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@tson/parser/-/parser-0.1.2.tgz#d8b14e9a91b3101bdfa9091f25387062df748213"
-  integrity sha512-zqX7qTVYkEWyUk4boqHyDf+jT9gGayaKxZrneGGeah+cjLQdtTttcMGvI3n6C5HZ/qs8WKkp2jo1AqommYISPw==
+"@tson/parse@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@tson/parse/-/parse-0.1.3.tgz#0f3228f41032f6521fd6ae6da65ee4c88ae188e9"
+  integrity sha512-1hW8/DrTV4vSwPUC0MBRJWk285mwRL9uOTx9XDMqiceSEuYJukYHkHwt0o07JwGQN9WK38DhDhzKEX9ieOFvHQ==
   dependencies:
     "@utilz/deepmerge" "^0.1.7"
     "@utilz/types" "^0.1.6"
@@ -9180,14 +9180,6 @@ gatsby-core-utils@^1.0.25:
     ci-info "2.0.0"
     node-object-hash "^2.0.0"
 
-gatsby-core-utils@^1.0.26:
-  version "1.0.26"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.0.26.tgz#e1cbdfad498d58d677d9d74f21a1ede661b49d6f"
-  integrity sha512-NPflmXmyTcg3x2mp6cqp/51QeAHRKepfbf0X4erDsnVlewFJuGTe+25ZJvWkkwU2g1cPAxuwzlPe0jOL92iU4A==
-  dependencies:
-    ci-info "2.0.0"
-    node-object-hash "^2.0.0"
-
 gatsby-graphiql-explorer@^0.2.31:
   version "0.2.31"
   resolved "https://registry.yarnpkg.com/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-0.2.31.tgz#cb7a7ed2749085a28612f11ef37a35de54809710"
@@ -9267,47 +9259,6 @@ gatsby-plugin-mdx@^1.0.59:
     eval "^0.1.4"
     fs-extra "^8.1.0"
     gatsby-core-utils "^1.0.24"
-    gray-matter "^4.0.2"
-    json5 "^2.1.1"
-    loader-utils "^1.2.3"
-    lodash "^4.17.15"
-    mdast-util-to-string "^1.0.7"
-    mdast-util-toc "^3.1.0"
-    mime "^2.4.4"
-    p-queue "^5.0.0"
-    pretty-bytes "^5.3.0"
-    remark "^10.0.1"
-    remark-retext "^3.1.3"
-    retext-english "^3.0.4"
-    static-site-generator-webpack-plugin "^3.4.2"
-    style-to-object "^0.3.0"
-    underscore.string "^3.3.5"
-    unified "^8.4.2"
-    unist-util-map "^1.0.5"
-    unist-util-remove "^1.0.3"
-    unist-util-visit "^1.4.1"
-
-gatsby-plugin-mdx@^1.0.67:
-  version "1.0.67"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.0.67.tgz#1c2d80606a4c6b112164f46fad0a81b146603884"
-  integrity sha512-PG1j8voD1hCBrj1blw1CqiJlXMv+QATVllvqClKl47GfCOZAuVj+VMN6O9WbImc5sVUw/SuvfCTOpk9H7gHlPw==
-  dependencies:
-    "@babel/core" "^7.7.5"
-    "@babel/generator" "^7.7.4"
-    "@babel/helper-plugin-utils" "^7.0.0"
-    "@babel/plugin-proposal-object-rest-spread" "^7.7.4"
-    "@babel/preset-env" "^7.7.6"
-    "@babel/preset-react" "^7.7.4"
-    "@babel/types" "^7.7.4"
-    camelcase-css "^2.0.1"
-    change-case "^3.1.0"
-    core-js "2"
-    dataloader "^1.4.0"
-    debug "^4.1.1"
-    escape-string-regexp "^1.0.5"
-    eval "^0.1.4"
-    fs-extra "^8.1.0"
-    gatsby-core-utils "^1.0.26"
     gray-matter "^4.0.2"
     json5 "^2.1.1"
     loader-utils "^1.2.3"
