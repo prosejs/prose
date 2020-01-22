@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/prosejs/prose/compare/@prose/code@0.1.1-alpha.3...@prose/code@0.1.1) (2020-01-22)
+
+**Note:** Version bump only for package @prose/code
+
+
+
+
+
 ## [0.1.1-alpha.3](https://github.com/prosejs/prose/compare/@prose/code@0.1.1-alpha.2...@prose/code@0.1.1-alpha.3) (2020-01-21)
 
 **Note:** Version bump only for package @prose/code
