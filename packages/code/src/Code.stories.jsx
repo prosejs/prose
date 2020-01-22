@@ -10,6 +10,11 @@ import MDX from '@mdx-js/runtime'
 import deepmerge from '@utilz/deepmerge'
 import languageLabels from './render/language-labels'
 import { withKnobs, optionsKnob as options } from '@storybook/addon-knobs'
+import Prism from 'prismjs/components/prism-core'
+import 'prismjs/components/prism-clike'
+import 'prismjs/components/prism-c'
+import 'prismjs/components/prism-cpp'
+import 'prismjs/components/prism-csharp'
 
 const defaultProps = {
   language: 'javascript',
@@ -27,7 +32,7 @@ const Themed = ({ theme, children }) => (
   </ThemeProvider>
 )
 
-export const withTheme = () => {
+const DefaultThemed = ({ children }) => {
   const theme = {
     ...funkTheme,
     styles: {
@@ -43,12 +48,14 @@ export const withTheme = () => {
     },
   }
 
-  return (
-    <Themed theme={theme}>
-      <Code {...defaultProps} />
-    </Themed>
-  )
+  return <Themed theme={theme}>{children}</Themed>
 }
+
+export const withTheme = () => (
+  <DefaultThemed>
+    <Code {...defaultProps} />
+  </DefaultThemed>
+)
 
 export const withLines = () => (
   <Code {...defaultProps} options={{ lines: { enabled: true } }} />
@@ -207,3 +214,23 @@ export const withLanguage = () => {
 
   return <Foo language={language} />
 }
+
+export const withLongText = () => (
+  <MdxT
+    code={codeWithMeta(
+      `
+  $oauth = Invoke-RestMethod -Method Post -Uri $loginURL/$TenantDomain/oauth2/token?api-version=1.0 -Body $body Invoke-RestMethod -Method Post -Uri $loginURL/$TenantDomain/oauth2/token?api-version=1.0 -Body $body`
+    )()}
+  />
+)
+
+export const withAdditionalLanguage = () => (
+  <DefaultThemed>
+    <Code
+      language="csharp"
+      code="var x = 5;"
+      prism={Prism}
+      options={{ lines: { enabled: true } }}
+    />
+  </DefaultThemed>
+)

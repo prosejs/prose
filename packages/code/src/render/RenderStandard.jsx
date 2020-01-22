@@ -72,6 +72,7 @@ const RenderStandard = ({
             padding: `${label ? '1.5rem' : '1rem'} 0.5rem 1rem 0.5rem`,
             gridTemplateColumns: options.lines.enabled ? 'auto 1fr' : '1fr',
             margin: 0,
+            overflowX: 'scroll',
             ...getLabelProps(label, options.lines.enabled),
           }}
         >

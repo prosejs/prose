@@ -20,7 +20,16 @@ const defaultOptions = {
   },
 }
 
-const Code = ({ code, language, meta, options, parse, render, ...props }) => {
+const Code = ({
+  code,
+  language,
+  meta,
+  options,
+  parse,
+  render,
+  prism,
+  ...props
+}) => {
   const combinedOptions = deepmerge(defaultOptions, options)
   const resolvedLanguage =
     combinedOptions.aliases[language] || language || 'none'
@@ -32,6 +41,7 @@ const Code = ({ code, language, meta, options, parse, render, ...props }) => {
       {...defaultProps}
       {...props}
       theme={undefined}
+      {...(prism ? { Prism: prism } : {})}
       language={resolvedLanguage}
       code={code}
     >
