@@ -4,7 +4,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer'
 import deepmerge from '@utilz/deepmerge'
 import shortid from 'shortid'
 import parseStandard from './parse-standard'
-import renderStandard from './render/RenderStandard.jsx'
+import renderStandard from './render/render-standard'
 
 const defaultOptions = {
   classPrefix: 'language-',
@@ -34,7 +34,7 @@ const Code = ({
   const resolvedLanguage =
     combinedOptions.aliases[language] || language || 'none'
   const resolvedParser = parse || parseStandard
-  const ResolvedRenderer = render || renderStandard
+  const resolvedRenderer = render || renderStandard()
 
   return (
     <Highlight
@@ -105,15 +105,13 @@ const Code = ({
           lines: toDomainLines(prismLines),
         })
 
-        return (
-          <ResolvedRenderer
-            parsed={parsed}
-            language={resolvedLanguage}
-            getPreProps={preProps}
-            getLineProps={lineProps}
-            getTokenProps={tokenProps}
-          />
-        )
+        return resolvedRenderer({
+          parsed,
+          language,
+          getPreProps,
+          getLineProps,
+          getTokenProps,
+        })
       }}
     </Highlight>
   )

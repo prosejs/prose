@@ -7,9 +7,26 @@ import 'prismjs/components/prism-c'
 import 'prismjs/components/prism-cpp'
 import 'prismjs/components/prism-csharp'
 import 'prismjs/components/prism-javascript'
+import renderStandard from '@prose/code/src/render/render-standard'
 
-export default getComponents(componentOptions => ({
-  code: props => (
-    <Code {...fromMdxProps(props)} options={componentOptions} prism={Prism} />
-  ),
-}))
+export default getComponents(componentOptions => {
+  const render = renderStandard({
+    languageLabels: {
+      csharp: {
+        title: 'c#',
+        color: '#fff',
+        backgroundColor: '#9f76db',
+      },
+    },
+  })
+  return {
+    code: props => (
+      <Code
+        {...fromMdxProps(props)}
+        options={componentOptions}
+        prism={Prism}
+        render={render}
+      />
+    ),
+  }
+})
