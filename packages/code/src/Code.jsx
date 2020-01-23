@@ -107,10 +107,10 @@ const Code = ({
 
         return resolvedRenderer({
           parsed,
-          language,
-          getPreProps,
-          getLineProps,
-          getTokenProps,
+          language: resolvedLanguage,
+          getPreProps: preProps,
+          getLineProps: lineProps,
+          getTokenProps: tokenProps,
         })
       }}
     </Highlight>

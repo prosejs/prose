@@ -1,5 +1,5 @@
 import React from 'react'
-import RenderStandard from './RenderStandard'
+import RenderStandard from './RenderStandard.jsx'
 import deepmerge from '@utilz/deepmerge'
 import defaultLanguageLabels from './language-labels'
 
