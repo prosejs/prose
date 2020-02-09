@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@prose/gatsby-theme-wiki": "^0.1.1",
-    "@theme-ui/preset-funk": "^0.2.44",
+    "@theme-ui/preset-funk": "^0.3.0",
     "gatsby": "^2.17.11",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
