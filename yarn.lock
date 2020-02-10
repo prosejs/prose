@@ -3145,13 +3145,13 @@
     modularscale "^2.0.1"
     object-assign "^4.1.1"
 
-"@tson/parse@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@tson/parse/-/parse-0.1.3.tgz#0f3228f41032f6521fd6ae6da65ee4c88ae188e9"
-  integrity sha512-1hW8/DrTV4vSwPUC0MBRJWk285mwRL9uOTx9XDMqiceSEuYJukYHkHwt0o07JwGQN9WK38DhDhzKEX9ieOFvHQ==
+"@tson/parse@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@tson/parse/-/parse-0.1.4.tgz#fd66edc57b5368f1cce06cf34827a8e28f675e18"
+  integrity sha512-QShKwGl6uh9IU2xmqqPI2zMKmp5A62dy/8z9FbDoq5XaiWisofUKOuj+XXm4VcpC0pP1xDWW1dPePxhp2FGXhQ==
   dependencies:
-    "@utilz/deepmerge" "^0.1.7"
-    "@utilz/types" "^0.1.6"
+    "@utilz/deepmerge" "^0.1.13"
+    "@utilz/types" "^0.1.11"
 
 "@types/babel__core@^7.1.0":
   version "7.1.3"
@@ -3461,7 +3461,7 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@utilz/deepmerge@^0.1.13", "@utilz/deepmerge@^0.1.7":
+"@utilz/deepmerge@^0.1.13":
   version "0.1.13"
   resolved "https://registry.yarnpkg.com/@utilz/deepmerge/-/deepmerge-0.1.13.tgz#3837224d0393d04a045161d59782ef2c019b76f7"
   integrity sha512-wiQhvBFz46ENUTIohfrm/V351gh0yKofyzSaV33W4zlWb4tif3pK+jQvOFWt9bAF0+I0ykxiuQf6WwSzTMbIVQ==
@@ -3469,7 +3469,7 @@
     "@utilz/types" "^0.1.11"
     deepmerge "^4.2.2"
 
-"@utilz/types@^0.1.11", "@utilz/types@^0.1.6":
+"@utilz/types@^0.1.11":
   version "0.1.11"
   resolved "https://registry.yarnpkg.com/@utilz/types/-/types-0.1.11.tgz#74e3269cdc9f0da1ed96b1feb1c33e5fc83a5a2a"
   integrity sha512-VwEuaY9IWiTcG97PE8Tqhhj7rak64v/IK+Id4gbCJjukIM0Q1jUzPySwa2DF+uJkPq0IDo+xkNvwfb+XLsqDmg==
