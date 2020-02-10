@@ -1,12 +1,8 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider, ThemeStateProvider, ColorMode } from 'theme-ui'
-import React from 'react'
+import { jsx, ThemeProvider } from 'theme-ui'
 import theme from './index'
 import getComponents from './components'
-import deepmerge from '@utilz/deepmerge'
-
-const hasColorModes = t =>
-  t.colors && t.colors.modes && Object.keys(t.colors.modes).length
+import { deepmerge } from '@utilz/deepmerge'
 
 const getOptions = options => {
   const defaultOptions = {
@@ -22,21 +18,16 @@ const getOptions = options => {
   return deepmerge(defaultOptions, options)
 }
 
+// Adapted from https://github.com/system-ui/theme-ui/blob/master/packages/gatsby-plugin-theme-ui/src/provider.js
 export const wrapRootElement = ({ element }, options) => {
   const combinedOptions = getOptions(options)
+
   return jsx(
-    ThemeStateProvider,
-    { theme },
-    jsx(
-      ThemeProvider,
-      {
-        components: getComponents(combinedOptions.components),
-      },
-      hasColorModes(theme) &&
-        jsx(ColorMode, {
-          key: 'theme-ui-color-mode',
-        }),
-      React.cloneElement(element, { key: 'element' })
-    )
+    ThemeProvider,
+    {
+      theme,
+      components: getComponents(combinedOptions.components),
+    },
+    element
   )
 }

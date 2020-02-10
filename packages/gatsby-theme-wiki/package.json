@@ -17,7 +17,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@mdx-js/react": "^1.5.1",
+    "@mdx-js/react": "^1.5.5",
     "@prose/gatsby": "^0.1.1",
     "@prose/gatsby-theme": "^0.1.1"
   },

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React from 'react'
+import React from 'react' // required
 import { jsx } from 'theme-ui'
 import Code, { fromMdxProps } from '@prose/code'
 
