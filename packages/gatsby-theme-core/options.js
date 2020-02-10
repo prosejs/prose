@@ -1,4 +1,4 @@
-const deepmerge = require('@utilz/deepmerge')
+const { deepmerge } = require('@utilz/deepmerge')
 
 const getOptions = themeOptions => {
   const defaultOptions = {
