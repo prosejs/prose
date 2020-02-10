@@ -3,7 +3,7 @@ import { jsx, ThemeProvider, ThemeStateProvider, ColorMode } from 'theme-ui'
 import React from 'react'
 import theme from './index'
 import getComponents from './components'
-import deepmerge from '@utilz/deepmerge'
+import { deepmerge } from '@utilz/deepmerge'
 
 const hasColorModes = t =>
   t.colors && t.colors.modes && Object.keys(t.colors.modes).length
