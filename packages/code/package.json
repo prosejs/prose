@@ -1,6 +1,6 @@
 {
   "name": "@prose/code",
-  "version": "0.1.1",
+  "version": "0.1.2-alpha.0",
   "description": "The Prose code component",
   "source": "src/index.js",
   "main": "dist/code.js",
