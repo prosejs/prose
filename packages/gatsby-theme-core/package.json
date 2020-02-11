@@ -1,6 +1,6 @@
 {
   "name": "@prose/gatsby-theme-core",
-  "version": "0.1.1",
+  "version": "0.1.2-alpha.0",
   "main": "index.js",
   "license": "MIT",
   "repository": {
@@ -24,29 +24,29 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^1.5.1",
-    "@prose/gatsby-remark-mermaid": "^0.1.0",
-    "@prose/gatsby-remark-nomnoml": "^0.1.1",
-    "@utilz/deepmerge": "^0.1.8",
-    "gatsby-plugin-mdx": "^1.0.59",
-    "gatsby-plugin-sharp": "^2.3.2",
-    "gatsby-remark-copy-linked-files": "^2.1.30",
+    "@mdx-js/mdx": "^1.5.5",
+    "@prose/gatsby-remark-mermaid": "^0.1.1-alpha.0",
+    "@prose/gatsby-remark-nomnoml": "^0.1.2-alpha.0",
+    "@utilz/deepmerge": "^0.1.13",
+    "gatsby-plugin-mdx": "^1.0.70",
+    "gatsby-plugin-sharp": "^2.4.5",
+    "gatsby-remark-copy-linked-files": "^2.1.37",
     "gatsby-remark-graph": "^0.2.2",
-    "gatsby-remark-images": "^3.1.31",
+    "gatsby-remark-images": "^3.1.44",
     "gatsby-remark-mermaid": "^1.2.0",
-    "gatsby-remark-prismjs": "^3.3.23",
-    "gatsby-remark-responsive-iframe": "^2.2.27",
-    "gatsby-remark-smartypants": "^2.1.16",
-    "gatsby-source-filesystem": "^2.1.37",
-    "gatsby-transformer-json": "^2.2.18",
-    "gatsby-transformer-remark": "^2.6.36",
-    "gatsby-transformer-sharp": "^2.3.5",
-    "prismjs": "^1.17.1",
+    "gatsby-remark-prismjs": "^3.3.31",
+    "gatsby-remark-responsive-iframe": "^2.2.32",
+    "gatsby-remark-smartypants": "^2.1.21",
+    "gatsby-source-filesystem": "^2.1.48",
+    "gatsby-transformer-json": "^2.2.26",
+    "gatsby-transformer-remark": "^2.6.50",
+    "gatsby-transformer-sharp": "^2.3.14",
+    "prismjs": "^1.19.0",
     "rehype-toc": "^2.2.2",
     "remark-slug": "^5.1.2"
   },
   "devDependencies": {
-    "cross-env": "^6.0.3"
+    "cross-env": "^7.0.0"
   },
   "gitHead": "6621bc126c3dbec7324cf9946fadbd7ee87008c9"
 }

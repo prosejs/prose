@@ -1,6 +1,6 @@
 import { resolverPassthrough } from './resolver-pass-through'
 import { getSlug } from './get-slug'
-import deepmerge from '@utilz/deepmerge'
+import { deepmerge } from '@utilz/deepmerge'
 
 const getOptions = options => {
   const defaultOptions = {

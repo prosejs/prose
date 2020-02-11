@@ -1,4 +1,4 @@
-import deepmerge from '@utilz/deepmerge'
+import { deepmerge } from '@utilz/deepmerge'
 import getLineMap from './line-map'
 import normalise from './normalise'
 

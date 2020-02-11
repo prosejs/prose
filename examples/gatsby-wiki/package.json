@@ -1,7 +1,7 @@
 {
   "name": "gatsby-wiki",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2-alpha.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -10,8 +10,8 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@prose/gatsby-theme-wiki": "^0.1.1",
-    "@theme-ui/preset-funk": "^0.2.44",
+    "@prose/gatsby-theme-wiki": "^0.1.2-alpha.1",
+    "@theme-ui/preset-funk": "^0.3.0",
     "gatsby": "^2.17.11",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"

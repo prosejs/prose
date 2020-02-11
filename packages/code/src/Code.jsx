@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import Highlight, { defaultProps } from 'prism-react-renderer'
-import deepmerge from '@utilz/deepmerge'
+import { deepmerge } from '@utilz/deepmerge'
 import shortid from 'shortid'
 import parseStandard from './parse-standard'
 import renderStandard from './render/render-standard'
