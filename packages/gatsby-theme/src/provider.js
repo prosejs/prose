@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, ThemeProvider } from 'theme-ui'
-import theme from './index'
-import getComponents from './components'
+import theme from './theme'
+import { getComponents } from './components'
 import { deepmerge } from '@utilz/deepmerge'
 
 const getOptions = options => {

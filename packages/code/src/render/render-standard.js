@@ -1,6 +1,6 @@
 import React from 'react'
 import RenderStandard from './RenderStandard.jsx'
-import deepmerge from '@utilz/deepmerge'
+import { deepmerge } from '@utilz/deepmerge'
 import defaultLanguageLabels from './language-labels'
 
 const renderStandard = options => props => {
