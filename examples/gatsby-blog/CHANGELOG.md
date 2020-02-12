@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2-alpha.3](https://github.com/prosejs/prose/compare/gatsby-blog@1.0.2-alpha.2...gatsby-blog@1.0.2-alpha.3) (2020-02-12)
+
+
+### Bug Fixes
+
+* export render standard ([#14](https://github.com/prosejs/prose/issues/14)) ([e5c5fdc](https://github.com/prosejs/prose/commit/e5c5fdc490a7117ea5c5a69240ffc71dda6e3667))
+
+
+
+
+
 ## [1.0.2-alpha.2](https://github.com/prosejs/prose/compare/gatsby-blog@1.0.2-alpha.1...gatsby-blog@1.0.2-alpha.2) (2020-02-12)
 
 
