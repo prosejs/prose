@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1-alpha.1](https://github.com/prosejs/prose/compare/@prose/gatsby-remark-mermaid@0.1.1-alpha.0...@prose/gatsby-remark-mermaid@0.1.1-alpha.1) (2020-02-12)
+
+
+### Features
+
+* add prism language ([#13](https://github.com/prosejs/prose/issues/13)) ([a2712cb](https://github.com/prosejs/prose/commit/a2712cb7200933b6e6d6b9c9cd8e04dc0097011b))
+
+
+
+
+
 ## [0.1.1-alpha.0](https://github.com/prosejs/prose/compare/@prose/gatsby-remark-mermaid@0.1.0...@prose/gatsby-remark-mermaid@0.1.1-alpha.0) (2020-02-10)
 
 **Note:** Version bump only for package @prose/gatsby-remark-mermaid
