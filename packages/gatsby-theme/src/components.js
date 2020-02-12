@@ -2,8 +2,9 @@
 import React from 'react' // required
 import { jsx } from 'theme-ui'
 import Code, { fromMdxProps } from '@prose/code'
+import { deepmerge } from '@utilz/deepmerge'
 
-const getComponents = componentOptions => {
+const getDefaultMappings = componentOptions => {
   const { code } = componentOptions
   return {
     pre: ({ children }) => <>{children}</>,
@@ -11,4 +12,12 @@ const getComponents = componentOptions => {
   }
 }
 
-export default getComponents
+export const configureComponents = mappings => componentOptions => {
+  const defaultMappings = getDefaultMappings(componentOptions)
+  return deepmerge(
+    defaultMappings,
+    mappings ? mappings(componentOptions) : null
+  )
+}
+
+export const getComponents = configureComponents()

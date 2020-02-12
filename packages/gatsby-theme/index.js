@@ -1,2 +1,5 @@
-export { default } from './src'
-export { default as MDXRenderer } from './mdx-renderer'
+const { configureComponents } = require('./src/components')
+
+module.exports = {
+  configureComponents,
+}

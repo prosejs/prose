@@ -3,7 +3,6 @@ import React from 'react'
 import { jsx, Styled } from 'theme-ui'
 import Title from './Title.jsx'
 import CodeLine from './CodeLine.jsx'
-import languageLabels from './language-labels'
 
 const getLabelProps = (label, linesEnabled) => {
   if (!label) {
@@ -28,7 +27,7 @@ const getLabelProps = (label, linesEnabled) => {
   }
 }
 
-const getLabel = language => {
+const getLabel = languageLabels => language => {
   if (!language) {
     return null
   }
@@ -54,10 +53,11 @@ const RenderStandard = ({
   getPreProps,
   getLineProps,
   getTokenProps,
+  languageLabels,
 }) => {
   const { options, lines } = parsed
 
-  const label = getLabel(language)
+  const label = getLabel(languageLabels)(language)
 
   return (
     <React.Fragment>
@@ -72,6 +72,7 @@ const RenderStandard = ({
             padding: `${label ? '1.5rem' : '1rem'} 0.5rem 1rem 0.5rem`,
             gridTemplateColumns: options.lines.enabled ? 'auto 1fr' : '1fr',
             margin: 0,
+            overflowX: 'scroll',
             ...getLabelProps(label, options.lines.enabled),
           }}
         >

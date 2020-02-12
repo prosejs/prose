@@ -5,9 +5,17 @@ date: 2019-04-15
 
 Test post
 
+JavaScript
+
 ```javascript
 const foo = 'bar'
 const bah = 'foo'
+```
+
+C#
+
+```csharp
+var x = 5;
 ```
 
 ## Heading

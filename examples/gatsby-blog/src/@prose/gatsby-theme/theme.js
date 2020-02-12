@@ -3,26 +3,32 @@ import mermaidTheme from '@prose/gatsby-remark-mermaid/theme'
 
 export default {
   ...theme,
-  mermaid: {
-    ...mermaidTheme('default'),
-  },
-  nomnoml: {
-    '&': {
-      fontFamily: 'body',
-      fontSize: 12,
+  components: {
+    base: {
+      mb: 1,
     },
-    text: {
-      fill: '#333 !important',
-      fontWeight: '300 !important',
-      fontSize: '0.9rem',
+    mermaid: {
+      variant: 'components.base',
+      ...mermaidTheme('default'),
     },
-    'rect, ellipse, circle': {
-      fill: '#fbfbfb !important',
-      stroke: '#666 !important',
-      strokeWidth: '1px',
-    },
-    path: {
-      strokeWidth: '1px',
+    nomnoml: {
+      variant: 'components.base',
+      '&': {
+        fontFamily: 'body',
+      },
+      text: {
+        fill: '#333 !important',
+        fontWeight: '300 !important',
+        fontSize: 14,
+      },
+      'rect, ellipse, circle': {
+        fill: '#fbfbfb !important',
+        stroke: '#666 !important',
+        strokeWidth: '1px',
+      },
+      path: {
+        strokeWidth: '1px',
+      },
     },
   },
 }
