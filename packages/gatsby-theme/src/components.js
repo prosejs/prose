@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react' // required
 import { jsx } from 'theme-ui'
-import Code, { fromMdxProps } from '@prose/code'
+import { Code, fromMdxProps } from '@prose/code'
 import { deepmerge } from '@utilz/deepmerge'
 
 const getDefaultMappings = componentOptions => {

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react'
 import { jsx, Styled } from 'theme-ui'
-import Code, { fromMdxProps } from './index'
+import { Code, fromMdxProps } from './index'
 import { ThemeProvider } from 'theme-ui'
 import funkTheme from '@theme-ui/preset-funk'
 import nightOwl from '@theme-ui/prism/presets/night-owl.json'
