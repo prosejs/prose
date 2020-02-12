@@ -4,7 +4,7 @@ import { deepmerge } from '@utilz/deepmerge'
 import defaultLanguageLabels from './language-labels'
 
 export const renderStandard = options => props => {
-  const { languageLabels } = options
+  const { languageLabels } = options || {}
   const resolvedLanguageLabels = deepmerge(
     defaultLanguageLabels,
     languageLabels

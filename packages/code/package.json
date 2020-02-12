@@ -25,6 +25,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@storybook/react": "^6.0.0-alpha.10",
     "@tson/parse": "^0.1.4",
     "@utilz/deepmerge": "^0.1.13",
     "@utilz/types": "^0.1.11",

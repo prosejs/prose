@@ -24,7 +24,7 @@ const bar = 'foo'`,
 
 export default { title: 'Code', decorators: [withKnobs] }
 
-export const withDefault = () => <Code language={undefined} {...defaultProps} />
+export const withDefault = () => <Code {...defaultProps} />
 
 const Themed = ({ theme, children }) => (
   <ThemeProvider theme={theme}>
