@@ -13,13 +13,13 @@ module.exports = listDetailDefinitions({
   typePrefix: 'Mdx',
   interfaceSchema: {
     id: 'ID!',
-    title: 'String!',
-    body: 'String!',
-    slug: 'String!',
     date: 'Date! @dateformat',
+    title: 'String!',
+    slug: 'String!',
     tags: '[String]!',
     keywords: '[String]!',
     excerpt: 'String!',
+    body: 'String!',
   },
   nodeSchema: resolverPassthrough => ({
     id: { type: 'ID!' },
@@ -48,11 +48,22 @@ module.exports = listDetailDefinitions({
     },
   }),
   nodeFields: ({ node }) => {
+    const {
+      id,
+      title,
+      date,
+      tags = [],
+      keywords = [],
+      ...rest
+    } = node.frontmatter
+
     return {
-      title: node.frontmatter.title,
-      tags: node.frontmatter.tags || [],
-      date: node.frontmatter.date,
-      keywords: node.frontmatter.keywords || [],
+      id,
+      title,
+      date,
+      tags,
+      keywords,
+      // frontmatter: rest,
     }
   },
   listNodes: listNodesBasic({ entityName }),

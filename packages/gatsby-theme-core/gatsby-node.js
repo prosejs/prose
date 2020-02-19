@@ -75,8 +75,9 @@ exports.onCreateNode = async (
 
       reporter.info('Processing node')
 
-      const id = createNodeId(n.id({ node }))
+      const nodeId = createNodeId(n.id({ node }))
       const fields = n.fields({ node, getNode })
+      const id = fields.id || nodeId
 
       await createNode({
         ...fields,
