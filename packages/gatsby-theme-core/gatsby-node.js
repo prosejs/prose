@@ -4,7 +4,7 @@ const mkdirp = require(`mkdirp`)
 const crypto = require(`crypto`)
 const Debug = require(`debug`)
 
-const debug = Debug(`gatsby-theme-blog-core`)
+const debug = Debug(`gatsby-theme-core`)
 const getOptions = require('./options').getOptions
 
 const asyncForEach = async (array, callback) => {
