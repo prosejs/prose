@@ -4,6 +4,7 @@ const getOptions = themeOptions => {
   const defaultOptions = {
     mdx: {
       enabled: true,
+      allowDuplicateIdentifiers: false,
     },
     definitions: [],
   }

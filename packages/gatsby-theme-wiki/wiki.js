@@ -48,11 +48,14 @@ module.exports = listDetailDefinitions({
     },
   }),
   nodeFields: ({ node }) => {
+    const { id, title, date, tags = [], keywords = [] } = node.frontmatter
+
     return {
-      title: node.frontmatter.title,
-      tags: node.frontmatter.tags || [],
-      date: node.frontmatter.date,
-      keywords: node.frontmatter.keywords || [],
+      id,
+      title,
+      date,
+      tags,
+      keywords,
     }
   },
   listNodes: listNodesBasic({ entityName }),

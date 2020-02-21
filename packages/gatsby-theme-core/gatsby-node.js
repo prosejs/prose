@@ -4,8 +4,8 @@ const mkdirp = require(`mkdirp`)
 const crypto = require(`crypto`)
 const Debug = require(`debug`)
 
-const debug = Debug(`gatsby-theme-blog-core`)
-const getOptions = require('./options').getOptions
+const debug = Debug(`gatsby-theme-core`)
+const { getOptions } = require('./options')
 
 const asyncForEach = async (array, callback) => {
   if (!callback) {
@@ -65,7 +65,10 @@ exports.onCreateNode = async (
   themeOptions
 ) => {
   const { createNode, createParentChildLink } = actions
-  const { definitions } = getOptions(themeOptions)
+  const {
+    mdx: { allowDuplicateIdentifiers },
+    definitions,
+  } = getOptions(themeOptions)
 
   await asyncForEach(definitions, async d => {
     await asyncForEach(d.nodes, async n => {
@@ -75,8 +78,22 @@ exports.onCreateNode = async (
 
       reporter.info('Processing node')
 
-      const id = createNodeId(n.id({ node }))
-      const fields = n.fields({ node, getNode })
+      const fields = {
+        ...n.fields({ node, getNode }),
+        fileAbsolutePath: node.fileAbsolutePath,
+      }
+
+      if (!allowDuplicateIdentifiers) {
+        const oldNode = fields.id ? getNode(fields.id) : null
+        if (oldNode) {
+          reporter.error(
+            `Duplicate id of '${fields.id}' exists within the files '${node.fileAbsolutePath} and '${oldNode.fileAbsolutePath}'.`
+          )
+        }
+      }
+
+      const nodeId = createNodeId(n.id({ node }))
+      const id = fields.id || nodeId
 
       await createNode({
         ...fields,
