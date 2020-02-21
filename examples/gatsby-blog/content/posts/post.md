@@ -1,5 +1,5 @@
 ---
-title: Test post
+title: Test post content
 date: 2019-04-15
 ---
 

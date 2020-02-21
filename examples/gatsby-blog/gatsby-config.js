@@ -6,7 +6,9 @@ module.exports = {
         basePath: '/',
         contentPath: 'content/posts',
         assetPath: 'content/assets',
-        mdx: true,
+        mdx: {
+          allowDuplicateIdentifiers: true,
+        },
         components: {
           code: {
             lines: {

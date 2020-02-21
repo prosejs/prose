@@ -1,4 +1,4 @@
-const getOptions = require('./options').getOptions
+const { getOptions } = require('./options')
 
 module.exports = themeOptions => {
   const options = getOptions(themeOptions)
@@ -35,19 +35,9 @@ module.exports = themeOptions => {
 
   return {
     siteMetadata: {
-      title: `Blog Title Placeholder`,
-      author: `Name Placeholder`,
+      title: `Title Placeholder`,
+      author: `Author Placeholder`,
       description: `Description placeholder`,
-      social: [
-        {
-          name: `Twitter`,
-          url: `https://twitter.com/gatsbyjs`,
-        },
-        {
-          name: `GitHub`,
-          url: `https://github.com/gatsbyjs`,
-        },
-      ],
     },
     plugins,
   }
