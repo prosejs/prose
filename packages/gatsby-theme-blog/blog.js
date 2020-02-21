@@ -48,14 +48,7 @@ module.exports = listDetailDefinitions({
     },
   }),
   nodeFields: ({ node }) => {
-    const {
-      id,
-      title,
-      date,
-      tags = [],
-      keywords = [],
-      ...rest
-    } = node.frontmatter
+    const { id, title, date, tags = [], keywords = [] } = node.frontmatter
 
     return {
       id,
@@ -63,7 +56,6 @@ module.exports = listDetailDefinitions({
       date,
       tags,
       keywords,
-      // frontmatter: rest,
     }
   },
   listNodes: listNodesBasic({ entityName }),
