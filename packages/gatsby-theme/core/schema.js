@@ -1,5 +1,5 @@
 // interfaces [{ name, schema }]
-const createInterfaces = interfaces => api => {
+exports.createInterfaces = interfaces => api => {
   const { actions } = api
   const { createTypes } = actions
 
@@ -13,16 +13,11 @@ const createInterfaces = interfaces => api => {
   })
 }
 
-const createTypes = types => api => {
+exports.createTypes = types => api => {
   const { actions, schema } = api
   const { createTypes } = actions
 
   types.forEach(t => {
     createTypes(schema.buildObjectType(t))
   })
-}
-
-module.exports = {
-  createInterfaces,
-  createTypes,
 }

@@ -1,18 +1,18 @@
 /** @jsx jsx */
-import React from 'react' // required
-import { jsx } from 'theme-ui'
-import { Code, fromMdxProps } from '@prose/code'
-import { deepmerge } from '@utilz/deepmerge'
+const React = require('react')
+const { jsx } = require('theme-ui')
+const { Code, fromMdxProps } = require('@prose/code')
+const { deepmerge } = require('@utilz/deepmerge')
 
 const getDefaultMappings = componentOptions => {
   const { code } = componentOptions
   return {
-    pre: ({ children }) => <>{children}</>,
-    code: props => <Code {...fromMdxProps(props)} options={code} />,
+    pre: ({ children }) => jsx(React.Fragment, null, children),
+    code: props => jsx(Code, { ...fromMdxProps(props), options: { code } }),
   }
 }
 
-export const configureComponents = mappings => componentOptions => {
+const configureComponents = mappings => componentOptions => {
   const defaultMappings = getDefaultMappings(componentOptions)
   return deepmerge(
     defaultMappings,
@@ -20,4 +20,9 @@ export const configureComponents = mappings => componentOptions => {
   )
 }
 
-export const getComponents = configureComponents()
+const getComponents = configureComponents()
+
+module.exports = {
+  configureComponents,
+  getComponents,
+}

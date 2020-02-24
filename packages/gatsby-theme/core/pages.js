@@ -1,14 +1,24 @@
-const createPage = page => async api => {
-  const { createPage: gatsbyCreatePage } = api
+exports.createPage = page => async api => {
+  const { actions } = api
+  const { createPage: gatsbyCreatePage } = actions
+
   gatsbyCreatePage(page)
 }
 
-const createDetailNextPreviousPage = ({
+exports.createDetailNextPreviousPage = ({
   entityName,
   component,
 }) => async api => {
   const { graphql, actions, reporter } = api
   const { createPage } = actions
+
+  if (!entityName) {
+    reporter.panic('No detail next/previous page entity name specified.')
+  }
+
+  if (!component) {
+    reporter.panic('No detail next/previous page component specified.')
+  }
 
   const listQuery = `{
     all${entityName}(sort: { fields: [date, title], order: DESC }, limit: 1000) {
@@ -46,9 +56,4 @@ const createDetailNextPreviousPage = ({
 
     index++
   }
-}
-
-module.exports = {
-  createPage,
-  createDetailNextPreviousPage,
 }

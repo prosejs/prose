@@ -1,11 +1,12 @@
-const fs = require(`fs`)
-const path = require(`path`)
-const mkdirp = require(`mkdirp`)
-const Debug = require(`debug`)
-const debug = Debug(`gatsby-theme-core`)
+const fs = require('fs')
+const path = require('path')
+const mkdirp = require('mkdirp')
+const Debug = require('debug')
+
+const debug = Debug('gatsby-theme')
 
 // Ensure that content directories exist at site-level
-const createPaths = paths => api => {
+exports.createPaths = paths => api => {
   const { store } = api
   const { program } = store.getState()
 
@@ -17,8 +18,4 @@ const createPaths = paths => api => {
       mkdirp.sync(dir)
     }
   })
-}
-
-module.exports = {
-  createPaths,
 }

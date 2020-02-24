@@ -1,4 +1,4 @@
-const proseConfig = ({ sources, mdxEnabled = true }) => () => {
+exports.proseConfig = ({ sources, mdxEnabled = true }) => () => {
   const plugins = [
     ...sources.map(s => ({
       resolve: `gatsby-source-filesystem`,
@@ -36,8 +36,4 @@ const proseConfig = ({ sources, mdxEnabled = true }) => () => {
     },
     plugins,
   }
-}
-
-module.exports = {
-  proseConfig,
 }

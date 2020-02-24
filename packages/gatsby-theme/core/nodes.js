@@ -1,4 +1,6 @@
-const createNodes = nodes => async api => {
+const crypto = require('crypto')
+
+exports.createNodes = nodes => async api => {
   const { node, actions, getNode, createNodeId, reporter } = api
   const { createNode, createParentChildLink } = actions
 
@@ -43,8 +45,4 @@ const createNodes = nodes => async api => {
 
     createParentChildLink({ parent: node, child: getNode(id) })
   }
-}
-
-module.exports = {
-  createNodes,
 }

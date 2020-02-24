@@ -1,8 +1,7 @@
-const core = require('./core')
+const core = require('./core/index')
 const { configureComponents } = require('./src/components')
 
-console.log(core)
 module.exports = {
   ...core,
-  configureComponents,
+  // configureComponents,
 }

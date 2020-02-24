@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "yarn clean && gatsby develop",
     "develop:debug": "node --nolazy --inspect-brk node_modules/.bin/gatsby develop",
     "build": "gatsby build",
     "clean": "gatsby clean"

@@ -1,10 +1,5 @@
-const {
-  listDetailDefinitions,
-  listNodesBasic,
-  detailNextPrevious,
-  listBasic,
-  resolverPassthrough,
-} = require('@prose/gatsby')
+const { getSlug, resolverPassthrough } = require('@prose/gatsby')
+
 const {
   proseConfig,
   createPaths,
@@ -66,6 +61,9 @@ const blog = options => {
             title: {
               type: 'String!',
             },
+            subTitle: {
+              type: 'String',
+            },
             slug: {
               type: 'String!',
             },
@@ -93,24 +91,24 @@ const blog = options => {
     ),
     onCreateNode: createNodes([
       {
+        id: ({ node }) => `${node.id} >>> ${typePrefix}${entityName}`,
+        type: `${typePrefix}${entityName}`,
+        description: `${typePrefix} implementation of the ${entityName} interface`,
         include: ({ node, getNode }) => {
           // Create source field (according to contentPath)
           const fileNode = getNode(node.parent)
           const source = fileNode ? fileNode.sourceInstanceName : null
 
           return (
-            node.internal.type === nodeType &&
-            source === combinedOptions.contentPath
+            node.internal.type === nodeType && source === options.contentPath
           )
         },
-        id: ({ node }) => `${node.id} >>> ${typePrefix}${entityName}`,
-        type: `${typePrefix}${entityName}`,
-        description: `${typePrefix} implementation of the ${entityName} interface`,
         fields: props => {
           const getFields = ({ node }) => {
             const {
               id,
               title,
+              subTitle,
               date,
               tags = [],
               keywords = [],
@@ -119,6 +117,7 @@ const blog = options => {
             return {
               id,
               title,
+              subTitle,
               date,
               tags,
               keywords,
@@ -129,18 +128,19 @@ const blog = options => {
           const { node, getNode } = props
           return {
             ...fields,
-            slug: getSlug()(combinedOptions.basePath, node, getNode),
+            slug: getSlug()(options.basePath, node, getNode),
           }
         },
       },
     ]),
-    onCreatePages: all(
+    onCreatePage: all(
       createPage({
         path: '/',
         component: require.resolve(`./src/templates/posts-query`),
         context: {},
       }),
       createDetailNextPreviousPage({
+        entityName,
         component: require.resolve(`./src/templates/post-query`),
       })
     ),
