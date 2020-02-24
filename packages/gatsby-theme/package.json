@@ -1,6 +1,6 @@
 {
   "name": "@prose/gatsby-theme",
-  "version": "0.1.2-alpha.3",
+  "version": "0.1.2-alpha.4",
   "description": "The prose Gatsby theme",
   "main": "index.js",
   "module": "index.js",
@@ -21,7 +21,7 @@
     "@emotion/core": "^10.0.27",
     "@mdx-js/react": "^1.5.5",
     "@prose/code": "^0.1.2-alpha.3",
-    "@prose/gatsby-theme-core": "^0.1.2-alpha.1",
+    "@prose/gatsby-theme-core": "^0.1.2-alpha.2",
     "@theme-ui/prism": "^0.3.0",
     "@theme-ui/typography": "^0.3.0",
     "@utilz/deepmerge": "^0.1.13",

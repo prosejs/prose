@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2-alpha.2](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-core@0.1.2-alpha.1...@prose/gatsby-theme-core@0.1.2-alpha.2) (2020-02-24)
+
+
+### Features
+
+* allow id in frontmatter and detect duplicates ([#15](https://github.com/prosejs/prose/issues/15)) ([3eab726](https://github.com/prosejs/prose/commit/3eab7269826a52beed51a720c1d8e77ecefd9f14))
+
+
+
+
+
 ## [0.1.2-alpha.1](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-core@0.1.2-alpha.0...@prose/gatsby-theme-core@0.1.2-alpha.1) (2020-02-12)
 
 **Note:** Version bump only for package @prose/gatsby-theme-core

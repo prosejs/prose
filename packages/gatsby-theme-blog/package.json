@@ -1,6 +1,6 @@
 {
   "name": "@prose/gatsby-theme-blog",
-  "version": "0.1.2-alpha.3",
+  "version": "0.1.2-alpha.4",
   "description": "The Gatsby Prose blog theme",
   "main": "index.js",
   "license": "MIT",
@@ -19,7 +19,7 @@
   "dependencies": {
     "@mdx-js/react": "^1.5.5",
     "@prose/gatsby": "^0.1.2-alpha.0",
-    "@prose/gatsby-theme": "^0.1.2-alpha.3"
+    "@prose/gatsby-theme": "^0.1.2-alpha.4"
   },
   "devDependencies": {
     "gatsby": "^2.18.0",
