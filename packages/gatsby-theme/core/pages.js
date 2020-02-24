@@ -37,9 +37,9 @@ exports.createDetailNextPreviousPage = ({
     reporter.panic(results.errors)
   }
 
-  let index = 0
-  for await (const result of results) {
-    const { nodes, node } = result
+  const nodes = results.data[`all${entityName}`].edges.map(n => n.node)
+
+  nodes.forEach((node, index) => {
     const previous = index === nodes.length - 1 ? null : nodes[index + 1]
     const next = index === 0 ? null : nodes[index - 1]
     const { slug } = node
@@ -49,11 +49,9 @@ exports.createDetailNextPreviousPage = ({
       component,
       context: {
         id: node.id,
-        previousId: previous ? previous.node.id : undefined,
-        nextId: next ? next.node.id : undefined,
+        previousId: previous ? previous.id : undefined,
+        nextId: next ? next.id : undefined,
       },
     })
-
-    index++
-  }
+  })
 }

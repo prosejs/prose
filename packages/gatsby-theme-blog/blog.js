@@ -133,7 +133,7 @@ const blog = options => {
         },
       },
     ]),
-    onCreatePage: all(
+    createPages: all(
       createPage({
         path: '/',
         component: require.resolve(`./src/templates/posts-query`),

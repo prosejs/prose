@@ -4,4 +4,4 @@ const invoke = name => (api, options) =>
 exports.onPreBootstrap = invoke('onPreBootstrap')
 exports.createSchemaCustomization = invoke('createSchemaCustomization')
 exports.onCreateNode = invoke('onCreateNode')
-exports.onCreatePages = invoke('onCreatePages')
+exports.createPages = invoke('createPages')
