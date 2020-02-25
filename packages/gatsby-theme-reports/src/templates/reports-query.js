@@ -17,6 +17,8 @@ export const query = graphql`
           excerpt
           slug
           title
+          subTitle
+          draft
           date(formatString: "MMMM DD, YYYY")
           tags
         }

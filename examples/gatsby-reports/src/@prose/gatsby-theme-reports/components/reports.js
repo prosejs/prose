@@ -1,4 +1,5 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 import { Styled } from 'theme-ui'
 
@@ -11,14 +12,18 @@ const ReportsPage = ({ data }) => {
       slug: p.slug,
       title: p.title,
       date: p.date,
+      draft: p.draft,
     }))
 
   return (
     <ul>
-      {reports.map((p, i) => (
-        <Styled.a key={i} as={Link} to={p.slug}>
-          {p.title}
-        </Styled.a>
+      {reports.map((r, i) => (
+        <Styled.li key={i}>
+          <Styled.a as={Link} to={r.slug}>
+            {r.title}
+          </Styled.a>
+          {r.draft && <span sx={{ ml: 1 }}>[Draft]</span>}
+        </Styled.li>
       ))}
     </ul>
   )

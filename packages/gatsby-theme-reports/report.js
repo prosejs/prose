@@ -1,4 +1,7 @@
-const { createCoreConfigStandard } = require('@prose/gatsby-theme')
+const {
+  createCoreConfigStandard,
+  pagesWithDraft,
+} = require('@prose/gatsby-theme')
 
 const report = options => {
   return createCoreConfigStandard(({ resolverPassthrough }) => ({
@@ -10,6 +13,7 @@ const report = options => {
         date: 'Date! @dateformat',
         title: 'String!',
         subTitle: 'String',
+        draft: 'Boolean!',
         slug: 'String!',
         tags: '[String]!',
         keywords: '[String]!',
@@ -23,6 +27,9 @@ const report = options => {
         },
         subTitle: {
           type: 'String',
+        },
+        draft: {
+          type: 'Boolean!',
         },
         slug: {
           type: 'String!',
@@ -53,6 +60,7 @@ const report = options => {
           id,
           title,
           subTitle,
+          draft,
           date,
           tags = [],
           keywords = [],
@@ -62,16 +70,17 @@ const report = options => {
           id,
           title,
           subTitle,
+          draft: draft || false,
           date,
           tags,
           keywords,
         }
       },
     },
-    pages: {
+    pages: pagesWithDraft({
       list: require.resolve(`./src/templates/reports-query`),
       detail: require.resolve(`./src/templates/report-query`),
-    },
+    }),
   }))
 }
 

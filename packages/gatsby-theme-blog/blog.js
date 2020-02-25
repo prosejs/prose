@@ -1,6 +1,7 @@
-const { createCoreConfigStandard } = require('@prose/gatsby-theme')
-
-const isDevelopment = () => process.env.NODE_ENV !== 'production'
+const {
+  createCoreConfigStandard,
+  pagesWithDraft,
+} = require('@prose/gatsby-theme')
 
 const blog = options => {
   return createCoreConfigStandard(({ resolverPassthrough }) => ({
@@ -73,28 +74,10 @@ const blog = options => {
         }
       },
     },
-    pages: {
-      listQuery: ({ entityName }) => `{
-        all${entityName}(sort: { fields: [date, title], order: DESC }, limit: 1000) {
-          edges {
-            node {
-              id
-              slug
-              draft
-            }
-          }
-        }
-      }`,
+    pages: pagesWithDraft({
       list: require.resolve(`./src/templates/posts-query`),
       detail: require.resolve(`./src/templates/post-query`),
-      include: ({ node }) => {
-        if (isDevelopment()) {
-          return true
-        }
-
-        return !node.draft
-      },
-    },
+    }),
   }))
 }
 

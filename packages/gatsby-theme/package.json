@@ -26,7 +26,6 @@
     "@theme-ui/prism": "^0.3.0",
     "@theme-ui/typography": "^0.3.0",
     "@utilz/deepmerge": "^0.1.13",
-    "deepmerge": "^4.2.2",
     "gatsby-image": "^2.2.41",
     "gatsby-plugin-emotion": "^4.1.22",
     "gatsby-plugin-feed": "^2.3.27",

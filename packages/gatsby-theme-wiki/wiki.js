@@ -1,4 +1,7 @@
-const { createCoreConfigStandard } = require('@prose/gatsby-theme')
+const {
+  createCoreConfigStandard,
+  pagesWithDraft,
+} = require('@prose/gatsby-theme')
 
 const wiki = options => {
   return createCoreConfigStandard(({ resolverPassthrough }) => ({
@@ -10,6 +13,7 @@ const wiki = options => {
         date: 'Date! @dateformat',
         title: 'String!',
         subTitle: 'String',
+        draft: 'Boolean!',
         slug: 'String!',
         tags: '[String]!',
         keywords: '[String]!',
@@ -23,6 +27,9 @@ const wiki = options => {
         },
         subTitle: {
           type: 'String',
+        },
+        draft: {
+          type: 'Boolean!',
         },
         slug: {
           type: 'String!',
@@ -53,6 +60,7 @@ const wiki = options => {
           id,
           title,
           subTitle,
+          draft,
           date,
           tags = [],
           keywords = [],
@@ -62,16 +70,17 @@ const wiki = options => {
           id,
           title,
           subTitle,
+          draft: draft || false,
           date,
           tags,
           keywords,
         }
       },
     },
-    pages: {
+    pages: pagesWithDraft({
       list: require.resolve(`./src/templates/wikis-query`),
       detail: require.resolve(`./src/templates/wiki-query`),
-    },
+    }),
   }))
 }
 

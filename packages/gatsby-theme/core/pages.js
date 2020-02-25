@@ -1,3 +1,7 @@
+const { deepmerge } = require('@utilz/deepmerge')
+
+const isDevelopment = () => process.env.NODE_ENV !== 'production'
+
 exports.createPage = page => async api => {
   const { actions } = api
   const { createPage: gatsbyCreatePage } = actions
@@ -66,3 +70,28 @@ exports.createDetailNextPreviousPage = ({
     })
   }
 }
+
+exports.pagesWithDraft = obj =>
+  deepmerge(
+    {
+      listQuery: ({ entityName }) => `{
+    all${entityName}(sort: { fields: [date, title], order: DESC }, limit: 1000) {
+      edges {
+        node {
+          id
+          slug
+          draft
+        }
+      }
+    }
+  }`,
+      include: ({ node }) => {
+        if (isDevelopment()) {
+          return true
+        }
+
+        return !node.draft
+      },
+    },
+    obj
+  )
