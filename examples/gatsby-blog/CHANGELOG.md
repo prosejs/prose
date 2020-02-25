@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2-alpha.5](https://github.com/prosejs/prose/compare/gatsby-blog@1.0.2-alpha.4...gatsby-blog@1.0.2-alpha.5) (2020-02-25)
+
+
+### Features
+
+* add support for draft ([#16](https://github.com/prosejs/prose/issues/16)) ([a1250c3](https://github.com/prosejs/prose/commit/a1250c3b504c8e30993089b9e46055fa6ac3ea25))
+
+
+
+
+
 ## [1.0.2-alpha.4](https://github.com/prosejs/prose/compare/gatsby-blog@1.0.2-alpha.3...gatsby-blog@1.0.2-alpha.4) (2020-02-24)
 
 
