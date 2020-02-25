@@ -2,7 +2,7 @@ const crypto = require('crypto')
 
 exports.createNodes = nodes => async api => {
   const { node, actions, getNode, createNodeId, reporter } = api
-  const { createNode, createParentChildLink } = actions
+  const { createNode, createNodeField, createParentChildLink } = actions
 
   for await (const n of nodes) {
     if (!n.include({ node, getNode })) {
@@ -26,6 +26,14 @@ exports.createNodes = nodes => async api => {
     const nodeId = createNodeId(n.id({ node }))
     const id = fields.id || nodeId
 
+    // Update MDX node with slug field
+    createNodeField({
+      node,
+      name: `slug`,
+      value: fields.slug,
+    })
+
+    // Create entity node
     await createNode({
       ...fields,
       // Required fields.
