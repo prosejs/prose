@@ -1,4 +1,4 @@
-exports.proseConfig = ({ sources, mdxEnabled = true }) => () => {
+exports.createConfigStandard = ({ sources, mdxEnabled = true }) => () => {
   const plugins = [
     ...sources.map(s => ({
       resolve: `gatsby-source-filesystem`,
