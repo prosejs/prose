@@ -3,5 +3,5 @@ const { configureComponents } = require('./src/components')
 
 module.exports = {
   ...core,
-  // configureComponents,
+  configureComponents,
 }
