@@ -5,10 +5,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "yarn clean && gatsby develop",
     "develop:debug": "node --nolazy --inspect-brk node_modules/.bin/gatsby develop",
     "build": "gatsby build",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "serve": "gatsby serve"
   },
   "dependencies": {
     "@prose/gatsby-theme-blog": "^0.1.2-alpha.4",

@@ -16,6 +16,8 @@ export const query = graphql`
       body
       slug
       title
+      subTitle
+      draft
       tags
       keywords
       date(formatString: "MMMM DD, YYYY")
@@ -25,6 +27,8 @@ export const query = graphql`
       excerpt
       slug
       title
+      subTitle
+      draft
       date(formatString: "MMMM DD, YYYY")
     }
     next: wikiPage(id: { eq: $nextId }) {
@@ -32,6 +36,8 @@ export const query = graphql`
       excerpt
       slug
       title
+      subTitle
+      draft
       date(formatString: "MMMM DD, YYYY")
     }
   }

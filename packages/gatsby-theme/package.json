@@ -2,8 +2,7 @@
   "name": "@prose/gatsby-theme",
   "version": "0.1.2-alpha.4",
   "description": "The prose Gatsby theme",
-  "main": "index.js",
-  "module": "index.js",
+  "source": "index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -12,6 +11,8 @@
   },
   "homepage": "https://github.com/prosejs/prose/tree/master/packages/gatsby-theme#readme",
   "scripts": {
+    "build": "echo build",
+    "prepare": "cross-env NODE_ENV=production npm run build",
     "test": "echo testing gatsby-theme with version: $npm_package_version"
   },
   "publishConfig": {
@@ -19,14 +20,13 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.27",
-    "@mdx-js/react": "^1.5.5",
+    "@mdx-js/react": "^1.5.7",
     "@prose/code": "^0.1.2-alpha.3",
     "@prose/gatsby-theme-core": "^0.1.2-alpha.2",
     "@theme-ui/prism": "^0.3.0",
     "@theme-ui/typography": "^0.3.0",
     "@utilz/deepmerge": "^0.1.13",
-    "deepmerge": "^4.2.2",
-    "gatsby-image": "^2.2.40",
+    "gatsby-image": "^2.2.41",
     "gatsby-plugin-emotion": "^4.1.22",
     "gatsby-plugin-feed": "^2.3.27",
     "gatsby-plugin-react-helmet": "^3.1.22",
@@ -39,6 +39,8 @@
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
     "gatsby": "^2.18.0",
     "prettier": "^1.19.1",
     "react": "^16.11.0",
