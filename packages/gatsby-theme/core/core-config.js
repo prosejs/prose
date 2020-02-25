@@ -97,7 +97,9 @@ exports.createCoreConfigStandard = configFactory => {
       }),
       createDetailNextPreviousPage({
         entityName,
+        listQuery: pages.listQuery,
         component: pages.detail,
+        include: pages.include,
       })
     ),
   }

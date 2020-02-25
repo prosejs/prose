@@ -7,7 +7,9 @@ exports.createPage = page => async api => {
 
 exports.createDetailNextPreviousPage = ({
   entityName,
+  listQuery,
   component,
+  include,
 }) => async api => {
   const { graphql, actions, reporter } = api
   const { createPage } = actions
@@ -20,7 +22,7 @@ exports.createDetailNextPreviousPage = ({
     reporter.panic('No detail next/previous page component specified.')
   }
 
-  const listQuery = `{
+  const defaultListQuery = `{
     all${entityName}(sort: { fields: [date, title], order: DESC }, limit: 1000) {
       edges {
         node {
@@ -31,7 +33,8 @@ exports.createDetailNextPreviousPage = ({
     }
   }`
 
-  const results = await graphql(listQuery)
+  const query = listQuery ? listQuery({ entityName }) : defaultListQuery
+  const results = await graphql(query)
 
   if (results.errors) {
     reporter.panic(results.errors)
@@ -39,7 +42,15 @@ exports.createDetailNextPreviousPage = ({
 
   const nodes = results.data[`all${entityName}`].edges.map(n => n.node)
 
-  nodes.forEach((node, index) => {
+  const predicate = include || (() => true)
+
+  for (let index = 0; index < nodes.length; index++) {
+    const node = nodes[index]
+
+    if (!predicate({ node, index })) {
+      continue
+    }
+
     const previous = index === nodes.length - 1 ? null : nodes[index + 1]
     const next = index === 0 ? null : nodes[index - 1]
     const { slug } = node
@@ -53,5 +64,5 @@ exports.createDetailNextPreviousPage = ({
         nextId: next ? next.id : undefined,
       },
     })
-  })
+  }
 }
