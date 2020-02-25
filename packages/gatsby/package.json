@@ -1,6 +1,6 @@
 {
   "name": "@prose/gatsby",
-  "version": "0.1.2-alpha.1",
+  "version": "0.1.2-alpha.2",
   "description": "The Prose Gatsby library",
   "source": "src/index.js",
   "main": "dist/gatsby.js",
