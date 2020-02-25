@@ -3,6 +3,7 @@ const schema = require('./schema')
 const nodes = require('./nodes')
 const pages = require('./pages')
 const config = require('./config')
+const coreConfig = require('./core-config')
 
 module.exports = {
   ...preBootstrap,
@@ -10,4 +11,5 @@ module.exports = {
   ...nodes,
   ...pages,
   ...config,
+  ...coreConfig,
 }
