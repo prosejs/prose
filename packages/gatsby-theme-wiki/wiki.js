@@ -1,69 +1,78 @@
-const {
-  listDetailDefinitions,
-  listNodesBasic,
-  detailNextPrevious,
-  listBasic,
-} = require('@prose/gatsby')
+const { createCoreConfigStandard } = require('@prose/gatsby-theme')
 
-const entityName = 'WikiPage' // TODO: make option?
-
-module.exports = listDetailDefinitions({
-  entityName,
-  nodeType: 'Mdx',
-  typePrefix: 'Mdx',
-  interfaceSchema: {
-    id: 'ID!',
-    title: 'String!',
-    body: 'String!',
-    slug: 'String!',
-    date: 'Date! @dateformat',
-    tags: '[String]!',
-    keywords: '[String]!',
-    excerpt: 'String!',
-  },
-  nodeSchema: resolverPassthrough => ({
-    id: { type: 'ID!' },
-    title: {
-      type: 'String!',
-    },
-    slug: {
-      type: 'String!',
-    },
-    date: { type: 'Date!', extensions: { dateformat: {} } },
-    tags: { type: '[String]!' },
-    keywords: { type: '[String]!' },
-    excerpt: {
-      type: 'String!',
-      args: {
-        pruneLength: {
-          type: 'Int',
-          defaultValue: 140,
+const wiki = options => {
+  return createCoreConfigStandard(({ resolverPassthrough }) => ({
+    entityName: 'WikiPage', // TODO: make option,
+    options,
+    node: {
+      interface: {
+        id: 'ID!',
+        date: 'Date! @dateformat',
+        title: 'String!',
+        subTitle: 'String',
+        slug: 'String!',
+        tags: '[String]!',
+        keywords: '[String]!',
+        excerpt: 'String!',
+        body: 'String!',
+      },
+      fields: {
+        id: { type: 'ID!' },
+        title: {
+          type: 'String!',
+        },
+        subTitle: {
+          type: 'String',
+        },
+        slug: {
+          type: 'String!',
+        },
+        date: { type: 'Date!', extensions: { dateformat: {} } },
+        tags: { type: '[String]!' },
+        keywords: { type: '[String]!' },
+        excerpt: {
+          type: 'String!',
+          args: {
+            pruneLength: {
+              type: 'Int',
+              defaultValue: 140,
+            },
+          },
+          resolve: resolverPassthrough('excerpt'),
+        },
+        body: {
+          type: 'String!',
+          resolve: resolverPassthrough('body'),
         },
       },
-      resolve: resolverPassthrough('excerpt'),
-    },
-    body: {
-      type: 'String!',
-      resolve: resolverPassthrough('body'),
-    },
-  }),
-  nodeFields: ({ node }) => {
-    const { id, title, date, tags = [], keywords = [] } = node.frontmatter
+      include: () => {
+        return true
+      },
+      getFields: ({ node }) => {
+        const {
+          id,
+          title,
+          subTitle,
+          date,
+          tags = [],
+          keywords = [],
+        } = node.frontmatter
 
-    return {
-      id,
-      title,
-      date,
-      tags,
-      keywords,
-    }
-  },
-  listNodes: listNodesBasic({ entityName }),
-  list: listBasic({
-    path: '/',
-    listComponent: require.resolve(`./src/templates/wikis-query`),
-  }),
-  detail: detailNextPrevious({
-    detailComponent: require.resolve(`./src/templates/wiki-query`),
-  }),
-})
+        return {
+          id,
+          title,
+          subTitle,
+          date,
+          tags,
+          keywords,
+        }
+      },
+    },
+    pages: {
+      list: require.resolve(`./src/templates/wikis-query`),
+      detail: require.resolve(`./src/templates/wiki-query`),
+    },
+  }))
+}
+
+module.exports = wiki

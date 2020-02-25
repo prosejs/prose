@@ -1,14 +1,11 @@
-const wikiDefinitions = require('./wiki')
+const wiki = require('./wiki')
 
 module.exports = themeOptions => {
   return {
     plugins: [
       {
         resolve: `@prose/gatsby-theme`,
-        options: {
-          ...themeOptions,
-          definitions: wikiDefinitions(themeOptions),
-        },
+        options: wiki(themeOptions),
       },
     ],
   }

@@ -1,14 +1,11 @@
-const reportDefinitions = require('./report')
+const report = require('./report')
 
 module.exports = themeOptions => {
   return {
     plugins: [
       {
         resolve: `@prose/gatsby-theme`,
-        options: {
-          ...themeOptions,
-          definitions: reportDefinitions(themeOptions),
-        },
+        options: report(themeOptions),
       },
     ],
   }
