@@ -2,9 +2,25 @@ import path from 'path'
 import { createFilePath } from 'gatsby-source-filesystem'
 import { urlResolve } from 'gatsby-core-utils'
 
+const replaceLast = (value, find, replace) => {
+  if (!value) {
+    return value
+  }
+
+  const index = value.lastIndexOf(find)
+
+  if (index === -1) {
+    return value
+  }
+
+  return `${value.substring(0, index)}${replace}${value.substring(
+    index + find.length
+  )}`
+}
+
 const defaultNormalise = (
   slug // normalize use of trailing slash
-) => slug.replace(/\/*$/, `/`) // TODO: make trailing slash an option, default to none, always normalise
+) => replaceLast(slug, '/', '') // TODO: make trailing slash an option, default to none, always normalise
 
 export const getSlug = normalise => (basePath, node, getNode) => {
   const resolvedNormaliser = normalise || defaultNormalise
