@@ -18,9 +18,20 @@ const replaceLast = (value, find, replace) => {
   )}`
 }
 
+// TODO: make trailing slash an option, default to none, always normalise
 const defaultNormalise = (
   slug // normalize use of trailing slash
-) => replaceLast(slug, '/', '') // TODO: make trailing slash an option, default to none, always normalise
+) => {
+  if (!slug) {
+    return slug
+  }
+
+  if (slug.endsWith('/')) {
+    return slug.substring(0, slug.length - 1)
+  }
+
+  return slug
+}
 
 export const getSlug = normalise => (basePath, node, getNode) => {
   const resolvedNormaliser = normalise || defaultNormalise
