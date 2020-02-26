@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2-alpha.6](https://github.com/prosejs/prose/compare/@prose/code@0.1.2-alpha.5...@prose/code@0.1.2-alpha.6) (2020-02-26)
+
+
+### Bug Fixes
+
+* move variants to components ([#22](https://github.com/prosejs/prose/issues/22)) ([72a8b9e](https://github.com/prosejs/prose/commit/72a8b9e7c6fa9d50efa92072b7753767e462cdec))
+
+
+
+
+
 ## [0.1.2-alpha.5](https://github.com/prosejs/prose/compare/@prose/code@0.1.2-alpha.4...@prose/code@0.1.2-alpha.5) (2020-02-26)
 
 
