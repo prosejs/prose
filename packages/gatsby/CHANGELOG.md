@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2-alpha.3](https://github.com/prosejs/prose/compare/@prose/gatsby@0.1.2-alpha.2...@prose/gatsby@0.1.2-alpha.3) (2020-02-26)
+
+
+### Bug Fixes
+
+* add code variants ([#18](https://github.com/prosejs/prose/issues/18)) ([044ddfb](https://github.com/prosejs/prose/commit/044ddfb64aab9270ead88faa6379f3fbe33103c1))
+
+
+
+
+
 ## [0.1.2-alpha.2](https://github.com/prosejs/prose/compare/@prose/gatsby@0.1.2-alpha.1...@prose/gatsby@0.1.2-alpha.2) (2020-02-25)
 
 **Note:** Version bump only for package @prose/gatsby

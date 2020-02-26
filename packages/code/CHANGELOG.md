@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2-alpha.4](https://github.com/prosejs/prose/compare/@prose/code@0.1.2-alpha.3...@prose/code@0.1.2-alpha.4) (2020-02-26)
+
+
+### Bug Fixes
+
+* add additional code variants ([#19](https://github.com/prosejs/prose/issues/19)) ([6af80a8](https://github.com/prosejs/prose/commit/6af80a82131deb6f890477839aa73b44ac036831))
+* add code variants ([#18](https://github.com/prosejs/prose/issues/18)) ([044ddfb](https://github.com/prosejs/prose/commit/044ddfb64aab9270ead88faa6379f3fbe33103c1))
+* disable line numbers for the none language ([#20](https://github.com/prosejs/prose/issues/20)) ([477b30c](https://github.com/prosejs/prose/commit/477b30c77140c99d1f13847393194766fc853158))
+
+
+
+
+
 ## [0.1.2-alpha.3](https://github.com/prosejs/prose/compare/@prose/code@0.1.2-alpha.2...@prose/code@0.1.2-alpha.3) (2020-02-12)
 
 
