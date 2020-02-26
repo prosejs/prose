@@ -25,3 +25,45 @@ export const withLineNumberStyle = () => (
     <Code {...defaultProps} />
   </Themed>
 )
+
+export const withLanguageLabelStyle = () => (
+  <Themed
+    theme={{
+      code: {
+        languageLabel: {
+          fontSize: '1rem',
+          marginBottom: '0.2rem',
+          paddingLeft: 5,
+          paddingRight: 5,
+        },
+        pre: {
+          paddingTop: '2rem',
+        },
+      },
+    }}
+  >
+    <Code {...defaultProps} />
+  </Themed>
+)
+
+export const withTitleStyle = () => (
+  <Themed
+    theme={{
+      code: {
+        title: {
+          container: {
+            padding: '0.3rem 2rem',
+            backgroundColor: '#ccc',
+            borderBottom: '4px solid #555',
+          },
+          text: {
+            fontSize: 3,
+            color: '#555',
+          },
+        },
+      },
+    }}
+  >
+    <Code {...defaultProps} meta={{ title: `./foo.js` }} />
+  </Themed>
+)

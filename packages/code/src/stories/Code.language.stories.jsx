@@ -18,7 +18,7 @@ const defaultProps = {
 const foo = 'bar'
 const bar = 'foo'
 `,
-  language: null,
+  meta: null,
 }
 
 export const withLanguageSelect = () => {

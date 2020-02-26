@@ -8,6 +8,7 @@ const Token = ({ token, tokenStyle, ...props }) => {
       sx={{
         fontSize: 1,
         ...tokenStyle,
+        variant: 'code.token',
       }}
     />
   )

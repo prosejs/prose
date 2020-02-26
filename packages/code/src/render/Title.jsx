@@ -1,25 +1,26 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import { jsx, Box, Styled } from 'theme-ui'
 
 const Title = ({ children, borderColor }) => (
   <Styled.pre
     as="div"
-    sx={{ backgroundColor: 'pre.backgroundColor' }}
     sx={{
       padding: '0.8rem',
       borderBottom: borderColor ? `1px solid ${borderColor}` : null,
+      variant: 'code.title.container',
     }}
   >
-    <p
+    <Styled.p
       sx={{
         fontSize: 1,
         color: '#866c5b',
         margin: 0,
         fontFamily: 'body',
+        variant: 'code.title.text',
       }}
     >
       {children}
-    </p>
+    </Styled.p>
   </Styled.pre>
 )
 

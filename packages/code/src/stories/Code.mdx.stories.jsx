@@ -23,15 +23,15 @@ export const withJavascriptWhitespace = () => (
 )
 
 export const withJavascriptAndOptions = () => (
-  <MdxThemed {...defaultProps} meta="javascript numbers:{enabled start:5}" />
+  <MdxThemed {...defaultProps} meta="javascript lines:{enabled start:5}" />
 )
 
 export const withNoneLanguageAndOptions = () => (
-  <MdxThemed {...defaultProps} meta="none numbers:{enabled start:5}" />
+  <MdxThemed {...defaultProps} meta="none lines:{enabled start:5}" />
 )
 
 export const withInvalidNoLanguageAndOptions = () => (
-  <MdxThemed {...defaultProps} meta="numbers:{enabled start:5}" />
+  <MdxThemed {...defaultProps} meta="lines:{enabled start:5}" />
 )
 
 export const withEmphasiseLines = () => (
@@ -67,6 +67,10 @@ export const withDiff = () => {
 
 export const withLineNumbersDisabled = () => (
   <MdxThemed {...defaultProps} meta="javascript lines:{enabled:false}" />
+)
+
+export const withLineNumbersStart = () => (
+  <MdxThemed {...defaultProps} meta="javascript lines:{start:5}" />
 )
 
 export const withTitle = () => (
