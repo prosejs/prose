@@ -23,7 +23,7 @@ const getLabelProps = (label, linesEnabled) => {
       left: linesEnabled ? '2rem' : '1rem',
       top: 0,
       textTransform: 'uppercase',
-      variant: 'code.languageLabel',
+      variant: 'components.code.languageLabel',
     },
   }
 }
@@ -75,7 +75,7 @@ const RenderStandard = ({
             margin: 0,
             overflowX: 'scroll',
             ...getLabelProps(label, options.lines.enabled),
-            variant: 'code.pre',
+            variant: 'components.code.pre', // TODO: move all variant uses to util function and make 'components.code' configurable in options
           }}
         >
           {lines.map((line, i) => (

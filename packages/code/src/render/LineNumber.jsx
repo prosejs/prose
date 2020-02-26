@@ -7,7 +7,7 @@ const LineNumber = ({ lineNumber }) => (
       display: 'flex',
       alignItems: 'center',
       fontSize: 1,
-      variant: 'code.lineNumber',
+      variant: 'components.code.lineNumber',
       paddingRight: '0.5rem',
     }}
   >

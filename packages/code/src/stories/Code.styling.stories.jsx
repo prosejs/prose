@@ -14,10 +14,12 @@ const bar = 'foo'`,
 export const withLineNumberStyle = () => (
   <Themed
     theme={{
-      code: {
-        lineNumber: {
-          color: '#ccc',
-          borderRight: '1px solid #ccc',
+      components: {
+        code: {
+          lineNumber: {
+            color: '#ccc',
+            borderRight: '1px solid #ccc',
+          },
         },
       },
     }}
@@ -29,15 +31,17 @@ export const withLineNumberStyle = () => (
 export const withLanguageLabelStyle = () => (
   <Themed
     theme={{
-      code: {
-        languageLabel: {
-          fontSize: '1rem',
-          marginBottom: '0.2rem',
-          paddingLeft: 5,
-          paddingRight: 5,
-        },
-        pre: {
-          paddingTop: '2rem',
+      components: {
+        code: {
+          languageLabel: {
+            fontSize: '1rem',
+            marginBottom: '0.2rem',
+            paddingLeft: 5,
+            paddingRight: 5,
+          },
+          pre: {
+            paddingTop: '2rem',
+          },
         },
       },
     }}
@@ -49,16 +53,18 @@ export const withLanguageLabelStyle = () => (
 export const withTitleStyle = () => (
   <Themed
     theme={{
-      code: {
-        title: {
-          container: {
-            padding: '0.3rem 2rem',
-            backgroundColor: '#ccc',
-            borderBottom: '4px solid #555',
-          },
-          text: {
-            fontSize: 3,
-            color: '#555',
+      components: {
+        code: {
+          title: {
+            container: {
+              padding: '0.3rem 2rem',
+              backgroundColor: '#ccc',
+              borderBottom: '4px solid #555',
+            },
+            text: {
+              fontSize: 3,
+              color: '#555',
+            },
           },
         },
       },

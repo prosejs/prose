@@ -7,7 +7,7 @@ const Title = ({ children, borderColor }) => (
     sx={{
       padding: '0.8rem',
       borderBottom: borderColor ? `1px solid ${borderColor}` : null,
-      variant: 'code.title.container',
+      variant: 'components.code.title.container',
     }}
   >
     <Styled.p
@@ -16,7 +16,7 @@ const Title = ({ children, borderColor }) => (
         color: '#866c5b',
         margin: 0,
         fontFamily: 'body',
-        variant: 'code.title.text',
+        variant: 'components.code.title.text',
       }}
     >
       {children}
