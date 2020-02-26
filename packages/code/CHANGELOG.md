@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2-alpha.5](https://github.com/prosejs/prose/compare/@prose/code@0.1.2-alpha.4...@prose/code@0.1.2-alpha.5) (2020-02-26)
+
+
+### Bug Fixes
+
+* add unnumbered languages option to parse ([#21](https://github.com/prosejs/prose/issues/21)) ([71a76a6](https://github.com/prosejs/prose/commit/71a76a650e5233d193ae8ad8be4d110a0650ad2c))
+
+
+
+
+
 ## [0.1.2-alpha.4](https://github.com/prosejs/prose/compare/@prose/code@0.1.2-alpha.3...@prose/code@0.1.2-alpha.4) (2020-02-26)
 
 
