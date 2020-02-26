@@ -15,7 +15,7 @@ const parse = parseOptions => ({ language, options, meta, code, lines }) => {
   const startLine =
     combinedOptions && combinedOptions.lines ? combinedOptions.lines.start : 1
 
-  // If the language is in the linelessLanguages, then disable line numbers,
+  // If the language is in the unnumbered languages, then disable line numbers,
   // unless they have been enabled in the meta
   let lineNumbersEnabled = combinedOptions.lines.enabled
 
