@@ -53,3 +53,24 @@ export const withAdditionalLanguage = () => (
     />
   </Themed>
 )
+
+export const withNoneLanguage = () => (
+  <Themed>
+    <Code
+      language="none"
+      code="var x = 5;"
+      options={{ lines: { enabled: true } }}
+    />
+  </Themed>
+)
+
+export const withNoneLanguageLineNumbersInMeta = () => (
+  <Themed>
+    <Code
+      language="none"
+      code="var x = 5;"
+      meta={{ lines: { enabled: true } }}
+      options={{ lines: { enabled: true } }}
+    />
+  </Themed>
+)
