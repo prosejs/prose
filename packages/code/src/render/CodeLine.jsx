@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react'
-import { jsx, useThemeUI } from 'theme-ui'
+import { jsx, Box, useThemeUI } from 'theme-ui'
 import LineNumber from './LineNumber.jsx'
 import Token from './Token.jsx'
 import Symbol from './Symbol.jsx'
@@ -77,7 +77,7 @@ const CodeLine = ({
   return (
     <React.Fragment>
       {lineNumbersEnabled && <LineNumber lineNumber={lineNumber} />}
-      <div
+      <Box
         {...lineProps}
         sx={{
           ...getLineStyle({
@@ -85,6 +85,7 @@ const CodeLine = ({
             meta,
           }),
           paddingLeft: '0.5rem',
+          variant: 'code.line',
         }}
       >
         {symbol && (
@@ -98,7 +99,7 @@ const CodeLine = ({
             {...getTokenProps({ token })}
           />
         ))}
-      </div>
+      </Box>
     </React.Fragment>
   )
 }

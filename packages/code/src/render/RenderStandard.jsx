@@ -23,6 +23,7 @@ const getLabelProps = (label, linesEnabled) => {
       left: linesEnabled ? '2rem' : '1rem',
       top: 0,
       textTransform: 'uppercase',
+      variant: 'code.languageLabel',
     },
   }
 }
@@ -74,6 +75,7 @@ const RenderStandard = ({
             margin: 0,
             overflowX: 'scroll',
             ...getLabelProps(label, options.lines.enabled),
+            variant: 'code.pre',
           }}
         >
           {lines.map((line, i) => (
