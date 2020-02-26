@@ -6,7 +6,7 @@ const Symbol = ({ symbol, style }) => (
     sx={{
       fontSize: 1,
       ...style,
-      variant: 'code.symbol',
+      variant: 'components.code.symbol',
     }}
   >
     {symbol}&nbsp;

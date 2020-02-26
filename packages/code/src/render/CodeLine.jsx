@@ -85,7 +85,7 @@ const CodeLine = ({
             meta,
           }),
           paddingLeft: '0.5rem',
-          variant: 'code.line',
+          variant: 'components.code.line',
         }}
       >
         {symbol && (
