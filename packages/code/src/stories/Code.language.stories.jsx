@@ -70,7 +70,7 @@ export const withNoneLanguageLineNumbersInMeta = () => (
       language="none"
       code="var x = 5;"
       meta={{ lines: { enabled: true } }}
-      options={{ lines: { enabled: false } }}
+      options={{ lines: { enabled: true } }}
     />
   </Themed>
 )
