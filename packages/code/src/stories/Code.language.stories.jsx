@@ -74,3 +74,13 @@ export const withNoneLanguageLineNumbersInMeta = () => (
     />
   </Themed>
 )
+
+export const withBashLanguage = () => (
+  <Themed>
+    <Code
+      language="bash"
+      code="node ./foo.js"
+      options={{ lines: { enabled: true } }}
+    />
+  </Themed>
+)
