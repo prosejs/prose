@@ -2,7 +2,12 @@ import { deepmerge } from '@utilz/deepmerge'
 import getLineMap from './line-map'
 import normalise from './normalise'
 
-const parse = ({ language, options, meta, code, lines }) => {
+const parse = parseOptions => ({ language, options, meta, code, lines }) => {
+  const defaultParseOptions = {
+    unnumberedLanguages: ['none', 'bash'],
+  }
+
+  const combinedParseOptions = deepmerge(defaultParseOptions, parseOptions)
   const combinedOptions = deepmerge(options, meta)
   const emLineMap = getLineMap(combinedOptions.em)
   const demLineMap = getLineMap(combinedOptions.dem)
@@ -10,11 +15,11 @@ const parse = ({ language, options, meta, code, lines }) => {
   const startLine =
     combinedOptions && combinedOptions.lines ? combinedOptions.lines.start : 1
 
-  // If the language is 'none', then disable line numbers,
+  // If the language is in the linelessLanguages, then disable line numbers,
   // unless they have been enabled in the meta
   let lineNumbersEnabled = combinedOptions.lines.enabled
 
-  if (language === 'none') {
+  if (combinedParseOptions.unnumberedLanguages.includes(language)) {
     lineNumbersEnabled = false
 
     if (meta && meta.lines && meta.lines.enabled) {

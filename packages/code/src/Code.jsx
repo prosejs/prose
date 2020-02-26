@@ -33,7 +33,7 @@ export const Code = ({
   const combinedOptions = deepmerge(defaultOptions, options)
   const resolvedLanguage =
     combinedOptions.aliases[language] || language || 'none'
-  const resolvedParser = parse || parseStandard
+  const resolvedParser = parse || parseStandard()
   const resolvedRenderer = render || renderStandard()
 
   return (
