@@ -1,6 +1,6 @@
 {
   "name": "@prose/gatsby-theme-core",
-  "version": "0.1.2-alpha.3",
+  "version": "0.1.2-alpha.4",
   "main": "index.js",
   "license": "MIT",
   "repository": {
@@ -25,8 +25,8 @@
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.5.7",
-    "@prose/gatsby-remark-mermaid": "^0.1.1-alpha.1",
-    "@prose/gatsby-remark-nomnoml": "^0.1.2-alpha.1",
+    "@prose/gatsby-remark-mermaid": "^0.1.1-alpha.2",
+    "@prose/gatsby-remark-nomnoml": "^0.1.2-alpha.2",
     "@utilz/deepmerge": "^0.1.13",
     "gatsby-plugin-mdx": "^1.0.73",
     "gatsby-plugin-sharp": "^2.4.5",

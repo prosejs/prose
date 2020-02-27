@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2-alpha.10](https://github.com/prosejs/prose/compare/gatsby-reports@1.0.2-alpha.9...gatsby-reports@1.0.2-alpha.10) (2020-02-27)
+
+
+### Bug Fixes
+
+* add pre and post render to mermaid and nomnoml ([#23](https://github.com/prosejs/prose/issues/23)) ([6989b0e](https://github.com/prosejs/prose/commit/6989b0e90a467b6da25f9cc96eb2a4ea3f1cf51e))
+
+
+
+
+
 ## [1.0.2-alpha.9](https://github.com/prosejs/prose/compare/gatsby-reports@1.0.2-alpha.8...gatsby-reports@1.0.2-alpha.9) (2020-02-26)
 
 **Note:** Version bump only for package gatsby-reports

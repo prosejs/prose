@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2-alpha.2](https://github.com/prosejs/prose/compare/@prose/gatsby-remark-nomnoml@0.1.2-alpha.1...@prose/gatsby-remark-nomnoml@0.1.2-alpha.2) (2020-02-27)
+
+
+### Bug Fixes
+
+* add pre and post render to mermaid and nomnoml ([#23](https://github.com/prosejs/prose/issues/23)) ([6989b0e](https://github.com/prosejs/prose/commit/6989b0e90a467b6da25f9cc96eb2a4ea3f1cf51e))
+
+
+
+
+
 ## [0.1.2-alpha.1](https://github.com/prosejs/prose/compare/@prose/gatsby-remark-nomnoml@0.1.2-alpha.0...@prose/gatsby-remark-nomnoml@0.1.2-alpha.1) (2020-02-12)
 
 
