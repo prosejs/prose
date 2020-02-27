@@ -25,7 +25,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@storybook/react": "^6.0.0-alpha.10",
+    "@storybook/react": "^5.3.14",
     "@tson/parse": "^0.1.4",
     "@utilz/deepmerge": "^0.1.13",
     "@utilz/types": "^0.1.11",
@@ -52,9 +52,5 @@
     "prettier": "^1.19.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
-  },
-  "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
   }
 }

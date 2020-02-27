@@ -22,7 +22,7 @@
     "cheerio": "^1.0.0-rc.3",
     "hast-util-to-html": "^7.0.0",
     "jest": "^25.1.0",
-    "mdast-util-to-hast": "^7.0.0",
+    "mdast-util-to-hast": "^8.0.0",
     "remark": "^11.0.2"
   }
 }
