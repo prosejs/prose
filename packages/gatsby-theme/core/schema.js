@@ -17,7 +17,5 @@ exports.createTypes = types => api => {
   const { actions, schema } = api
   const { createTypes } = actions
 
-  types.forEach(t => {
-    createTypes(schema.buildObjectType(t))
-  })
+  createTypes(types.map(t => schema.buildObjectType(t)))
 }

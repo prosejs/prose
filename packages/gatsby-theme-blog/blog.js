@@ -19,6 +19,7 @@ const blog = options => {
         keywords: '[String]!',
         excerpt: 'String!',
         body: 'String!',
+        category: 'Category',
       },
       fields: {
         id: { type: 'ID!' },
@@ -51,6 +52,9 @@ const blog = options => {
           type: 'String!',
           resolve: resolverPassthrough('body'),
         },
+        category: {
+          type: 'Category',
+        },
       },
       getFields: ({ node }) => {
         const {
@@ -61,6 +65,7 @@ const blog = options => {
           date,
           tags = [],
           keywords = [],
+          category,
         } = node.frontmatter
 
         return {
@@ -71,6 +76,16 @@ const blog = options => {
           date,
           tags,
           keywords,
+          category: {
+            title: 'certifications',
+            child: {
+              title: 'aws',
+              child: {
+                title: 'solution architect',
+                child: null,
+              },
+            },
+          },
         }
       },
     },

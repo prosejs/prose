@@ -44,11 +44,32 @@ exports.createCoreConfigStandard = configFactory => {
     createSchemaCustomization: all(
       createInterfaces([
         {
+          name: 'Category', // TODO: move up to caller
+          schema: {
+            id: 'ID!',
+            name: 'String!',
+            child: 'Category',
+          },
+        },
+        {
           name: entityName,
           schema: node.interface,
         },
       ]),
       createTypes([
+        {
+          name: `CategoryType`,
+          fields: {
+            id: { type: 'ID!' },
+            name: {
+              type: 'String!',
+            },
+            child: {
+              type: 'CategoryType',
+            },
+          },
+          interfaces: ['Node', 'Category'],
+        },
         {
           name: `${typePrefix}${entityName}`,
           fields: node.fields,
