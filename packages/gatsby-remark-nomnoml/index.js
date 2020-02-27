@@ -29,21 +29,30 @@ const nomnomlNodes = (markdownAST, language) => {
   return result
 }
 
-const toNomnomlComponent = value => {
-  const svg = nomnoml.renderSvg(value)
-
-  let cleanedSvg = svg.replace(/<title >.*?<\/desc>/gms, '')
-  cleanedSvg = cleanedSvg.replace(/\sxmlns:xlink.*?>/gms, '>')
-  return `<Nomnoml>${EOL}${EOL}${cleanedSvg}${EOL}${EOL}</Nomnoml>`
-}
-
 const addImport = (tree, importValue) => {
   // TODO: review, as position property is not set
   tree.children = [{ type: 'import', value: importValue }, ...tree.children]
 }
 
 const plugin = async ({ markdownAST }, options) => {
+  const defaultPreRender = value => value
+
+  const defaultPostRender = value => {
+    if (!value) {
+      return value
+    }
+
+    // replace braces interpreted as JSX vars
+    // see https://github.com/facebook/react/issues/1545
+    let val = value.replace(/([{}]+)/g, "{'$1'}")
+
+    val = val.replace(/<title >.*?<\/desc>/gms, '')
+    return val.replace(/\sxmlns:xlink.*?>/gms, '>')
+  }
+
   const { language = 'nomnoml' } = options || {}
+  const { preRender = defaultPreRender, postRender = defaultPostRender } =
+    options || {}
 
   if (!isImportExists(markdownAST)) {
     addImport(markdownAST, importLine)
@@ -52,6 +61,14 @@ const plugin = async ({ markdownAST }, options) => {
   const nodes = nomnomlNodes(markdownAST, language)
   if (nodes.length === 0) {
     return
+  }
+
+  const toNomnomlComponent = value => {
+    const val = preRender(value)
+    let svg = nomnoml.renderSvg(val)
+    svg = postRender(svg)
+
+    return `<Nomnoml>${EOL}${EOL}${svg}${EOL}${EOL}</Nomnoml>`
   }
 
   await Promise.all(
