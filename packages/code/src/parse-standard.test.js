@@ -1,11 +1,17 @@
-import parse from './parse-standard'
+import parseStandard from './parse-standard'
 import faker from 'faker'
 
+const parse = parseStandard()
+
 describe('parse', () => {
-  it('returns null options given null options', () => {
+  it('returns disabled lines given null options and meta', () => {
     expect(
       parse({ options: null, meta: null, code: null, lines: null }).options
-    ).toEqual({})
+    ).toEqual({
+      lines: {
+        enabled: false,
+      },
+    })
   })
 
   it('returns merged options and meta', () => {
@@ -13,6 +19,9 @@ describe('parse', () => {
       parse({ options: { foo: 'bar' }, meta: { foo: 'baz' } }).options
     ).toEqual({
       foo: 'baz',
+      lines: {
+        enabled: false,
+      },
     })
   })
 

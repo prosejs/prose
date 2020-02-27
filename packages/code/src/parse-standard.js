@@ -17,7 +17,9 @@ const parse = parseOptions => ({ language, options, meta, code, lines }) => {
 
   // If the language is in the unnumbered languages, then disable line numbers,
   // unless they have been enabled in the meta
-  let lineNumbersEnabled = combinedOptions.lines.enabled
+  let lineNumbersEnabled = combinedOptions.lines
+    ? combinedOptions.lines.enabled
+    : false
 
   if (combinedParseOptions.unnumberedLanguages.includes(language)) {
     lineNumbersEnabled = false
@@ -29,7 +31,7 @@ const parse = parseOptions => ({ language, options, meta, code, lines }) => {
 
   const resolvedOptions = deepmerge(combinedOptions, {
     lines: {
-      enabled: lineNumbersEnabled,
+      enabled: lineNumbersEnabled || false,
     },
   })
 
