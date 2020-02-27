@@ -27,11 +27,6 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
   },
-  "peerDependencies": {
-    "gatsby": "^2.13.13",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-  },
   "dependencies": {
     "@utilz/deepmerge": "^0.1.13",
     "gatsby-core-utils": "^1.0.25",

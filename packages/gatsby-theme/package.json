@@ -20,35 +20,38 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.27",
+    "@mdx-js/mdx": "^1.5.7",
     "@mdx-js/react": "^1.5.7",
     "@prose/code": "^0.1.2-alpha.6",
+    "@prose/gatsby-remark-mermaid": "^0.1.1-alpha.2",
+    "@prose/gatsby-remark-nomnoml": "^0.1.2-alpha.2",
     "@prose/gatsby-theme-core": "^0.1.2-alpha.4",
     "@theme-ui/prism": "^0.3.0",
     "@theme-ui/typography": "^0.3.0",
     "@utilz/deepmerge": "^0.1.13",
-    "gatsby-image": "^2.2.41",
     "gatsby-plugin-emotion": "^4.1.22",
-    "gatsby-plugin-feed": "^2.3.27",
+    "gatsby-plugin-mdx": "^1.0.73",
     "gatsby-plugin-react-helmet": "^3.1.22",
+    "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-plugin-twitter": "^2.1.19",
+    "gatsby-remark-images": "^3.1.44",
+    "gatsby-remark-smartypants": "^2.1.21",
+    "gatsby-source-filesystem": "^2.1.48",
+    "gatsby-transformer-remark": "^2.6.53",
+    "gatsby-transformer-sharp": "^2.3.14",
     "mdx-utils": "0.2.0",
+    "prismjs": "^1.19.0",
     "react-helmet": "^5.2.1",
-    "theme-ui": "^0.3.1",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75",
-    "typography-theme-wordpress-2016": "^0.16.19"
+    "rehype-toc": "^3.0.0",
+    "remark-slug": "^5.1.2",
+    "theme-ui": "^0.3.1"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
     "gatsby": "^2.18.0",
     "prettier": "^1.19.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
-  },
-  "peerDependencies": {
-    "gatsby": "^2.13.13",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
   }
 }
