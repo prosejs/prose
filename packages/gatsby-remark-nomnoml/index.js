@@ -71,12 +71,10 @@ const plugin = async ({ markdownAST }, options) => {
     return `<Nomnoml>${EOL}${EOL}${svg}${EOL}${EOL}</Nomnoml>`
   }
 
-  await Promise.all(
-    nodes.map(async node => {
-      node.type = 'jsx'
-      node.value = toNomnomlComponent(node.value)
-    })
-  )
+  for (const node of nodes) {
+    node.type = 'jsx'
+    node.value = toNomnomlComponent(node.value)
+  }
 }
 
 module.exports = plugin
