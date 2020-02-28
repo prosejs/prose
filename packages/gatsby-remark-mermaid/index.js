@@ -85,6 +85,8 @@ const plugin = async ({ markdownAST }, options) => {
     node.type = 'jsx'
     node.value = await toMermaidComponent(node.value)
   }
+
+  browser.close()
 }
 
 module.exports = plugin
