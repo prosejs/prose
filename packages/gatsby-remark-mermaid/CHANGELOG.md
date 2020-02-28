@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1-alpha.4](https://github.com/prosejs/prose/compare/@prose/gatsby-remark-mermaid@0.1.1-alpha.3...@prose/gatsby-remark-mermaid@0.1.1-alpha.4) (2020-02-28)
+
+
+### Bug Fixes
+
+* add browser close to mermaid render ([#26](https://github.com/prosejs/prose/issues/26)) ([d6883b7](https://github.com/prosejs/prose/commit/d6883b7967a8c302baaf71dd818e709ea6fd03db))
+
+
+
+
+
 ## [0.1.1-alpha.3](https://github.com/prosejs/prose/compare/@prose/gatsby-remark-mermaid@0.1.1-alpha.2...@prose/gatsby-remark-mermaid@0.1.1-alpha.3) (2020-02-28)
 
 
