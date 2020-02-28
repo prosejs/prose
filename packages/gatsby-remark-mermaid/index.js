@@ -81,12 +81,10 @@ const plugin = async ({ markdownAST }, options) => {
     return `<Mermaid>${EOL}${EOL}${svg}${EOL}${EOL}</Mermaid>`
   }
 
-  await Promise.all(
-    nodes.map(async node => {
-      node.type = 'jsx'
-      node.value = await toMermaidComponent(node.value)
-    })
-  )
+  for await (const node of nodes) {
+    node.type = 'jsx'
+    node.value = await toMermaidComponent(node.value)
+  }
 }
 
 module.exports = plugin
