@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1-alpha.6](https://github.com/prosejs/prose/compare/@prose/gatsby-remark-mermaid@0.1.1-alpha.5...@prose/gatsby-remark-mermaid@0.1.1-alpha.6) (2020-02-28)
+
+
+### Bug Fixes
+
+* await browser close ([#29](https://github.com/prosejs/prose/issues/29)) ([34b1896](https://github.com/prosejs/prose/commit/34b18969f0e02fff29103599f3d3f2198147a223))
+
+
+
+
+
 ## [0.1.1-alpha.5](https://github.com/prosejs/prose/compare/@prose/gatsby-remark-mermaid@0.1.1-alpha.4...@prose/gatsby-remark-mermaid@0.1.1-alpha.5) (2020-02-28)
 
 

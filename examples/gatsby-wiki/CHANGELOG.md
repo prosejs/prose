@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2-alpha.16](https://github.com/prosejs/prose/compare/gatsby-wiki@1.0.2-alpha.15...gatsby-wiki@1.0.2-alpha.16) (2020-02-28)
+
+**Note:** Version bump only for package gatsby-wiki
+
+
+
+
+
 ## [1.0.2-alpha.15](https://github.com/prosejs/prose/compare/gatsby-wiki@1.0.2-alpha.14...gatsby-wiki@1.0.2-alpha.15) (2020-02-28)
 
 **Note:** Version bump only for package gatsby-wiki
