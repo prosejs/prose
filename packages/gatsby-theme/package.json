@@ -1,6 +1,6 @@
 {
   "name": "@prose/gatsby-theme",
-  "version": "0.1.2-alpha.13",
+  "version": "0.1.2-alpha.14",
   "description": "The prose Gatsby theme",
   "source": "index.js",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "@mdx-js/react": "^1.5.7",
     "@prose/code": "^0.1.2-alpha.7",
     "@prose/gatsby-remark-mermaid": "^0.1.1-alpha.4",
-    "@prose/gatsby-remark-nomnoml": "^0.1.2-alpha.5",
+    "@prose/gatsby-remark-nomnoml": "^0.1.2-alpha.6",
     "@prose/gatsby-theme-core": "^0.1.2-alpha.5",
     "@theme-ui/prism": "^0.3.0",
     "@theme-ui/typography": "^0.3.0",

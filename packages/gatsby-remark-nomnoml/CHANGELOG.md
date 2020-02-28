@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2-alpha.6](https://github.com/prosejs/prose/compare/@prose/gatsby-remark-nomnoml@0.1.2-alpha.5...@prose/gatsby-remark-nomnoml@0.1.2-alpha.6) (2020-02-28)
+
+
+### Bug Fixes
+
+* remove promise all ([#27](https://github.com/prosejs/prose/issues/27)) ([cf2dc61](https://github.com/prosejs/prose/commit/cf2dc61ec1e1995f25a3f7cb984861e0d2499b12))
+
+
+
+
+
 ## [0.1.2-alpha.5](https://github.com/prosejs/prose/compare/@prose/gatsby-remark-nomnoml@0.1.2-alpha.4...@prose/gatsby-remark-nomnoml@0.1.2-alpha.5) (2020-02-28)
 
 **Note:** Version bump only for package @prose/gatsby-remark-nomnoml
