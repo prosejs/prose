@@ -3,7 +3,7 @@ const path = require('path')
 const render = async (browser, definition, theme, viewport, mermaidOptions) => {
   const page = await browser.newPage()
 
-  page.setViewport(viewport)
+  await page.setViewport(viewport)
 
   await page.goto(`file://${path.join(__dirname, 'render.html')}`)
 
@@ -11,7 +11,7 @@ const render = async (browser, definition, theme, viewport, mermaidOptions) => {
     path: require.resolve('mermaid/dist/mermaid.min.js'),
   })
 
-  return await page.$eval(
+  const svg = await page.$eval(
     '#container',
     (container, definition, theme, mermaidOptions) => {
       container.innerHTML = `<div class="mermaid">${definition}</div>`
@@ -32,6 +32,10 @@ const render = async (browser, definition, theme, viewport, mermaidOptions) => {
     theme,
     mermaidOptions
   )
+
+  await page.close()
+
+  return svg
 }
 
 module.exports = render
