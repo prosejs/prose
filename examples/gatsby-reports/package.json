@@ -1,7 +1,7 @@
 {
   "name": "gatsby-reports",
   "private": true,
-  "version": "1.0.2-alpha.11",
+  "version": "1.0.2-alpha.12",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -11,7 +11,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "@prose/gatsby-theme-reports": "^0.1.2-alpha.11",
+    "@prose/gatsby-theme-reports": "^0.1.2-alpha.12",
     "@theme-ui/preset-funk": "^0.3.0",
     "gatsby": "^2.17.11",
     "react": "^16.11.0",
