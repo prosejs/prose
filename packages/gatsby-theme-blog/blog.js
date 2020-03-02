@@ -19,7 +19,7 @@ const blog = options => {
         keywords: '[String]!',
         excerpt: 'String!',
         body: 'String!',
-        category: 'Category',
+        category: 'String',
       },
       fields: {
         id: { type: 'ID!' },
@@ -76,16 +76,7 @@ const blog = options => {
           date,
           tags,
           keywords,
-          category: {
-            title: 'certifications',
-            child: {
-              title: 'aws',
-              child: {
-                title: 'solution architect',
-                child: null,
-              },
-            },
-          },
+          category,
         }
       },
     },

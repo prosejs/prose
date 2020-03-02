@@ -1,6 +1,7 @@
 ---
 title: Test post content
 date: 2019-04-15
+category: cloud/aws/solution-architect
 ---
 
 Test post

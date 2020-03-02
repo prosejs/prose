@@ -44,36 +44,40 @@ exports.createCoreConfigStandard = configFactory => {
     createSchemaCustomization: all(
       createInterfaces([
         {
-          name: 'Category', // TODO: move up to caller
-          schema: {
-            id: 'ID!',
-            name: 'String!',
-            child: 'Category',
-          },
-        },
-        {
           name: entityName,
           schema: node.interface,
         },
       ]),
       createTypes([
         {
-          name: `CategoryType`,
+          name: `${typePrefix}${entityName}`,
           fields: {
-            id: { type: 'ID!' },
-            name: {
-              type: 'String!',
-            },
-            child: {
-              type: 'CategoryType',
+            ...node.fields,
+            category: {
+              type: 'String',
             },
           },
-          interfaces: ['Node', 'Category'],
+          interfaces: ['Node', entityName],
         },
         {
-          name: `${typePrefix}${entityName}`,
-          fields: node.fields,
-          interfaces: ['Node', entityName],
+          name: 'Category',
+          fields: {
+            id: { type: 'ID!' },
+            name: { type: 'String!' },
+            posts: {
+              type: `[${typePrefix}${entityName}]`,
+              resolve: (source, _, context) => {
+                const entityNodes = context.nodeModel.getAllNodes({
+                  type: entityName,
+                })
+
+                return entityNodes.filter(
+                  blogPost => blogPost.category === source.name
+                )
+              },
+            },
+          },
+          interfaces: ['Node'],
         },
       ])
     ),
