@@ -1,4 +1,5 @@
 const crypto = require('crypto')
+const { toCategories } = require('./category')
 
 const createCategoryNode = ({ getNode, createNode }) => async (
   name,
@@ -21,7 +22,7 @@ const createCategoryNode = ({ getNode, createNode }) => async (
     children: child ? [child] : [],
     internal: {
       type: 'Category',
-      description: 'This is a description',
+      description: 'Category',
       contentDigest: crypto
         .createHash(`md5`)
         .update(JSON.stringify(categoryFields))
@@ -92,8 +93,13 @@ exports.createNodes = nodes => async api => {
       createNode,
     })
 
-    await createCategory('cloud', null, 'cloud/aws') // no parent
-    await createCategory('cloud/aws', 'cloud', 'cloud/aws/solution-architect')
-    await createCategory('cloud/aws/solution-architect', 'cloud/aws', null) // no child
+    const categories = toCategories(fields.category)
+    for await (const category of categories) {
+      await createCategory(category.name, category.parent, category.child)
+    }
+
+    // await createCategory('cloud', null, 'cloud/aws') // no parent
+    // await createCategory('cloud/aws', 'cloud', 'cloud/aws/solution-architect')
+    // await createCategory('cloud/aws/solution-architect', 'cloud/aws', null) // no child
   }
 }
