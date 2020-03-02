@@ -10,7 +10,7 @@ const createCategoryNode = ({ getNode, createNode }) => async (
     name,
   }
 
-  const id = name // TODO: append category
+  const id = `category-${name}`
 
   const existingNode = getNode(id)
   if (existingNode) {
@@ -97,9 +97,5 @@ exports.createNodes = nodes => async api => {
     for await (const category of categories) {
       await createCategory(category.name, category.parent, category.child)
     }
-
-    // await createCategory('cloud', null, 'cloud/aws') // no parent
-    // await createCategory('cloud/aws', 'cloud', 'cloud/aws/solution-architect')
-    // await createCategory('cloud/aws/solution-architect', 'cloud/aws', null) // no child
   }
 }
