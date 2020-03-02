@@ -90,7 +90,6 @@ exports.createNodes = nodes => async api => {
     const createCategory = createCategoryNode({
       getNode,
       createNode,
-      createNodeId,
     })
 
     await createCategory('cloud', null, 'cloud/aws') // no parent

@@ -54,7 +54,16 @@ exports.createCoreConfigStandard = configFactory => {
           fields: {
             ...node.fields,
             category: {
-              type: 'String',
+              type: 'Category',
+              resolve: (source, _, context) => {
+                const categoryNodes = context.nodeModel.getAllNodes({
+                  type: 'Category',
+                })
+
+                return categoryNodes.find(
+                  category => category.name === source.category
+                )
+              },
             },
           },
           interfaces: ['Node', entityName],

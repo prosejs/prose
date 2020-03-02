@@ -19,7 +19,7 @@ const blog = options => {
         keywords: '[String]!',
         excerpt: 'String!',
         body: 'String!',
-        category: 'String',
+        category: 'Category',
       },
       fields: {
         id: { type: 'ID!' },
