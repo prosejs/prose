@@ -10,14 +10,16 @@ const createCategoryNode = ({ getNode, createNode }) => async (
     name,
   }
 
-  const existingNode = getNode(name) // TODO: append category
+  const id = name // TODO: append category
+
+  const existingNode = getNode(id)
   if (existingNode) {
-    return name
+    return
   }
 
   await createNode({
     ...categoryFields,
-    id: name,
+    id,
     parent,
     children: child ? [child] : [],
     internal: {
@@ -30,8 +32,6 @@ const createCategoryNode = ({ getNode, createNode }) => async (
       content: JSON.stringify(categoryFields),
     },
   })
-
-  return name
 }
 
 exports.createNodes = nodes => async api => {
