@@ -10,8 +10,7 @@ const createCategoryNode = ({
     name,
   }
 
-  const prefix = 'category-'
-  const prefixed = value => `${prefix}${value}`
+  const prefixed = value => `category-${value}`
 
   const id = prefixed(name)
 
