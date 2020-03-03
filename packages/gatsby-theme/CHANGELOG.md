@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2-alpha.21](https://github.com/prosejs/prose/compare/@prose/gatsby-theme@0.1.2-alpha.20...@prose/gatsby-theme@0.1.2-alpha.21) (2020-03-03)
+
+
+### Bug Fixes
+
+* update path comparison ([#34](https://github.com/prosejs/prose/issues/34)) ([c6db778](https://github.com/prosejs/prose/commit/c6db778647d1fc75b2a0153c60703b2bc8b3ff30))
+
+
+
+
+
 ## [0.1.2-alpha.20](https://github.com/prosejs/prose/compare/@prose/gatsby-theme@0.1.2-alpha.19...@prose/gatsby-theme@0.1.2-alpha.20) (2020-03-03)
 
 
