@@ -25,7 +25,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@storybook/react": "^5.3.14",
     "@tson/parse": "^0.1.4",
     "@utilz/deepmerge": "^0.1.13",
     "@utilz/types": "^0.1.11",
@@ -40,7 +39,7 @@
     "@mdx-js/runtime": "^1.5.5",
     "@sambego/storybook-state": "^2.0.1",
     "@storybook/addon-knobs": "^5.3.13",
-    "@storybook/react": "^5.3.13",
+    "@storybook/react": "^5.3.14",
     "@theme-ui/preset-base": "^0.3.0",
     "@theme-ui/preset-funk": "^0.3.0",
     "babel-jest": "^25.1.0",
