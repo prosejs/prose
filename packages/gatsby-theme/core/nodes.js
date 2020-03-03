@@ -118,6 +118,7 @@ exports.createNodes = nodes => async api => {
     })
 
     const categories = toCategories(fields.category)
+    console.log(categories)
     for await (const category of categories) {
       await createCategory(
         category.path,

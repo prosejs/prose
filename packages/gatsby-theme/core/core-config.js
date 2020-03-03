@@ -151,6 +151,7 @@ exports.createCoreConfigStandard = configFactory => {
           const slug = getSlug({ basePath: options.basePath, getNode })(
             gatsbyNode
           )
+
           const category =
             gatsbyNode.frontmatter.category || slugToCategory(slug)
 
