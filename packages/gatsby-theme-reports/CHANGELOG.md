@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2-alpha.19](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-reports@0.1.2-alpha.18...@prose/gatsby-theme-reports@0.1.2-alpha.19) (2020-03-03)
+
+
+### Bug Fixes
+
+* add config for category items name ([#32](https://github.com/prosejs/prose/issues/32)) ([b7b4f6d](https://github.com/prosejs/prose/commit/b7b4f6d573e91485dee7f1ff67ce2e4737b0bf39))
+
+
+
+
+
 ## [0.1.2-alpha.18](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-reports@0.1.2-alpha.17...@prose/gatsby-theme-reports@0.1.2-alpha.18) (2020-03-03)
 
 **Note:** Version bump only for package @prose/gatsby-theme-reports
