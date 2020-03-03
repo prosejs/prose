@@ -49,8 +49,12 @@ const toCategories = value => {
   const categories = []
 
   for (let i = 0; i < parts.length; i++) {
+    const path = categoryName(i)
+    const pathParts = path.split('/')
+
     categories.push({
-      name: categoryName(i),
+      path,
+      name: pathParts[pathParts.length - 1],
       parent: i === 0 ? null : categoryName(i - 1),
       child: i === parts.length - 1 ? null : categoryName(i + 1),
     })

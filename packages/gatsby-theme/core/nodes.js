@@ -5,14 +5,15 @@ const createCategoryNode = ({
   getNode,
   createNode,
   createParentChildLink,
-}) => async (name, parent, child) => {
+}) => async (path, name, parent, child) => {
   let categoryFields = {
     name,
+    path,
   }
 
   const prefixed = value => `category-${value}`
 
-  const id = prefixed(name)
+  const id = prefixed(name) // TODO: allow function as option
 
   let node = getNode(id)
   if (!node) {
@@ -118,7 +119,12 @@ exports.createNodes = nodes => async api => {
 
     const categories = toCategories(fields.category)
     for await (const category of categories) {
-      await createCategory(category.name, category.parent, category.child)
+      await createCategory(
+        category.path,
+        category.name,
+        category.parent,
+        category.child
+      )
     }
   }
 }
