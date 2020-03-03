@@ -1,3 +1,4 @@
+const { isNil, isString } = require('@utilz/types')
 const { getSlug, resolverPassthrough } = require('@prose/gatsby')
 
 const { createConfigStandard } = require('./config')
@@ -12,6 +13,30 @@ const all = (...funcs) => async api => {
   }
 }
 
+// Converts /foo/bar/page to foo/bar
+const slugToCategory = value => {
+  if (isNil(value)) {
+    return null
+  }
+
+  if (!isString(value)) {
+    return null
+  }
+
+  if (value.length === 0) {
+    return null
+  }
+
+  let val = value
+  if (val.startsWith('/')) {
+    val = val.substring(1)
+  }
+
+  const parts = val.split('/')
+  return parts.length === 1 ? null : parts.slice(0, parts.length - 1).join('/')
+}
+
+// Shared config across OOTB themes
 exports.createCoreConfigStandard = configFactory => {
   const nodeType = 'Mdx'
   const typePrefix = 'Mdx'
@@ -45,14 +70,55 @@ exports.createCoreConfigStandard = configFactory => {
       createInterfaces([
         {
           name: entityName,
-          schema: node.interface,
+          schema: {
+            ...node.interface,
+            slug: 'String!',
+            category: 'Category',
+          },
         },
       ]),
       createTypes([
         {
           name: `${typePrefix}${entityName}`,
-          fields: node.fields,
+          fields: {
+            ...node.fields,
+            slug: {
+              type: 'String!',
+            },
+            category: {
+              type: 'Category',
+              resolve: (source, _, context) => {
+                const categoryNodes = context.nodeModel.getAllNodes({
+                  type: 'Category',
+                })
+
+                return categoryNodes.find(
+                  category => category.name === source.category
+                )
+              },
+            },
+          },
           interfaces: ['Node', entityName],
+        },
+        {
+          name: 'Category',
+          fields: {
+            id: { type: 'ID!' },
+            name: { type: 'String!' },
+            posts: {
+              type: `[${typePrefix}${entityName}]`,
+              resolve: (source, _, context) => {
+                const entityNodes = context.nodeModel.getAllNodes({
+                  type: entityName,
+                })
+
+                return entityNodes.filter(
+                  blogPost => blogPost.category === source.name
+                )
+              },
+            },
+          },
+          interfaces: ['Node'],
         },
       ])
     ),
@@ -82,9 +148,16 @@ exports.createCoreConfigStandard = configFactory => {
           const { node: gatsbyNode, getNode } = props
 
           const fields = node.getFields(props)
+          const slug = getSlug({ basePath: options.basePath, getNode })(
+            gatsbyNode
+          )
+          const category =
+            gatsbyNode.frontmatter.category || slugToCategory(slug)
+
           return {
             ...fields,
-            slug: getSlug()(options.basePath, gatsbyNode, getNode),
+            slug,
+            category,
           }
         },
       },

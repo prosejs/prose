@@ -14,7 +14,6 @@ const wiki = options => {
         title: 'String!',
         subTitle: 'String',
         draft: 'Boolean!',
-        slug: 'String!',
         tags: '[String]!',
         keywords: '[String]!',
         excerpt: 'String!',
@@ -30,9 +29,6 @@ const wiki = options => {
         },
         draft: {
           type: 'Boolean!',
-        },
-        slug: {
-          type: 'String!',
         },
         date: { type: 'Date!', extensions: { dateformat: {} } },
         tags: { type: '[String]!' },

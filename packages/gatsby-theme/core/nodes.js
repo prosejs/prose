@@ -1,4 +1,60 @@
 const crypto = require('crypto')
+const { toCategories } = require('./category')
+
+const createCategoryNode = ({
+  getNode,
+  createNode,
+  createParentChildLink,
+}) => async (name, parent, child) => {
+  let categoryFields = {
+    name,
+  }
+
+  const prefixed = value => `category-${value}`
+
+  const id = prefixed(name)
+
+  let node = getNode(id)
+  if (!node) {
+    await createNode({
+      ...categoryFields,
+      id,
+      parent: prefixed(parent),
+      children: child ? [prefixed(child)] : [],
+      internal: {
+        type: 'Category',
+        description: 'Category',
+        contentDigest: crypto
+          .createHash(`md5`)
+          .update(JSON.stringify(categoryFields))
+          .digest(`hex`),
+        content: JSON.stringify(categoryFields),
+      },
+    })
+
+    node = getNode(id)
+  }
+
+  if (parent) {
+    const parentNode = getNode(prefixed(parent))
+    if (parentNode) {
+      createParentChildLink({
+        parent: parentNode,
+        child: node,
+      })
+    }
+  }
+
+  if (child) {
+    const childNode = getNode(prefixed(child))
+    if (childNode) {
+      createParentChildLink({
+        parent: node,
+        child: childNode,
+      })
+    }
+  }
+}
 
 exports.createNodes = nodes => async api => {
   const { node, actions, getNode, createNodeId, reporter } = api
@@ -52,5 +108,17 @@ exports.createNodes = nodes => async api => {
     })
 
     createParentChildLink({ parent: node, child: getNode(id) })
+
+    // Create categories
+    const createCategory = createCategoryNode({
+      getNode,
+      createNode,
+      createParentChildLink,
+    })
+
+    const categories = toCategories(fields.category)
+    for await (const category of categories) {
+      await createCategory(category.name, category.parent, category.child)
+    }
   }
 }
