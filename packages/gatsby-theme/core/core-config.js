@@ -47,7 +47,7 @@ exports.createCoreConfigStandard = configFactory => {
     resolverPassthrough: resolverPassthrough(nodeType),
   })
 
-  const { entityName, options, node, pages } = config
+  const { entityName, categoryItemsName, options, node, pages } = config
 
   // TODO: validate params
 
@@ -105,7 +105,7 @@ exports.createCoreConfigStandard = configFactory => {
           fields: {
             id: { type: 'ID!' },
             name: { type: 'String!' },
-            posts: {
+            [categoryItemsName]: {
               type: `[${typePrefix}${entityName}]`,
               resolve: (source, _, context) => {
                 const entityNodes = context.nodeModel.getAllNodes({
