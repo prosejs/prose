@@ -11,15 +11,17 @@ const createCategoryNode = ({
   }
 
   const prefix = 'category-'
-  const id = name
+  const prefixed = value => `${prefix}${value}`
+
+  const id = prefixed(name)
 
   let node = getNode(id)
   if (!node) {
     await createNode({
       ...categoryFields,
       id,
-      parent,
-      children: child ? [child] : [],
+      parent: prefixed(parent),
+      children: child ? [prefixed(child)] : [],
       internal: {
         type: 'Category',
         description: 'Category',
@@ -35,7 +37,7 @@ const createCategoryNode = ({
   }
 
   if (parent) {
-    const parentNode = getNode(parent)
+    const parentNode = getNode(prefixed(parent))
     if (parentNode) {
       createParentChildLink({
         parent: parentNode,
@@ -45,7 +47,7 @@ const createCategoryNode = ({
   }
 
   if (child) {
-    const childNode = getNode(child)
+    const childNode = getNode(prefixed(child))
     if (childNode) {
       createParentChildLink({
         parent: node,
