@@ -6,6 +6,7 @@ const {
 const blog = options => {
   return createCoreConfigStandard(({ resolverPassthrough }) => ({
     entityName: 'BlogPost', // TODO: make option,
+    categoryItemsName: 'posts',
     options,
     node: {
       interface: {

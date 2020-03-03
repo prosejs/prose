@@ -6,6 +6,7 @@ const {
 const wiki = options => {
   return createCoreConfigStandard(({ resolverPassthrough }) => ({
     entityName: 'WikiPage', // TODO: make option,
+    categoryItemsName: 'pages',
     options,
     node: {
       interface: {
