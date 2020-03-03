@@ -33,7 +33,7 @@ const defaultNormalise = (
   return slug
 }
 
-export const getSlug = normalise => (basePath, node, getNode) => {
+export const getSlug = ({ normalise, basePath, getNode }) => node => {
   const resolvedNormaliser = normalise || defaultNormalise
 
   if (node.frontmatter.slug) {

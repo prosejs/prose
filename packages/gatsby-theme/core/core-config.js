@@ -141,7 +141,9 @@ exports.createCoreConfigStandard = configFactory => {
           const { node: gatsbyNode, getNode } = props
 
           const fields = node.getFields(props)
-          const slug = getSlug()(options.basePath, gatsbyNode, getNode)
+          const slug = getSlug({ basePath: options.basePath, getNode })(
+            gatsbyNode
+          )
           const category = fields.category || slugToCategory(slug)
 
           return {

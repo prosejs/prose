@@ -35,7 +35,6 @@ const toCategories = value => {
     }
 
     let result = ''
-    // TODO: replace with reduce
     for (let i = 0; i <= toIndex; i++) {
       result += parts[i]
 
