@@ -93,7 +93,7 @@ exports.createCoreConfigStandard = configFactory => {
                 })
 
                 return categoryNodes.find(
-                  category => category.name === source.category
+                  category => category.path === source.category
                 )
               },
             },
@@ -113,7 +113,7 @@ exports.createCoreConfigStandard = configFactory => {
                 })
 
                 return entityNodes.filter(
-                  blogPost => blogPost.category === source.name
+                  blogPost => blogPost.category === source.path
                 )
               },
             },
