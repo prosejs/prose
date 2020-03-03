@@ -49,22 +49,22 @@ describe('toCategories', () => {
 
   it('should return single category for single word', () => {
     expect(toCategories('foo')).toEqual([
-      { name: 'foo', parent: null, child: null },
+      { name: 'foo', path: 'foo', parent: null, child: null },
     ])
   })
 
   it('should return two categories for two words', () => {
     expect(toCategories('foo/bar')).toEqual([
-      { name: 'foo', parent: null, child: 'foo/bar' },
-      { name: 'foo/bar', parent: 'foo', child: null },
+      { name: 'foo', path: 'foo', parent: null, child: 'foo/bar' },
+      { name: 'bar', path: 'foo/bar', parent: 'foo', child: null },
     ])
   })
 
   it('should return three categories for three words', () => {
     expect(toCategories('foo/bar/baz')).toEqual([
-      { name: 'foo', parent: null, child: 'foo/bar' },
-      { name: 'foo/bar', parent: 'foo', child: 'foo/bar/baz' },
-      { name: 'foo/bar/baz', parent: 'foo/bar', child: null },
+      { name: 'foo', path: 'foo', parent: null, child: 'foo/bar' },
+      { name: 'bar', path: 'foo/bar', parent: 'foo', child: 'foo/bar/baz' },
+      { name: 'baz', path: 'foo/bar/baz', parent: 'foo/bar', child: null },
     ])
   })
 })
