@@ -14,12 +14,10 @@ const blog = options => {
         title: 'String!',
         subTitle: 'String',
         draft: 'Boolean!',
-        slug: 'String!',
         tags: '[String]!',
         keywords: '[String]!',
         excerpt: 'String!',
         body: 'String!',
-        category: 'Category',
       },
       fields: {
         id: { type: 'ID!' },
@@ -31,9 +29,6 @@ const blog = options => {
         },
         draft: {
           type: 'Boolean!',
-        },
-        slug: {
-          type: 'String!',
         },
         date: { type: 'Date!', extensions: { dateformat: {} } },
         tags: { type: '[String]!' },
@@ -52,9 +47,6 @@ const blog = options => {
           type: 'String!',
           resolve: resolverPassthrough('body'),
         },
-        category: {
-          type: 'Category',
-        },
       },
       getFields: ({ node }) => {
         const {
@@ -65,7 +57,6 @@ const blog = options => {
           date,
           tags = [],
           keywords = [],
-          category,
         } = node.frontmatter
 
         return {
@@ -76,7 +67,6 @@ const blog = options => {
           date,
           tags,
           keywords,
-          category,
         }
       },
     },

@@ -70,7 +70,11 @@ exports.createCoreConfigStandard = configFactory => {
       createInterfaces([
         {
           name: entityName,
-          schema: node.interface,
+          schema: {
+            ...node.interface,
+            slug: 'String!',
+            category: 'Category',
+          },
         },
       ]),
       createTypes([
@@ -78,6 +82,9 @@ exports.createCoreConfigStandard = configFactory => {
           name: `${typePrefix}${entityName}`,
           fields: {
             ...node.fields,
+            slug: {
+              type: 'String!',
+            },
             category: {
               type: 'Category',
               resolve: (source, _, context) => {
@@ -144,7 +151,8 @@ exports.createCoreConfigStandard = configFactory => {
           const slug = getSlug({ basePath: options.basePath, getNode })(
             gatsbyNode
           )
-          const category = fields.category || slugToCategory(slug)
+          const category =
+            gatsbyNode.frontmatter.category || slugToCategory(slug)
 
           return {
             ...fields,
