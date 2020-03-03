@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2-alpha.5](https://github.com/prosejs/prose/compare/@prose/gatsby@0.1.2-alpha.4...@prose/gatsby@0.1.2-alpha.5) (2020-03-03)
+
+
+### Features
+
+* add nested category ([#30](https://github.com/prosejs/prose/issues/30)) ([af44c13](https://github.com/prosejs/prose/commit/af44c1379f26f191eeacc210578cb7a59effc1d0))
+
+
+
+
+
 ## [0.1.2-alpha.4](https://github.com/prosejs/prose/compare/@prose/gatsby@0.1.2-alpha.3...@prose/gatsby@0.1.2-alpha.4) (2020-02-27)
 
 **Note:** Version bump only for package @prose/gatsby
