@@ -13,7 +13,7 @@ const createCategoryNode = ({
 
   const prefixed = value => `category-${value}`
 
-  const id = prefixed(name) // TODO: allow function as option
+  const id = prefixed(path) // TODO: allow function as option
 
   let node = getNode(id)
   if (!node) {
