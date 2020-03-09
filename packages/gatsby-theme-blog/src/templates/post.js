@@ -1,10 +1,8 @@
 import { graphql } from 'gatsby'
-import PostPage from '../components/post'
-
-export default PostPage
+export { default } from '../components/post'
 
 export const query = graphql`
-  query PostPageQuery($id: String!, $previousId: String, $nextId: String) {
+  query($id: String!, $previousId: String, $nextId: String) {
     site {
       siteMetadata {
         title

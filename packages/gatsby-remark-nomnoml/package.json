@@ -20,9 +20,9 @@
     "@prose/gatsby-remark-mermaid": "^0.1.1-alpha.6",
     "babel-jest": "^25.1.0",
     "cheerio": "^1.0.0-rc.3",
-    "hast-util-to-html": "^7.0.0",
+    "hast-util-to-html": "^7.1.0",
     "jest": "^25.1.0",
-    "mdast-util-to-hast": "^8.0.0",
+    "mdast-util-to-hast": "^8.1.0",
     "remark": "^11.0.2"
   }
 }

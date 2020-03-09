@@ -72,8 +72,8 @@ const blog = options => {
       },
     },
     pages: pagesWithDraft({
-      list: require.resolve(`./src/templates/posts-query`),
-      detail: require.resolve(`./src/templates/post-query`),
+      list: require.resolve(`./src/templates/posts`),
+      detail: require.resolve(`./src/templates/post`),
     }),
   }))
 }

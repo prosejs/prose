@@ -1,10 +1,8 @@
 import { graphql } from 'gatsby'
-import PostsPage from '../components/posts'
-
-export default PostsPage
+export { default } from '../components/posts'
 
 export const query = graphql`
-  query PostsQuery {
+  query {
     site {
       siteMetadata {
         title
