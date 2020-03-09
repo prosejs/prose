@@ -6,8 +6,6 @@ import { Styled } from 'theme-ui'
 const isDevelopment = () => process.env.NODE_ENV !== 'production'
 
 const BlogPosts = ({ data }) => {
-  console.log(data)
-
   let posts = data.allBlogPost.edges
     .map(e => e.node)
     .map(p => ({
