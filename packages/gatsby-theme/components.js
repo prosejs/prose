@@ -1,4 +1,4 @@
-const { configureComponents } = require('../configure')
+const { configureComponents } = require('./configure')
 
 const getComponents = configureComponents()
 

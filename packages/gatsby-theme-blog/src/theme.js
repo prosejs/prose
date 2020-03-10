@@ -1,4 +1,4 @@
-const theme = require('@prose/gatsby-theme/src/theme')
+const theme = require('@prose/gatsby-theme/theme')
 
 module.exports = {
   ...theme,
