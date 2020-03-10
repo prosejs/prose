@@ -33,8 +33,8 @@
     "theme-ui": "^0.3.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.6",
-    "@babel/preset-env": "^7.8.6",
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
     "@mdx-js/runtime": "^1.5.5",
     "@sambego/storybook-state": "^2.0.1",
@@ -45,7 +45,7 @@
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
     "faker": "^4.1.0",
-    "gatsby": "^2.18.0",
+    "gatsby": "^2.19.32",
     "jest": "^25.1.0",
     "microbundle": "^0.11.0",
     "prettier": "^1.19.1",

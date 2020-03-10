@@ -1,5 +1,5 @@
 import React from 'react'
-import { configureComponents } from '@prose/gatsby-theme/src/components'
+import { configureComponents } from '@prose/gatsby-theme-blog'
 import { Code, fromMdxProps, renderStandard } from '@prose/code'
 import Prism from 'prismjs/components/prism-core'
 import 'prismjs/components/prism-clike'
@@ -22,7 +22,7 @@ export const getComponents = configureComponents(componentOptions => {
     code: props => (
       <Code
         {...fromMdxProps(props)}
-        options={componentOptions}
+        options={componentOptions.code}
         prism={Prism}
         render={render}
       />

@@ -1,8 +1,8 @@
-import theme from '@theme-ui/preset-swiss'
+import presetSwiss from '@theme-ui/preset-swiss'
 import mermaidTheme from '@prose/gatsby-remark-mermaid/theme'
 
-export default {
-  ...theme,
+export const theme = {
+  ...presetSwiss,
   components: {
     base: {
       mb: 1,

@@ -21,7 +21,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "gatsby": "^2.18.0",
+    "gatsby": "^2.19.32",
     "microbundle": "^0.11.0",
     "prettier": "^1.19.1",
     "react": "^16.11.0",
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@utilz/deepmerge": "^0.1.13",
-    "gatsby-core-utils": "^1.0.25",
-    "gatsby-source-filesystem": "^2.1.43"
+    "gatsby-core-utils": "^1.0.30",
+    "gatsby-source-filesystem": "^2.1.50"
   }
 }

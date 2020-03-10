@@ -1,10 +1,8 @@
 import { graphql } from 'gatsby'
-import ReportPage from '../components/report'
-
-export default ReportPage
+export { default } from '../components/report'
 
 export const query = graphql`
-  query ReportQuery($id: String!, $previousId: String, $nextId: String) {
+  query($id: String!, $previousId: String, $nextId: String) {
     site {
       siteMetadata {
         title

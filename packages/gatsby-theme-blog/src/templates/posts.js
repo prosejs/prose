@@ -1,16 +1,14 @@
 import { graphql } from 'gatsby'
-import ReportsPage from '../components/reports'
-
-export default ReportsPage
+export { default } from '../components/posts'
 
 export const query = graphql`
-  query ReportsQuery {
+  query {
     site {
       siteMetadata {
         title
       }
     }
-    allReport(sort: { fields: [date, title], order: DESC }, limit: 1000) {
+    allBlogPost(sort: { fields: [date, title], order: DESC }, limit: 1000) {
       edges {
         node {
           id

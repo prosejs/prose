@@ -75,8 +75,8 @@ const wiki = options => {
       },
     },
     pages: pagesWithDraft({
-      list: require.resolve(`./src/templates/wikis-query`),
-      detail: require.resolve(`./src/templates/wiki-query`),
+      list: require.resolve(`./src/templates/wikis`),
+      detail: require.resolve(`./src/templates/wiki`),
     }),
   }))
 }
