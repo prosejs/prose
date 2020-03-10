@@ -4,6 +4,7 @@ import { theme } from './src/theme'
 import { getComponents } from './src/components'
 import { deepmerge } from '@utilz/deepmerge'
 
+console.log(getComponents)
 const getOptions = options => {
   const defaultOptions = {
     components: {

@@ -75,8 +75,8 @@ const report = options => {
       },
     },
     pages: pagesWithDraft({
-      list: require.resolve(`./src/templates/reports-query`),
-      detail: require.resolve(`./src/templates/report-query`),
+      list: require.resolve(`./src/templates/reports`),
+      detail: require.resolve(`./src/templates/report`),
     }),
   }))
 }
