@@ -1,4 +1,4 @@
-const { configureComponents } = require('@prose/gatsby-theme')
+const { configureComponents } = require('@prose/gatsby-theme/theme/configure')
 
 module.exports = {
   configureComponents,

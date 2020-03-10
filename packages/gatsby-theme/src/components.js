@@ -1,7 +1,5 @@
-const { configureComponents } = require('../configure')
-
-const getComponents = configureComponents()
+const components = require('../theme/components')
 
 module.exports = {
-  getComponents,
+  ...components,
 }
