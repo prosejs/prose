@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2-alpha.6](https://github.com/prosejs/prose/compare/@prose/gatsby@0.1.2-alpha.5...@prose/gatsby@0.1.2-alpha.6) (2020-03-10)
+
+
+### Bug Fixes
+
+* clean up component shadowing ([#36](https://github.com/prosejs/prose/issues/36)) ([0432043](https://github.com/prosejs/prose/commit/0432043e52e77a5a8c6987a703ec0a159a34a07b))
+
+
+
+
+
 ## [0.1.2-alpha.5](https://github.com/prosejs/prose/compare/@prose/gatsby@0.1.2-alpha.4...@prose/gatsby@0.1.2-alpha.5) (2020-03-03)
 
 
