@@ -1,5 +1,7 @@
 import { graphql } from 'gatsby'
-export { default } from '../components/report'
+import ReportPage from '../components/report'
+
+export default ReportPage
 
 export const query = graphql`
   query($id: String!, $previousId: String, $nextId: String) {
