@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2-alpha.24](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-blog@0.1.2-alpha.23...@prose/gatsby-theme-blog@0.1.2-alpha.24) (2020-03-11)
+
+
+### Bug Fixes
+
+* remove default exports ([#37](https://github.com/prosejs/prose/issues/37)) ([ed68dcd](https://github.com/prosejs/prose/commit/ed68dcd025a140387530b9295eb1d454aff8e427))
+
+
+
+
+
 ## [0.1.2-alpha.23](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-blog@0.1.2-alpha.22...@prose/gatsby-theme-blog@0.1.2-alpha.23) (2020-03-10)
 
 

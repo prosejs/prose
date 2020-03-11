@@ -1,7 +1,7 @@
 {
   "name": "gatsby-blog",
   "private": true,
-  "version": "1.0.2-alpha.23",
+  "version": "1.0.2-alpha.24",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -12,7 +12,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "@prose/gatsby-theme-blog": "^0.1.2-alpha.23",
+    "@prose/gatsby-theme-blog": "^0.1.2-alpha.24",
     "@theme-ui/preset-swiss": "^0.3.0",
     "gatsby": "^2.19.32",
     "react": "^16.11.0",

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2-alpha.24](https://github.com/prosejs/prose/compare/gatsby-reports@1.0.2-alpha.23...gatsby-reports@1.0.2-alpha.24) (2020-03-11)
+
+**Note:** Version bump only for package gatsby-reports
+
+
+
+
+
 ## [1.0.2-alpha.23](https://github.com/prosejs/prose/compare/gatsby-reports@1.0.2-alpha.22...gatsby-reports@1.0.2-alpha.23) (2020-03-10)
 
 
