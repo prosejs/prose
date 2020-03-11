@@ -1,5 +1,7 @@
 import { graphql } from 'gatsby'
-export { default } from '../components/post'
+import PostPage from '../components/post'
+
+export default PostPage
 
 export const query = graphql`
   query($id: String!, $previousId: String, $nextId: String) {
