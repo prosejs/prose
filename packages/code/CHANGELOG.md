@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2-alpha.10](https://github.com/prosejs/prose/compare/@prose/code@0.1.2-alpha.9...@prose/code@0.1.2-alpha.10) (2020-03-25)
+
+
+### Bug Fixes
+
+* remove pre overflow ([#38](https://github.com/prosejs/prose/issues/38)) ([b8acaf0](https://github.com/prosejs/prose/commit/b8acaf0471f0d5242186632d128a281de9836811))
+
+
+
+
+
 ## [0.1.2-alpha.9](https://github.com/prosejs/prose/compare/@prose/code@0.1.2-alpha.8...@prose/code@0.1.2-alpha.9) (2020-03-10)
 
 
