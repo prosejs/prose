@@ -73,7 +73,13 @@ const RenderStandard = ({
             padding: `${label ? '1.5rem' : '1rem'} 0.5rem 1rem 0.5rem`,
             gridTemplateColumns: options.lines.enabled ? 'auto 1fr' : '1fr',
             margin: 0,
-            overflowX: 'scroll',
+            direction: 'ltr',
+            textAlign: 'left',
+            whiteSpace: 'pre-wrap',
+            wordSpacing: 'normal',
+            wordBreak: 'normal',
+            tabSize: 2,
+            hyphens: 'none',
             ...getLabelProps(label, options.lines.enabled),
             variant: 'components.code.pre', // TODO: move all variant uses to util function and make 'components.code' configurable in options
           }}
