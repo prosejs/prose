@@ -1,0 +1,30 @@
+{
+  "name": "@prose/gatsby-theme-site",
+  "version": "0.1.2-alpha.24",
+  "description": "The Gatsby Prose site theme",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prosejs/prose.git",
+    "directory": "packages/gatsby-theme-site"
+  },
+  "homepage": "https://github.com/prosejs/prose/tree/master/packages/gatsby-theme-site#readme",
+  "scripts": {
+    "test": "echo testing gatsby-theme with version: $npm_package_version"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@mdx-js/react": "^1.5.5",
+    "@prose/gatsby": "^0.1.2-alpha.6",
+    "@prose/gatsby-theme": "^0.1.2-alpha.24"
+  },
+  "devDependencies": {
+    "gatsby": "^2.19.32",
+    "prettier": "^1.19.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  }
+}

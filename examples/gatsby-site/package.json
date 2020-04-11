@@ -1,0 +1,20 @@
+{
+  "name": "gatsby-site",
+  "private": true,
+  "version": "1.0.2-alpha.24",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "develop": "yarn clean && gatsby develop",
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "@prose/gatsby-theme-site": "^0.1.2-alpha.24",
+    "@theme-ui/preset-funk": "^0.3.0",
+    "gatsby": "^2.19.32",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  }
+}
