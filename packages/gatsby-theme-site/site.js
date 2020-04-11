@@ -75,8 +75,8 @@ const site = options => {
       },
     },
     pages: pagesWithDraft({
-      list: require.resolve(`./src/templates/sites`),
-      detail: require.resolve(`./src/templates/site`),
+      list: require.resolve(`./src/templates/pages`),
+      detail: require.resolve(`./src/templates/page`),
     }),
   }))
 }
