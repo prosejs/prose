@@ -1,6 +1,6 @@
 {
   "name": "@prose/gatsby-theme-site",
-  "version": "0.1.2-alpha.25",
+  "version": "0.1.2-alpha.26",
   "description": "The Gatsby Prose site theme",
   "main": "index.js",
   "license": "MIT",

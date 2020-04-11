@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2-alpha.26](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-site@0.1.2-alpha.25...@prose/gatsby-theme-site@0.1.2-alpha.26) (2020-04-11)
+
+
+### Bug Fixes
+
+* rename sites ([#40](https://github.com/prosejs/prose/issues/40)) ([9e07c75](https://github.com/prosejs/prose/commit/9e07c750d1bba8d794160feeec0bbaac1527a97e))
+
+
+
+
+
 ## 0.1.2-alpha.25 (2020-04-11)
 
 
