@@ -1,0 +1,11 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 0.1.2-alpha.25 (2020-04-11)
+
+
+### Features
+
+* add site theme ([#39](https://github.com/prosejs/prose/issues/39)) ([ed92577](https://github.com/prosejs/prose/commit/ed925772ff1a855a42ff88bff96f576ab5eb645e))
