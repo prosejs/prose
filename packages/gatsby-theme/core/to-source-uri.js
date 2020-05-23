@@ -20,7 +20,7 @@ const toSourceUri = ({ prefix, uri, postfix = '' }) => ({
     )
   }
 
-  const fileSubstring = fileAbsolutePath.substring(index + prefix.length)
+  const fileSubstring = fileAbsolutePath.substring(index)
   return `${uri}${fileSubstring}${postfix}`
 }
 
