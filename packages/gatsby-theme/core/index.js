@@ -4,6 +4,7 @@ const nodes = require('./nodes')
 const pages = require('./pages')
 const config = require('./config')
 const coreConfig = require('./core-config')
+const toSourceUri = require('./to-source-uri')
 
 module.exports = {
   ...preBootstrap,
@@ -12,4 +13,5 @@ module.exports = {
   ...pages,
   ...config,
   ...coreConfig,
+  ...toSourceUri,
 }
