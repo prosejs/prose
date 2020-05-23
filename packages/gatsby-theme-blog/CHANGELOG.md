@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2-alpha.26](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-blog@0.1.2-alpha.25...@prose/gatsby-theme-blog@0.1.2-alpha.26) (2020-05-23)
+
+
+### Features
+
+* add source uri ([#41](https://github.com/prosejs/prose/issues/41)) ([fe1cf80](https://github.com/prosejs/prose/commit/fe1cf80e5cb41c6f3db42c84762d94ab983396d9))
+
+
+
+
+
 ## [0.1.2-alpha.25](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-blog@0.1.2-alpha.24...@prose/gatsby-theme-blog@0.1.2-alpha.25) (2020-03-25)
 
 **Note:** Version bump only for package @prose/gatsby-theme-blog
