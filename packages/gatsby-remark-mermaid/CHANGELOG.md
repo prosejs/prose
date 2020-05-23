@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/prosejs/prose/compare/@prose/gatsby-remark-mermaid@0.1.1-alpha.6...@prose/gatsby-remark-mermaid@0.1.1) (2020-05-23)
+
+**Note:** Version bump only for package @prose/gatsby-remark-mermaid
+
+
+
+
+
 ## [0.1.1-alpha.6](https://github.com/prosejs/prose/compare/@prose/gatsby-remark-mermaid@0.1.1-alpha.5...@prose/gatsby-remark-mermaid@0.1.1-alpha.6) (2020-02-28)
 
 

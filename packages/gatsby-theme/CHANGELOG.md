@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/prosejs/prose/compare/@prose/gatsby-theme@0.1.2-alpha.25...@prose/gatsby-theme@0.1.2) (2020-05-23)
+
+
+### Bug Fixes
+
+* remove skip over prefix ([#42](https://github.com/prosejs/prose/issues/42)) ([b4910d7](https://github.com/prosejs/prose/commit/b4910d723b860193ac21532923f2ec8b05312a16))
+
+
+
+
+
 ## [0.1.2-alpha.25](https://github.com/prosejs/prose/compare/@prose/gatsby-theme@0.1.2-alpha.24...@prose/gatsby-theme@0.1.2-alpha.25) (2020-05-23)
 
 
