@@ -1,4 +1,5 @@
 const { isNil, isString } = require('@utilz/types')
+const { deepmerge } = require('@utilz/deepmerge')
 const { getSlug, resolverPassthrough } = require('@prose/gatsby')
 
 const { createConfigStandard } = require('./config')
@@ -50,22 +51,30 @@ exports.createCoreConfigStandard = configFactory => {
   const { entityName, categoryItemsName, options, node, pages } = config
 
   // TODO: validate params
+  const defaultOptions = {
+    sourceUri: ({ fileAbsolutePath }) => fileAbsolutePath,
+  }
+
+  const resolvedOptions = deepmerge(defaultOptions, options)
 
   return {
     config: createConfigStandard({
       sources: [
         {
-          name: options.contentPath, // TODO: review optional
-          path: options.contentPath,
+          name: resolvedOptions.contentPath, // TODO: review optional
+          path: resolvedOptions.contentPath,
         },
         {
-          name: options.assetPath,
-          path: options.assetPath,
+          name: resolvedOptions.assetPath,
+          path: resolvedOptions.assetPath,
         },
       ],
-      mdxEnabled: options.mdx,
+      mdxEnabled: resolvedOptions.mdx,
     }),
-    onPreBootstrap: createPaths([options.contentPath, options.assetPath]), // TODO: review optional
+    onPreBootstrap: createPaths([
+      options.contentPath,
+      resolvedOptions.assetPath,
+    ]), // TODO: review optional
     createSchemaCustomization: all(
       createInterfaces([
         {
@@ -74,6 +83,7 @@ exports.createCoreConfigStandard = configFactory => {
             ...node.interface,
             slug: 'String!',
             category: 'Category',
+            sourceUri: 'String',
           },
         },
       ]),
@@ -96,6 +106,9 @@ exports.createCoreConfigStandard = configFactory => {
                   category => category.path === source.category
                 )
               },
+            },
+            sourceUri: {
+              type: 'String',
             },
           },
           interfaces: ['Node', entityName],
@@ -136,7 +149,7 @@ exports.createCoreConfigStandard = configFactory => {
 
           if (
             node.internal.type !== nodeType ||
-            source !== options.contentPath
+            source !== resolvedOptions.contentPath
           ) {
             return false
           }
@@ -148,16 +161,24 @@ exports.createCoreConfigStandard = configFactory => {
           const { node: gatsbyNode, getNode } = props
 
           const fields = node.getFields(props)
-          const slug = getSlug({ basePath: options.basePath, getNode })(
+
+          const slug = getSlug({ basePath: resolvedOptions.basePath, getNode })(
             gatsbyNode
           )
+
           const category =
             gatsbyNode.frontmatter.category || slugToCategory(slug)
+
+          const sourceUri = resolvedOptions.sourceUri({
+            fileAbsolutePath: gatsbyNode.fileAbsolutePath,
+            frontmatter: gatsbyNode.frontmatter,
+          })
 
           return {
             ...fields,
             slug,
             category,
+            sourceUri,
           }
         },
       },

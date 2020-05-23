@@ -15,6 +15,7 @@ export const query = graphql`
       excerpt
       body
       slug
+      sourceUri
       title
       subTitle
       draft
