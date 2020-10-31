@@ -13,8 +13,8 @@
   "dependencies": {
     "@prose/gatsby-theme-wiki": "^0.1.2",
     "@theme-ui/preset-funk": "^0.3.0",
-    "gatsby": "^2.19.32",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "gatsby": "^2.24.91",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }
