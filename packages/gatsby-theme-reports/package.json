@@ -17,14 +17,14 @@
     "access": "public"
   },
   "dependencies": {
-    "@mdx-js/react": "^1.5.7",
+    "@mdx-js/react": "^1.6.19",
     "@prose/gatsby": "^0.1.2",
     "@prose/gatsby-theme": "^0.1.2"
   },
   "devDependencies": {
-    "gatsby": "^2.19.32",
-    "prettier": "^1.19.1",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "gatsby": "^2.24.91",
+    "prettier": "^2.1.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }

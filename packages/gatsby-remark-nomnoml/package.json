@@ -12,17 +12,17 @@
     "access": "public"
   },
   "dependencies": {
-    "nomnoml": "^0.6.2",
+    "nomnoml": "^1.2.0",
     "theme-ui": "^0.3.1",
-    "unist-util-visit": "^2.0.1"
+    "unist-util-visit": "^2.0.3"
   },
   "devDependencies": {
     "@prose/gatsby-remark-mermaid": "^0.1.1",
-    "babel-jest": "^25.1.0",
+    "babel-jest": "^26.6.1",
     "cheerio": "^1.0.0-rc.3",
-    "hast-util-to-html": "^7.1.0",
-    "jest": "^25.1.0",
-    "mdast-util-to-hast": "^8.1.0",
-    "remark": "^11.0.2"
+    "hast-util-to-html": "^7.1.2",
+    "jest": "^26.6.1",
+    "mdast-util-to-hast": "^10.0.0",
+    "remark": "^13.0.0"
   }
 }

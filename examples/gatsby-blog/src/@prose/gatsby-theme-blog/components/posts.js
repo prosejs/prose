@@ -7,8 +7,8 @@ const isDevelopment = () => process.env.NODE_ENV !== 'production'
 
 const BlogPosts = ({ data }) => {
   let posts = data.allBlogPost.edges
-    .map(e => e.node)
-    .map(p => ({
+    .map((e) => e.node)
+    .map((p) => ({
       id: p.id,
       excerpt: p.excerpt,
       date: p.date,
@@ -18,7 +18,7 @@ const BlogPosts = ({ data }) => {
     }))
 
   if (!isDevelopment()) {
-    posts = posts.filter(p => !p.draft)
+    posts = posts.filter((p) => !p.draft)
   }
 
   return (
