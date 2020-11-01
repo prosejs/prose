@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/prosejs/prose/compare/@prose/gatsby-remark-nomnoml@0.1.2...@prose/gatsby-remark-nomnoml@0.1.3) (2020-11-01)
+
+
+### Bug Fixes
+
+* remove invalid jsx in mermaid svg ([#43](https://github.com/prosejs/prose/issues/43)) ([52c49f4](https://github.com/prosejs/prose/commit/52c49f4dd10f25cdcadd1be34b4ce044942f259d))
+
+
+
+
+
 ## [0.1.2](https://github.com/prosejs/prose/compare/@prose/gatsby-remark-nomnoml@0.1.2-alpha.9...@prose/gatsby-remark-nomnoml@0.1.2) (2020-05-23)
 
 **Note:** Version bump only for package @prose/gatsby-remark-nomnoml
