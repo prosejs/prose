@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/prosejs/prose/compare/@prose/gatsby-remark-mermaid@0.1.2...@prose/gatsby-remark-mermaid@0.1.3) (2020-11-02)
+
+
+### Bug Fixes
+
+* add headless flag ([#44](https://github.com/prosejs/prose/issues/44)) ([4a8e0b2](https://github.com/prosejs/prose/commit/4a8e0b2a5f93361ec64fa20ffcbf18a673bfd62b))
+
+
+
+
+
 ## [0.1.2](https://github.com/prosejs/prose/compare/@prose/gatsby-remark-mermaid@0.1.1...@prose/gatsby-remark-mermaid@0.1.2) (2020-11-01)
 
 
