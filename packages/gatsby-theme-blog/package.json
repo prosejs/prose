@@ -22,7 +22,7 @@
     "@prose/gatsby-theme": "^0.1.4"
   },
   "devDependencies": {
-    "gatsby": "^2.24.91",
+    "gatsby": "^2.25.1",
     "prettier": "^2.1.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
