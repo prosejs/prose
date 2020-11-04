@@ -16,10 +16,11 @@
     "clean": "yarn cache clean",
     "prepare": "microbundle --jsx React.createElement --no-compress -o dist",
     "watch": "microbundle watch --jsx React.createElement --no-compress -o dist",
-    "storybook": "start-storybook",
+    "storybook": "start-storybook -p 6006 --no-dll",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand"
+    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
+    "build-storybook": "build-storybook --no-dll"
   },
   "publishConfig": {
     "access": "public"
@@ -37,8 +38,10 @@
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
     "@mdx-js/runtime": "^1.6.19",
-    "@sambego/storybook-state": "^2.0.1",
+    "@storybook/addon-actions": "^6.0.28",
+    "@storybook/addon-essentials": "^6.0.28",
     "@storybook/addon-knobs": "^6.0.28",
+    "@storybook/addon-links": "^6.0.28",
     "@storybook/react": "^6.0.28",
     "@theme-ui/preset-base": "^0.3.0",
     "@theme-ui/preset-funk": "^0.3.0",
@@ -50,6 +53,7 @@
     "microbundle": "^0.12.4",
     "prettier": "^2.1.2",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-is": "^17.0.1"
   }
 }
