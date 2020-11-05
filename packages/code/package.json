@@ -29,7 +29,6 @@
     "@tson/parse": "^0.1.4",
     "@utilz/deepmerge": "^0.1.16",
     "@utilz/types": "^0.1.14",
-    "nanoid": "^3.1.16",
     "prism-react-renderer": "^1.1.1",
     "theme-ui": "^0.3.1"
   },
