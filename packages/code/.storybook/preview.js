@@ -1,3 +1,4 @@
-import { configure } from '@storybook/react'
 
-configure(require.context('../src', true, /\.stories\.jsx?$/), module)
+export const parameters = {
+  actions: { argTypesRegex: "^on[A-Z].*" },
+}

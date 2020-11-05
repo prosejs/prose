@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { deepmerge } from '@utilz/deepmerge'
-import shortid from 'shortid'
+import { nanoid } from 'nanoid'
 import parseStandard from './parse-standard'
 import { renderStandard } from './render/render-standard'
 
@@ -80,17 +80,17 @@ export const Code = ({
           return { ...rest }
         }
 
-        const toDomainTokens = prismTokens => {
-          return prismTokens.map(t => ({
-            id: shortid.generate(),
+        const toDomainTokens = (prismTokens) => {
+          return prismTokens.map((t) => ({
+            id: nanoid(),
             data: t,
           }))
         }
 
-        const toDomainLines = prismLines => {
-          return prismLines.map(l => {
+        const toDomainLines = (prismLines) => {
+          return prismLines.map((l) => {
             return {
-              id: shortid.generate(),
+              id: nanoid(),
               tokens: toDomainTokens(l),
             }
           })
