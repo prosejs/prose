@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.5](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-reports@0.1.4...@prose/gatsby-theme-reports@0.1.5) (2020-11-05)
+
+
+### Bug Fixes
+
+* remove shortid ([#45](https://github.com/prosejs/prose/issues/45)) ([fcd97c5](https://github.com/prosejs/prose/commit/fcd97c51edab4bc02f52fad5ad44cdeaac69bca0))
+
+
+
+
+
 ## [0.1.4](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-reports@0.1.3...@prose/gatsby-theme-reports@0.1.4) (2020-11-02)
 
 **Note:** Version bump only for package @prose/gatsby-theme-reports

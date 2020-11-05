@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.5](https://github.com/prosejs/prose/compare/gatsby-wiki@1.0.4...gatsby-wiki@1.0.5) (2020-11-05)
+
+
+### Bug Fixes
+
+* remove shortid ([#45](https://github.com/prosejs/prose/issues/45)) ([fcd97c5](https://github.com/prosejs/prose/commit/fcd97c51edab4bc02f52fad5ad44cdeaac69bca0))
+
+
+
+
+
 ## [1.0.4](https://github.com/prosejs/prose/compare/gatsby-wiki@1.0.3...gatsby-wiki@1.0.4) (2020-11-02)
 
 **Note:** Version bump only for package gatsby-wiki
