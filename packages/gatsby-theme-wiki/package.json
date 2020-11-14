@@ -1,6 +1,6 @@
 {
   "name": "@prose/gatsby-theme-wiki",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "The Gatsby Prose wiki theme",
   "main": "index.js",
   "license": "MIT",
@@ -18,8 +18,8 @@
   },
   "dependencies": {
     "@mdx-js/react": "^1.6.21",
-    "@prose/gatsby": "^0.1.4",
-    "@prose/gatsby-theme": "^0.1.6"
+    "@prose/gatsby": "^0.1.5",
+    "@prose/gatsby-theme": "^0.1.7"
   },
   "devDependencies": {
     "gatsby": "^2.26.1",

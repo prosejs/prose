@@ -1,6 +1,6 @@
 {
   "name": "@prose/gatsby-remark-mermaid",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Prose plugin for mermaid graphs.",
   "main": "index.js",
   "license": "MIT",

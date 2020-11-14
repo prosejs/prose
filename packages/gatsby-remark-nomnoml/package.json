@@ -1,6 +1,6 @@
 {
   "name": "@prose/gatsby-remark-nomnoml",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Prose plugin for nomnoml graphs.",
   "main": "index.js",
   "license": "MIT",
@@ -17,7 +17,7 @@
     "unist-util-visit": "^2.0.3"
   },
   "devDependencies": {
-    "@prose/gatsby-remark-mermaid": "^0.1.4",
+    "@prose/gatsby-remark-mermaid": "^0.1.5",
     "babel-jest": "^26.6.2",
     "cheerio": "^1.0.0-rc.3",
     "hast-util-to-html": "^7.1.2",
