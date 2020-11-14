@@ -18,9 +18,9 @@
     "access": "public"
   },
   "dependencies": {
-    "mermaid": "^8.8.2",
+    "mermaid": "^8.8.3",
     "puppeteer": "^5.4.1",
-    "theme-ui": "^0.3.1",
+    "theme-ui": "^0.3.3",
     "unist-util-map": "^2.0.0",
     "unist-util-visit": "^2.0.3"
   },
