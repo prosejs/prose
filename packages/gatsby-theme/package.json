@@ -1,6 +1,6 @@
 {
   "name": "@prose/gatsby-theme",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "The prose Gatsby theme",
   "source": "index.js",
   "license": "MIT",
