@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.11](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-blog@0.1.10...@prose/gatsby-theme-blog@0.1.11) (2020-11-20)
+
+
+### Bug Fixes
+
+* update posts select ([#51](https://github.com/prosejs/prose/issues/51)) ([5abfd9e](https://github.com/prosejs/prose/commit/5abfd9e798872c37eadffb1c79683887a335bc68))
+
+
+
+
+
 ## [0.1.10](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-blog@0.1.9...@prose/gatsby-theme-blog@0.1.10) (2020-11-20)
 
 
