@@ -21,6 +21,12 @@ export const query = graphql`
           draft
           date(formatString: "MMMM DD, YYYY")
           tags
+          category {
+            id
+            name
+            path
+          }
+          maturity
         }
       }
     }
