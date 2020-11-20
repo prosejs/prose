@@ -22,6 +22,12 @@ export const query = graphql`
       tags
       keywords
       date(formatString: "MMMM DD, YYYY")
+      category {
+        id
+        name
+        path
+      }
+      maturity
     }
     previous: blogPost(id: { eq: $previousId }) {
       id
