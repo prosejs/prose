@@ -2,6 +2,7 @@
 title: Test post content
 date: 2019-04-15
 category: test/child/child
+maturity: 8
 ---
 
 Test post
