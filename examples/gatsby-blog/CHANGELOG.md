@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.9](https://github.com/prosejs/prose/compare/gatsby-blog@1.0.8...gatsby-blog@1.0.9) (2020-11-20)
+
+
+### Features
+
+* add blog maturity ([#49](https://github.com/prosejs/prose/issues/49)) ([7c772a0](https://github.com/prosejs/prose/commit/7c772a099d306f2da7d3f910c7307fe061755f6a))
+
+
+
+
+
 ## [1.0.8](https://github.com/prosejs/prose/compare/gatsby-blog@1.0.7...gatsby-blog@1.0.8) (2020-11-15)
 
 **Note:** Version bump only for package gatsby-blog

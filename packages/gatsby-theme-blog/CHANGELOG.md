@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.9](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-blog@0.1.8...@prose/gatsby-theme-blog@0.1.9) (2020-11-20)
+
+
+### Features
+
+* add blog maturity ([#49](https://github.com/prosejs/prose/issues/49)) ([7c772a0](https://github.com/prosejs/prose/commit/7c772a099d306f2da7d3f910c7307fe061755f6a))
+
+
+
+
+
 ## [0.1.8](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-blog@0.1.7...@prose/gatsby-theme-blog@0.1.8) (2020-11-15)
 
 **Note:** Version bump only for package @prose/gatsby-theme-blog
