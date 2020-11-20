@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.10](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-blog@0.1.9...@prose/gatsby-theme-blog@0.1.10) (2020-11-20)
+
+
+### Bug Fixes
+
+* add category and maturity select ([#50](https://github.com/prosejs/prose/issues/50)) ([69a6c7f](https://github.com/prosejs/prose/commit/69a6c7fdc2d97dafcdfbde35f135b64dcf26aea2))
+
+
+
+
+
 ## [0.1.9](https://github.com/prosejs/prose/compare/@prose/gatsby-theme-blog@0.1.8...@prose/gatsby-theme-blog@0.1.9) (2020-11-20)
 
 
