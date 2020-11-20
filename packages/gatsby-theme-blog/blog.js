@@ -3,7 +3,7 @@ const {
   pagesWithDraft,
 } = require('@prose/gatsby-theme')
 
-const blog = options => {
+const blog = (options) => {
   return createCoreConfigStandard(({ resolverPassthrough }) => ({
     entityName: 'BlogPost', // TODO: make option,
     categoryItemsName: 'posts',
@@ -19,6 +19,7 @@ const blog = options => {
         keywords: '[String]!',
         excerpt: 'String!',
         body: 'String!',
+        maturity: 'Int',
       },
       fields: {
         id: { type: 'ID!' },
@@ -48,6 +49,9 @@ const blog = options => {
           type: 'String!',
           resolve: resolverPassthrough('body'),
         },
+        maturity: {
+          type: 'Int',
+        },
       },
       getFields: ({ node }) => {
         const {
@@ -58,6 +62,7 @@ const blog = options => {
           date,
           tags = [],
           keywords = [],
+          maturity,
         } = node.frontmatter
 
         return {
@@ -68,6 +73,7 @@ const blog = options => {
           date,
           tags,
           keywords,
+          maturity,
         }
       },
     },
