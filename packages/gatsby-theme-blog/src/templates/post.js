@@ -25,7 +25,6 @@ export const query = graphql`
       category {
         id
         name
-        path
       }
       maturity
     }
