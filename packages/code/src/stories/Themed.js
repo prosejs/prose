@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import { jsx } from 'theme-ui'
 import { ThemeProvider } from 'theme-ui'
 import { deepmerge } from '@utilz/deepmerge'
 import funkTheme from '@theme-ui/preset-funk'
@@ -17,7 +17,7 @@ const Themed = ({ theme, children }) => {
 
   return (
     <ThemeProvider theme={deepmerge(defaultTheme, theme)}>
-      <Styled.root>{children}</Styled.root>
+      {children}
     </ThemeProvider>
   )
 }

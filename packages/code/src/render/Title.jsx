@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, Box, Styled } from 'theme-ui'
+import { jsx, Themed } from 'theme-ui'
 
 const Title = ({ children, borderColor }) => (
-  <Styled.pre
+  <Themed.pre
     as="div"
     sx={{
       padding: '0.8rem',
@@ -10,7 +10,7 @@ const Title = ({ children, borderColor }) => (
       variant: 'components.code.title.container',
     }}
   >
-    <Styled.p
+    <Themed.p
       sx={{
         fontSize: 1,
         color: '#866c5b',
@@ -20,8 +20,8 @@ const Title = ({ children, borderColor }) => (
       }}
     >
       {children}
-    </Styled.p>
-  </Styled.pre>
+    </Themed.p>
+  </Themed.pre>
 )
 
 export default Title

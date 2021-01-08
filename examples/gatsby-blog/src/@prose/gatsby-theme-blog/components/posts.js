@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
-import { Styled } from 'theme-ui'
+import { Themed } from 'theme-ui'
 
 const isDevelopment = () => process.env.NODE_ENV !== 'production'
 
@@ -24,12 +24,12 @@ const BlogPosts = ({ data }) => {
   return (
     <ul>
       {posts.map((p, i) => (
-        <Styled.li key={i}>
-          <Styled.a as={Link} to={p.slug}>
+        <Themed.li key={i}>
+          <Themed.a as={Link} to={p.slug}>
             {p.title}
-          </Styled.a>
+          </Themed.a>
           {p.draft && <span sx={{ ml: 1 }}>[Draft]</span>}
-        </Styled.li>
+        </Themed.li>
       ))}
     </ul>
   )

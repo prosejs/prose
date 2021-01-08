@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react'
-import { jsx, Styled } from 'theme-ui'
+import { jsx, Themed } from 'theme-ui'
 import Title from './Title.jsx'
 import CodeLine from './CodeLine.jsx'
 
@@ -28,7 +28,7 @@ const getLabelProps = (label, linesEnabled) => {
   }
 }
 
-const getLabel = languageLabels => language => {
+const getLabel = (languageLabels) => (language) => {
   if (!language) {
     return null
   }
@@ -66,7 +66,7 @@ const RenderStandard = ({
         <Title borderColor={label.backgroundColor}>{options.title}</Title>
       )}
       <div style={{ position: 'relative' }}>
-        <Styled.pre
+        <Themed.pre
           {...getPreProps()}
           sx={{
             display: 'grid',
@@ -95,7 +95,7 @@ const RenderStandard = ({
               getTokenProps={getTokenProps}
             />
           ))}
-        </Styled.pre>
+        </Themed.pre>
       </div>
     </React.Fragment>
   )
