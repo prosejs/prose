@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { deepmerge } from '@utilz/deepmerge'
 import parseStandard from './parse-standard'

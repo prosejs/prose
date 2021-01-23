@@ -1,7 +1,6 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 import React from 'react'
 import { Code, fromMdxProps } from '../index'
-import { jsx } from 'theme-ui'
 import Themed from './Themed'
 import MDX from '@mdx-js/runtime'
 
@@ -16,7 +15,7 @@ ${code}
       <MDX
         components={{
           pre: ({ children }) => <React.Fragment>{children}</React.Fragment>,
-          code: props => <Code {...fromMdxProps(props)} />,
+          code: (props) => <Code {...fromMdxProps(props)} />,
         }}
       >
         {child}

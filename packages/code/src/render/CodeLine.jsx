@@ -1,6 +1,6 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 import React from 'react'
-import { jsx, Box, useThemeUI } from 'theme-ui'
+import { Box, useThemeUI } from 'theme-ui'
 import LineNumber from './LineNumber.jsx'
 import Token from './Token.jsx'
 import Symbol from './Symbol.jsx'
@@ -50,7 +50,7 @@ const getSymbol = ({ meta }) => {
   return dem ? getSymbolType(dem) : getSymbolType(em)
 }
 
-const getSymbolType = value => {
+const getSymbolType = (value) => {
   switch (value) {
     case '+':
       return '+'
@@ -91,7 +91,7 @@ const CodeLine = ({
         {symbol && (
           <Symbol symbol={symbol} style={getTokenStyle({ theme, meta })} />
         )}
-        {tokens.map(token => (
+        {tokens.map((token) => (
           <Token
             key={token.id}
             token={token}

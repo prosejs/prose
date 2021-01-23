@@ -1,6 +1,6 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 import React from 'react'
-import { jsx, Themed } from 'theme-ui'
+import { Themed } from 'theme-ui'
 import Title from './Title.jsx'
 import CodeLine from './CodeLine.jsx'
 

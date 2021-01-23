@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 import { ThemeProvider } from 'theme-ui'
 import { deepmerge } from '@utilz/deepmerge'
 import funkTheme from '@theme-ui/preset-funk'

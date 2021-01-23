@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 import Symbol from './Symbol'
 
 export default { title: 'render/Symbol' }

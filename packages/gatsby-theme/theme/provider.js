@@ -1,10 +1,11 @@
-/** @jsx jsx */
-import { jsx, ThemeProvider } from 'theme-ui'
+import { ThemeProvider } from 'theme-ui'
 import { theme } from '../src/theme'
 import { getComponents } from '../src/components'
 import { deepmerge } from '@utilz/deepmerge'
 
-const getOptions = options => {
+// TODO: use gatsby-plugin-themeui with
+// custom components option and remove custom provider
+const getOptions = (options) => {
   const defaultOptions = {
     components: {
       code: {

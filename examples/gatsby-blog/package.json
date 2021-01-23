@@ -15,7 +15,7 @@
   "dependencies": {
     "@prose/gatsby-theme-blog": "^0.1.12",
     "@theme-ui/preset-swiss": "^0.3.5",
-    "gatsby": "^2.30.1",
+    "gatsby": "^2.31.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }

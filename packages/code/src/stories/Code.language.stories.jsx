@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 import { Code } from '../index'
 import Themed from './Themed'
 import MdxThemed from './MdxThemed'
@@ -27,7 +26,7 @@ export const withLanguageSelect = () => {
     none: 'none',
   }
 
-  Object.keys(languageLabels).forEach(key => {
+  Object.keys(languageLabels).forEach((key) => {
     const label = languageLabels[key]
     values[label.title] = key
   })

@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 
 const Token = ({ token, tokenStyle, ...props }) => {
   return (
