@@ -4,7 +4,7 @@
   "description": "The Prose code component",
   "source": "src/index.js",
   "main": "dist/code.js",
-  "module": "dist/code.esm.js",
+  "module": "dist/code.module.js",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -16,11 +16,11 @@
     "clean": "yarn cache clean",
     "prepare": "microbundle --jsx React.createElement --jsxImportSource theme-ui --no-compress -o dist",
     "watch": "microbundle --jsx React.createElement --jsxImportSource theme-ui --no-compress -o dist",
-    "storybook": "start-storybook -p 6006 --no-dll",
+    "storybook": "start-storybook -p 6006",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
-    "build-storybook": "build-storybook --no-dll"
+    "build-storybook": "build-storybook"
   },
   "publishConfig": {
     "access": "public"
